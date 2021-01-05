@@ -8,7 +8,11 @@ import styles from './ForgotPage.module.scss';
 const cx = classNames.bind(styles);
 
 function ForgotPage() {
-  return <div>암호변경페이지입니다.</div>;
+  return (
+    <div>
+      <div className="hi">안뇽</div>
+    </div>
+  );
 }
 
 export default ForgotPage;
