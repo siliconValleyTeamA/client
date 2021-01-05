@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   html, body, div, span, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   abbr, address, cite, code,
@@ -84,4 +84,22 @@ export const GlobalStyle = createGlobalStyle`
   input, select {
       vertical-align:middle;
   }
+  input, button{
+    box-sizing: border-box;
+  }
+  button {
+    border:0 none; 
+    background-color:transparent; 
+    cursor:pointer;
+    &:focus{
+        outline:0;
+    }
+  }
+  input{
+    &:focus{
+        outline:0;
+    }
+  }
 `;
+
+export default GlobalStyle;

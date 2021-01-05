@@ -8,7 +8,7 @@ import styles from './DetailPage.module.scss';
 const cx = classNames.bind(styles);
 
 function DetailPage() {
-  return <div>디테일페이지입니다.</div>;
+  return <div className={cx('something-local')}>디테일페이지입니다.</div>;
 }
 
 export default DetailPage;
