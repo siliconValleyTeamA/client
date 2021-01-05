@@ -1,0 +1,11 @@
+@import 'styles/_palette.scss';
+.input-field {
+  border-radius: 0.7rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.12);
+  border: 0.0625rem solid transparent;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.825rem;
+  height: 3rem;
+  width: 15rem;
+}
