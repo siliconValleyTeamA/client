@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 function FindPwdPage() {
   return (
-    <div>
+    <div className={cx('find-pwd-page')}>
       <Header field="pwd" />
       <div className={cx('input-box')}>
         <Input text="이메일 계정" />

@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 function FindIdPage() {
   return (
-    <div>
+    <div className={cx('find-id-page')}>
       <Header field="id" />
       <div className={cx('input-box')}>
         <Input text="이메일 계정" />

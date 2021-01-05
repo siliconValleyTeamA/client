@@ -1,10 +1,11 @@
 @import 'styles/_palette.scss';
 
 .header {
+  margin-top: 15rem;
   margin-bottom: 2rem;
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 2rem;
   }
@@ -15,15 +16,15 @@
 
     ul {
       display: flex;
-
+      justify-content: space-between;
       li {
-        border-bottom: 0.2rem solid $wadiz;
         list-style: none;
         color: $gray;
       }
 
       .click {
         color: $wadiz;
+        border-bottom: 0.2rem solid $wadiz;
       }
     }
   }

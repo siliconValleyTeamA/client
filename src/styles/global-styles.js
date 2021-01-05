@@ -95,6 +95,11 @@ const GlobalStyle = createGlobalStyle`
         outline:0;
     }
   }
+  input{
+    &:focus{
+        outline:0;
+    }
+  }
 `;
 
 export default GlobalStyle;

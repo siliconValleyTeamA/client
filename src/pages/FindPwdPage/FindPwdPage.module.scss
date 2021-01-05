@@ -1,7 +1,9 @@
-.input-box {
-  margin-bottom: 0.7rem;
-}
+.find-pwd-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.button-box {
-  margin-bottom: 0.7rem;
+  .input-box {
+    margin-bottom: 1.7rem;
+  }
 }
