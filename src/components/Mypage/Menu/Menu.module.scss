@@ -1,0 +1,26 @@
+@import 'styles/_palette.scss';
+
+ol {
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 14px 8px 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    background-color: $black-025;
+    font-weight: 600;
+
+    .AiFillHeart {
+      color: $pink;
+    }
+
+    .RiShoppingBag3Fill {
+      color: $powder;
+    }
+
+
+  }
+}

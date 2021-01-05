@@ -10,6 +10,7 @@ import MainPage from 'pages/MainPage';
 import SignupPage from 'pages/SignupPage';
 import ForgotPage from 'pages/ForgotPage';
 import PrivacyPage from 'pages/PrivacyPage';
+import MyPage from 'pages/MyPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/signup" component={SignupPage} />
         <Route path="/forgot" component={ForgotPage} />
         <Route path="/privacy" component={PrivacyPage} />
+        <Route path="/mypage" component={MyPage} />
       </Switch>
     </BrowserRouter>
   );
