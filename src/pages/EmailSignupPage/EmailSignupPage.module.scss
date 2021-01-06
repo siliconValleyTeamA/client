@@ -57,18 +57,21 @@
       float: right;
     }
   }
-  .email p {
-    font-size: 3px;
-    font-style: rgb(240, 240, 240);
-    margin-left: 3px;
+
+  .notice {
+    opacity: 0.7;
+    font-size: 13px;
+    margin: 8px 0px 15px 5px;
   }
 
   .name {
     display: flex;
+    margin-bottom: 20px;
   }
   .password {
     .password-input {
       display: flex;
+      margin-bottom: 10px;
     }
     .password-conf {
       display: flex;
@@ -79,7 +82,8 @@
 .emoji {
   font-size: 20px;
   padding-top: 5px;
-  margin-left: 5px;
+  margin-right: 8px;
+  opacity: 0.5;
 }
 
 .password-input,

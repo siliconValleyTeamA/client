@@ -25,7 +25,7 @@ function EmailSignupPage() {
             <input className = {cx('email-input')} type = "email" placeholder = "이메일 계정"/>
             <button className = {cx('email-auth')} onClick = {() => {}}>인증하기</button>  
         </div>
-        <div><p>위 이메일로 인증번호가 발송됩니다.</p></div>
+        <div><p className = {cx('notice')}>위 이메일로 인증번호가 발송됩니다.</p></div>
         </div>
         <div className = {cx('name')}>
             <input className = {cx('name-input')}type = "text" placeholder = "이름"/>
@@ -36,10 +36,15 @@ function EmailSignupPage() {
             <input type = "text" placeholder = "비밀번호 입력"/>
             <p className = {cx('emoji')}> <AiOutlineLock /></p>
          </div>
+         <div>
          <div className = {cx('password-conf')}>
             <input type = "text" placeholder = "비밀번호 확인"/>
             <p className = {cx('emoji')}> <AiOutlineLock /></p>
          </div>
+         <div>
+            <p className = {cx('notice')}>영문, 숫자, 특수문자 (!@#$%^&*+=-)를 조합한 8자 이상</p>
+        </div>
+        </div>
         </div>
         <button className = {cx('submit')} type = "button">완료</button>
     </div>;
