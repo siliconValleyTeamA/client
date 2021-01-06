@@ -11,35 +11,37 @@ import styles from './EmailSignupPage.module.scss';
 const cx = classNames.bind(styles);
 
 function EmailSignupPage() {
-    return <div className = {cx('header')}>
-        <h1>회원가입</h1>
-        <div>
-            <input type = "checkbox"/>
-            <div> 
+    return <div className = {cx('signup')}>       
+        <h1 className = {cx('title')}>회원가입</h1>
+        <div className = {cx('agree')}>
+            <input className = {cx('agree-chkbtn')}type = "checkbox"/>
+            <div className = {cx('agree-text')}> 
                 <p>전체동의</p>
-                <p> <CgChevronRight /> </p>
+                <p className = {cx('agree-more', 'emoji')}> <CgChevronRight /> </p>
             </div> 
         </div>
+        <div>
         <div className = {cx('email')}>
-            <input type = "email" placeholder = "이메일 계정"/>
-            <button type = "button">인증하기</button>
-            <p>위 이메일로 인증번호가 발송됩니다.</p>
+            <input className = {cx('email-input')} type = "email" placeholder = "이메일 계정"/>
+            <button className = {cx('email-auth')} onClick = {() => {}}>인증하기</button>  
+        </div>
+        <div><p>위 이메일로 인증번호가 발송됩니다.</p></div>
         </div>
         <div className = {cx('name')}>
-            <input type = "text" placeholder = "이름"/>
-            <p> <IoPersonOutline /></p>
+            <input className = {cx('name-input')}type = "text" placeholder = "이름"/>
+            <p className = {cx('emoji')}> <IoPersonOutline /></p>
         </div>
         <div className = {cx('password')}>
-        <div>
+        <div className = {cx('password-input')}>
             <input type = "text" placeholder = "비밀번호 입력"/>
-            <p> <AiOutlineLock /></p>
+            <p className = {cx('emoji')}> <AiOutlineLock /></p>
          </div>
-         <div>
+         <div className = {cx('password-conf')}>
             <input type = "text" placeholder = "비밀번호 확인"/>
-            <p> <AiOutlineLock /></p>
+            <p className = {cx('emoji')}> <AiOutlineLock /></p>
          </div>
         </div>
-        <button type = "button">완료</button>
+        <button className = {cx('submit')} type = "button">완료</button>
     </div>;
 }
 
