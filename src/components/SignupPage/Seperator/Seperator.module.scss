@@ -1,0 +1,28 @@
+@import 'styles/_palette.scss';
+
+.seperator {
+  width: 300px;
+  position: relative;
+  margin: 16px 0;
+  text-align: center;
+  line-height: 16px;
+
+  span {
+    display: inline-block;
+    position: relative;
+    padding: 0 16px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 12px;
+  }
+}
+
+.seperator::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 1px;
+  content: '';
+}
