@@ -24,13 +24,7 @@ function InterestSelect({interest}){
 function EmailSignupPage() {
     return <div className = {cx('signup')}>       
         <h1 className = {cx('title')}>회원가입</h1>
-        <div className = {cx('agree')}>
-            <input className = {cx('agree-chkbtn')}type = "checkbox"/>
-            <div className = {cx('agree-text')}> 
-                <p>전체동의</p>
-                <p className = {cx('agree-more', 'emoji')}> <CgChevronRight /> </p>
-            </div> 
-        </div>
+        <hr/>
         <div>
         <div className = {cx('email')}>
             <input className = {cx('email-input')} type = "email" placeholder = "이메일 계정"/>
@@ -82,6 +76,10 @@ function EmailSignupPage() {
             </div>
             </div>
             
+        </div>
+        <div className = {cx('agree')}>
+            <p>전체동의</p>
+            <input className = {cx('agree-chkbtn')}type = "checkbox"/>
         </div>
         <button className = {cx('submit')} type = "button">완료</button>
 

@@ -9,7 +9,11 @@
   h1 {
     font-size: 30px;
     font-style: #292929;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+  }
+
+  hr {
+    margin: 0px 0px;
   }
 
   input {
@@ -32,27 +36,9 @@
     float: left;
     margin-top: 1.7rem;
   }
-  .agree {
-    display: flex;
-    .agree-chkbtn {
-      width: 15px;
-      height: 15px;
-    }
-    .agree-text {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 2px;
-      margin-left: 5px;
-      font-weight: bold;
-      font-size: 15px;
 
-      .agree-more {
-        text-align: right;
-      }
-    }
-  }
   .email {
+    margin-top: 20px;
     .email-auth {
       float: right;
     }
@@ -79,8 +65,7 @@
   }
 
   .country {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0px 10px 5px;
     p {
       font-size: 15px;
       margin-bottom: 10px;
@@ -97,8 +82,7 @@
   }
 
   .interest {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0px 10px 5px;
     p {
       font-size: 15px;
       margin-bottom: 10px;
@@ -121,6 +105,18 @@
         }
       }
     }
+  }
+  .agree {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px 10px 5px;
+    .agree-chkbtn {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .submit {
+    margin: 10px 0px 10px 5px;
   }
 }
 
