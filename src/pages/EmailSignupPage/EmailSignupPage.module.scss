@@ -77,6 +77,51 @@
       display: flex;
     }
   }
+
+  .country {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    p {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    .country-list {
+      width: 100%;
+      height: 40px;
+      padding-left: 10px;
+      padding-right: 20px;
+      border: 1px solid rgb(210, 210, 210);
+      background-color: rgb(240, 240, 240);
+      margin-bottom: 10px;
+    }
+  }
+
+  .interest {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    p {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .interest-list {
+      .list1 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .list2 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .interest-element {
+        display: flex;
+        justify-content: space-between;
+        p {
+          width: 140px;
+        }
+      }
+    }
+  }
 }
 
 .emoji {
@@ -95,4 +140,9 @@
   padding: 3px;
   margin: 5px;
   background-color: rgb(240, 240, 240);
+}
+
+input[type='checkbox'] {
+  width: auto;
+  margin-right: 10px;
 }
