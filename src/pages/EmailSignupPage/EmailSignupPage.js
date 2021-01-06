@@ -9,6 +9,17 @@ import { AiOutlineLock } from "react-icons/ai";
 import styles from './EmailSignupPage.module.scss';
 
 const cx = classNames.bind(styles);
+const country = [ {lang : "영어"}, {lang : "한국어"}, {lang : "중국어"}, {lang : "일본어"}];
+
+function LanguageSelect({ lang }){
+    return <option> {lang} </option>;
+}
+
+function InterestSelect({interest}){
+    return <div className = {cx('interest-element')}><input type = "checkbox"/>
+                <p>{interest}</p>
+            </div>;
+}
 
 function EmailSignupPage() {
     return <div className = {cx('signup')}>       
@@ -23,9 +34,9 @@ function EmailSignupPage() {
         <div>
         <div className = {cx('email')}>
             <input className = {cx('email-input')} type = "email" placeholder = "이메일 계정"/>
-            <button className = {cx('email-auth')} onClick = {() => {}}>인증하기</button>  
+            <button className = {cx('email-auth')} onClick = {() => {}}>확인하기</button>  
         </div>
-        <div><p className = {cx('notice')}>위 이메일로 인증번호가 발송됩니다.</p></div>
+        <div><p className = {cx('notice')}>이메일을 입력해주세요.</p></div>
         </div>
         <div className = {cx('name')}>
             <input className = {cx('name-input')}type = "text" placeholder = "이름"/>
@@ -46,7 +57,34 @@ function EmailSignupPage() {
         </div>
         </div>
         </div>
+        <div className = {cx('country')}>
+            <p>국가선택</p>
+            <div>
+                <select className = {cx('country-list')}>
+                    {country.map( language => (
+                        <LanguageSelect lang = {language.lang}/>
+                    ))}
+                </select>
+            </div>
+        </div>
+        <div className = {cx('interest')}>
+            <p>관심사</p>
+            <div className = {cx('interest-list')}>
+            <div className = {cx('list1')} >
+                <InterestSelect interest = "테크・가전"/>  
+                <InterestSelect interest = "패션・잡화"/> 
+                <InterestSelect interest = "뷰티"/> 
+            </div>
+            <div className = {cx('list2')}>
+                <InterestSelect interest = "푸드"/>  
+                <InterestSelect interest = "홈리빙"/> 
+                <InterestSelect interest = "디자인소품"/> 
+            </div>
+            </div>
+            
+        </div>
         <button className = {cx('submit')} type = "button">완료</button>
+
     </div>;
 }
 
