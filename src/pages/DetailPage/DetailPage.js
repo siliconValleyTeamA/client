@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
+import { IoIosHeartDislike } from 'react-icons/io';
 
 /* Internal dependencies */
 import styles from './DetailPage.module.scss';
@@ -21,6 +22,7 @@ function DetailPage() {
   const date = 19;
 
   const [open, setOpen] = useState(false);
+  const [jjim, setJjim] = useState(false);
 
   return (
     <div className={cx('detail')}>
@@ -64,7 +66,18 @@ function DetailPage() {
         </div>
 
         <div className={cx('product-details-info-options')}>
-          <AiFillHeart className={cx('product-details-info-options-jjim')} />
+          {jjim ? (
+            <AiFillHeart
+              className={cx('product-details-info-options-jjim')}
+              onClick={() => setJjim(false)}
+            />
+          ) : (
+            <IoIosHeartDislike
+              className={cx('product-details-info-options-jjim')}
+              onClick={() => setJjim(true)}
+            />
+          )}
+
           <RiShoppingBag3Fill
             className={cx('product-details-info-options-funding')}
             onClick={() => setOpen(true)}
