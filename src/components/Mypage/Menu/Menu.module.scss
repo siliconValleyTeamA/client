@@ -1,53 +1,46 @@
 @import 'styles/_palette.scss';
 
-.menu {
+ol {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  list-style: none;
+  width: 40%;
+  border-radius: 0.7rem;
+  margin-top: 2rem;
+  background-color: $black-025 !important;
 
-  ol {
+  li {
     display: flex;
-    flex-direction: column;
-    list-style: none;
-    width: 40%;
-    border-radius: 0.7rem;
-    margin-top: 2rem;
-    background-color: $black-025;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 14px 8px 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    font-weight: 600;
+    height: 3rem;
 
-    li {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 8px 14px 8px 8px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-      cursor: pointer;
-      font-weight: 600;
-      height: 3rem;
+    &:last-child {
+      border-bottom: none;
+    }
 
-      &:last-child {
-        border-bottom: none;
-      }
+    .title {
+      margin-left: 0.7rem;
+    }
 
-      .title {
-        margin-left: 0.7rem;
-      }
+    .AiFillHeart {
+      color: $pink;
+    }
 
-      .AiFillHeart {
-        color: $pink;
-      }
+    .RiShoppingBag3Fill {
+      color: $wadiz;
+    }
 
-      .RiShoppingBag3Fill {
-        color: $wadiz;
-      }
+    .BiWorld {
+      color: $purple;
+    }
 
-      .BiWorld {
-        color: $purple;
-      }
-
-      .RiArrowRightSLine {
-        margin-left: auto;
-      }
+    .RiArrowRightSLine {
+      margin-left: auto;
     }
   }
 }

@@ -13,25 +13,23 @@ const cx = classNames.bind(styles);
 
 function Menu() {
   return (
-    <div className={cx('menu')}>
-      <ol className={cx('ol-menu')}>
-        <li className={cx('jjim')}>
-          <AiFillHeart className={cx('AiFillHeart')} />
-          <div className={cx('title')}>내가 찜한 펀딩</div>
-          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
-        </li>
-        <li className={cx('support')}>
-          <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
-          <div className={cx('title')}>내가 후원한 펀딩</div>
-          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
-        </li>
-        <li className={cx('country')}>
-          <BiWorld className={cx('BiWorld')} />
-          <div className={cx('title')}>국가 설정</div>
-          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
-        </li>
-      </ol>
-    </div>
+    <ol className={cx('ol-menu')}>
+      <li className={cx('jjim')}>
+        <AiFillHeart className={cx('AiFillHeart')} />
+        <div className={cx('title')}>내가 찜한 펀딩</div>
+        <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+      </li>
+      <li className={cx('support')}>
+        <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
+        <div className={cx('title')}>내가 후원한 펀딩</div>
+        <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+      </li>
+      <li className={cx('country')}>
+        <BiWorld className={cx('BiWorld')} />
+        <div className={cx('title')}>국가 설정</div>
+        <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+      </li>
+    </ol>
   );
 }
 
