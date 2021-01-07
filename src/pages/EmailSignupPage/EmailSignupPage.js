@@ -1,7 +1,6 @@
 /* External dependencies */
 import React from 'react';
 import classNames from 'classnames/bind';
-import { CgChevronRight } from "react-icons/cg";
 import { IoPersonOutline } from "react-icons/io5";
 import { AiOutlineLock } from "react-icons/ai";
 
@@ -43,7 +42,7 @@ function EmailSignupPage() {
         <div className = {cx('name')}>
             <InputInfo className= "name-input" type = "text" placeholder = "이름"/>
              <p className = {cx('emoji')}> <IoPersonOutline /></p>
-        </div>;
+        </div>
         <div className = {cx('password')}>
         <div className = {cx('password-input')}>
             <InputInfo className= "" type = "password" placeholder = "비밀번호 입력"/>
