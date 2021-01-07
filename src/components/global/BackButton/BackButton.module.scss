@@ -1,0 +1,25 @@
+@import 'styles/_palette.scss';
+
+.back-button {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  border-radius: 9999px;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  font-size: medium;
+
+  .RiArrowRightSLine {
+    transform: scaleX(-1);
+    display: flex;
+    margin-right: 10px;
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
