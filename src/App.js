@@ -11,6 +11,7 @@ import SignupPage from 'pages/SignupPage';
 import FindIdPage from 'pages/FindIdPage';
 import FindPwdPage from 'pages/FindPwdPage';
 import PrivacyPage from 'pages/PrivacyPage';
+import MyPage from 'pages/MyPage';
 import GlobalStyle from 'styles/global-styles';
 
 const MainLayout = styled.div`
@@ -32,6 +33,7 @@ function App() {
           <Route path="/find/id" component={FindIdPage} />
           <Route path="/find/pwd" component={FindPwdPage} />
           <Route path="/privacy" component={PrivacyPage} />
+          <Route path="/mypage" component={MyPage} />
         </Switch>
         <GlobalStyle />
       </MainLayout>
