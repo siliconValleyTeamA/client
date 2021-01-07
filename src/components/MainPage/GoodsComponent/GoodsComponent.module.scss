@@ -1,0 +1,53 @@
+@import 'styles/_palette.scss';
+
+.goods {
+  width: 100%;
+  margin: 20px;
+
+  span {
+    opacity: 0.6;
+    font-size: 12px;
+  }
+
+  .goods-img img {
+    width: 100%;
+    height: 170px;
+    border: 0.5px solid gray;
+    border-radius: 3px;
+  }
+
+  .goods-title {
+    margin: 10px 0px;
+    h3 {
+      font-weight: normal;
+    }
+  }
+
+  .goods-catecory-company {
+    display: flex;
+    margin-bottom: 10px;
+    span {
+      margin-right: 3px;
+    }
+  }
+
+  .goods-progressbar {
+    height: 5px;
+    background-color: $wadiz;
+    margin-bottom: 10px;
+    margin: 0px 2px 10px 2px;
+  }
+
+  .goods-progressinfo {
+    display: flex;
+    justify-content: space-between;
+    .goods-progressinfo-percent {
+      display: flex;
+      p {
+        font-weight: bold;
+        color: $wadiz;
+        margin-right: 3px;
+      }
+    }
+  }
+}
