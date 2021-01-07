@@ -12,7 +12,9 @@ import FindIdPage from 'pages/FindIdPage';
 import FindPwdPage from 'pages/FindPwdPage';
 import PrivacyPage from 'pages/PrivacyPage';
 import MyPage from 'pages/MyPage';
+import EmailSignupPage from 'pages/EmailSignupPage';
 import GlobalStyle from 'styles/global-styles';
+
 
 const MainLayout = styled.div`
   width: 80%;
@@ -30,6 +32,7 @@ function App() {
           <Route path="/detail" component={DetailPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
+          <Route path="/signup/email" component={EmailSignupPage} />
           <Route path="/find/id" component={FindIdPage} />
           <Route path="/find/pwd" component={FindPwdPage} />
           <Route path="/privacy" component={PrivacyPage} />
