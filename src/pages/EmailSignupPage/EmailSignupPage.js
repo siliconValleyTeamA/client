@@ -11,6 +11,14 @@ import styles from './EmailSignupPage.module.scss';
 const cx = classNames.bind(styles);
 const country = [ {lang : "영어"}, {lang : "한국어"}, {lang : "중국어"}, {lang : "일본어"}];
 
+function InputInfo({className, type ,placeholder}){
+    return <input className = {cx({className})} type = {type} placeholder = {placeholder}/>;
+}
+
+function Notice ({text}) {
+    return <div><p className = {cx('notice')}> {text} </p> </div>;
+}
+
 function LanguageSelect({ lang }){
     return <option> {lang} </option>;
 }
@@ -30,25 +38,23 @@ function EmailSignupPage() {
             <input className = {cx('email-input')} type = "email" placeholder = "이메일 계정"/>
             <button className = {cx('email-auth')} onClick = {() => {}}>확인하기</button>  
         </div>
-        <div><p className = {cx('notice')}>이메일을 입력해주세요.</p></div>
+        <Notice text = "이메일을 입력해주세요."/>
         </div>
         <div className = {cx('name')}>
-            <input className = {cx('name-input')}type = "text" placeholder = "이름"/>
-            <p className = {cx('emoji')}> <IoPersonOutline /></p>
-        </div>
+            <InputInfo className= "name-input" type = "text" placeholder = "이름"/>
+             <p className = {cx('emoji')}> <IoPersonOutline /></p>
+        </div>;
         <div className = {cx('password')}>
         <div className = {cx('password-input')}>
-            <input type = "text" placeholder = "비밀번호 입력"/>
+            <InputInfo className= "" type = "password" placeholder = "비밀번호 입력"/>
             <p className = {cx('emoji')}> <AiOutlineLock /></p>
          </div>
          <div>
          <div className = {cx('password-conf')}>
-            <input type = "text" placeholder = "비밀번호 확인"/>
+            <InputInfo className= "" type = "password" placeholder = "비밀번호 확인"/>
             <p className = {cx('emoji')}> <AiOutlineLock /></p>
          </div>
-         <div>
-            <p className = {cx('notice')}>영문, 숫자, 특수문자 (!@#$%^&*+=-)를 조합한 8자 이상</p>
-        </div>
+             <Notice text = "영문, 숫자, 특수문자 (!@#$%^&*+=-)를 조합한 8자 이상"/>
         </div>
         </div>
         <div className = {cx('country')}>
