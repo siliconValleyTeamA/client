@@ -61,6 +61,7 @@
         font-size: 17px;
         font-weight: normal;
         margin-left: 0.3rem;
+        margin-right: 0.3rem;
       }
     }
 
@@ -105,12 +106,14 @@
         color: $pink;
         width: 40px;
         height: auto;
+        cursor: pointer;
       }
 
       .product-details-info-options-funding {
         color: $wadiz;
         width: 40px;
         height: auto;
+        cursor: pointer;
       }
     }
   }

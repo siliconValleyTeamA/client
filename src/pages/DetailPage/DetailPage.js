@@ -1,5 +1,5 @@
 /* External dependencies */
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
@@ -7,6 +7,7 @@ import { AiFillHeart } from 'react-icons/ai';
 /* Internal dependencies */
 import styles from './DetailPage.module.scss';
 import BackButton from 'components/global/BackButton';
+import Drawer from 'components/DetailPage/Drawer';
 
 const cx = classNames.bind(styles);
 
@@ -18,6 +19,8 @@ function DetailPage() {
   const price = '189,000';
   const percent = 22;
   const date = 19;
+
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={cx('detail')}>
@@ -39,6 +42,9 @@ function DetailPage() {
         <div className={cx('product-details-info-name')}>{name}</div>
         <div className={cx('product-details-info-price-info')}>
           <div className={cx('product-details-info-price-info-price')}>
+            <span className={cx('product-details-info-price-unit')}>
+              지금까지
+            </span>
             <span>{price}</span>
             <span className={cx('product-details-info-price-unit')}>
               원 펀딩
@@ -61,13 +67,14 @@ function DetailPage() {
           <AiFillHeart className={cx('product-details-info-options-jjim')} />
           <RiShoppingBag3Fill
             className={cx('product-details-info-options-funding')}
+            onClick={() => setOpen(true)}
           />
         </div>
       </div>
-
       <div className={cx('product-more-details-info')}>
         <span>상세한 설명입니다.</span>
       </div>
+      <Drawer open={open} setOpen={setOpen} />
     </div>
   );
 }
