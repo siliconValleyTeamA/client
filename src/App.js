@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import DetailPage from 'pages/DetailPage';
 import LoginPage from 'pages/LoginPage';
 import MainPage from 'pages/MainPage';
+import PopularPage from 'pages/PopularPage';
 import SignupPage from 'pages/SignupPage';
 import FindIdPage from 'pages/FindIdPage';
 import FindPwdPage from 'pages/FindPwdPage';
@@ -28,6 +29,7 @@ function App() {
         <Switch>
           <Route path="/" exact render={() => <Redirect to="/main" />} />
           <Route path="/main" exact component={MainPage} />
+          <Route path="/popular" exact component={PopularPage} />
           <Route path="/detail" component={DetailPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
