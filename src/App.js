@@ -15,7 +15,6 @@ import MyPage from 'pages/MyPage';
 import EmailSignupPage from 'pages/EmailSignupPage';
 import GlobalStyle from 'styles/global-styles';
 
-
 const MainLayout = styled.div`
   width: 80%;
   margin: 0 auto;
