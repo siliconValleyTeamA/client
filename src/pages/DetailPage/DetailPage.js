@@ -1,8 +1,7 @@
 /* External dependencies */
 import React from 'react';
 import classNames from 'classnames/bind';
-import { RiArrowRightSLine } from 'react-icons/ri';
-import { FaShoppingCart } from 'react-icons/fa';
+import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 
 /* Internal dependencies */
@@ -16,7 +15,9 @@ function DetailPage() {
   const secondCategory = '주방가전';
   const description = '위 아래로 구워주니 기특한 인덕션';
   const name = '[해피콜] 하이브리드 인덕션 그릴 2X SYNCRILL';
-  const price = '189,000원';
+  const price = '189,000';
+  const percent = 22;
+  const date = 19;
 
   return (
     <div className={cx('detail')}>
@@ -38,17 +39,34 @@ function DetailPage() {
         <div className={cx('product-details-info-name')}>{name}</div>
         <div className={cx('product-details-info-price-info')}>
           <div className={cx('product-details-info-price-info-price')}>
-            <span
-              className={cx('product-details-info-price-info-price-current')}
-            >
-              {price}
+            <span>{price}</span>
+            <span className={cx('product-details-info-price-unit')}>
+              원 펀딩
             </span>
           </div>
         </div>
+        <div className={cx('product-details-funding-info')}>
+          <span className={cx('product-funding-duedate')}>{date}일 남음</span>
+          <span className={cx('product-funding-money')}>{percent}% 달성</span>
+        </div>
+
+        <div className={cx('product-details-funding')}>
+          <div
+            className={cx('product-funding-percent')}
+            style={{ width: `${percent}%` }}
+          />
+        </div>
+
         <div className={cx('product-details-info-options')}>
           <AiFillHeart className={cx('product-details-info-options-jjim')} />
-          <FaShoppingCart className={cx('product-details-info-options-cart')} />
+          <RiShoppingBag3Fill
+            className={cx('product-details-info-options-funding')}
+          />
         </div>
+      </div>
+
+      <div className={cx('product-more-details-info')}>
+        <span>상세한 설명입니다.</span>
       </div>
     </div>
   );
