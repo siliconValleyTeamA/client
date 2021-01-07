@@ -19,7 +19,7 @@ function Header({ field }) {
           </li>
           <li className={cx(field === 'pwd' && 'click')}>
             <a href="/find/pwd" onClick={() => {}}>
-              비밀번호 찾기
+              비밀번호 찾기!
             </a>
           </li>
         </ul>
