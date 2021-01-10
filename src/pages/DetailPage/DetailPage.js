@@ -1,6 +1,7 @@
 /* External dependencies */
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
+
 import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 import { IoIosHeartDislike } from 'react-icons/io';

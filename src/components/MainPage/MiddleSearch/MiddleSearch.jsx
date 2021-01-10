@@ -1,10 +1,12 @@
 /* External dependencies */
-import React, { createContext, useState, memo, useContext } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import { FiSearch } from 'react-icons/fi';
 
 /* Internal dependencies */
 import styles from './MiddleSearch.module.scss';
+import Filter from 'components/global/Filter';
+
 const cx = classNames.bind(styles);
 
 function MiddleSearch() {
@@ -15,66 +17,20 @@ function MiddleSearch() {
       </div>
       <div className={cx('navigation')}>
         <SearchBar />
-        <div className={cx('filter')}>
-          <FilterProvider>
-            <FilterContent />
-          </FilterProvider>
-        </div>
+        <Filter />
       </div>
     </div>
   );
 }
 
-function SearchBar(props) {
+function SearchBar() {
   return (
     <div className={cx('search')}>
-      <input
-        type="text"
-        placeholder="검색"
-        onChange={event => {}}
-        class={cx('search-input')}
-      />
+      <input type="text" placeholder="검색" className={cx('search-input')} />
       <button onClick={() => {}}>
         <FiSearch />
       </button>
     </div>
-  );
-}
-
-const FilterContent = memo(() => {
-  return (
-    <div>
-      <FilterPicker />
-    </div>
-  );
-});
-
-const FilterContext = createContext();
-
-function FilterProvider({ children }) {
-  const [menu, setMenu] = useState('P');
-
-  return (
-    <FilterContext.Provider value={{ menu, setMenu }}>
-      {children}
-    </FilterContext.Provider>
-  );
-}
-
-function FilterPicker() {
-  const { menu, setMenu } = useContext(FilterContext);
-
-  return (
-    <select
-      value={menu}
-      onChange={event => {
-        setMenu(event.target.value);
-      }}
-    >
-      <option value="P">펀딩률순</option>
-      <option value="M">펀딩금액순</option>
-      <option value="T">마감임박순</option>
-    </select>
   );
 }
 
