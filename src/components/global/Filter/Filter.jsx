@@ -12,11 +12,13 @@ function Filter() {
   const dispatch = useDispatch();
 
   return (
-    <select value={state} onChange={e => dispatch(setFilter(e.target.value))}>
-      <option value="percent">펀딩률순</option>
-      <option value="amount">펀딩금액순</option>
-      <option value="closing">마감임박순</option>
-    </select>
+    <div className={cx('filter')}>
+      <select value={state} onChange={e => dispatch(setFilter(e.target.value))}>
+        <option value="percent">펀딩률순</option>
+        <option value="amount">펀딩금액순</option>
+        <option value="closing">마감임박순</option>
+      </select>
+    </div>
   );
 }
 

@@ -9,13 +9,7 @@ import Img from 'images/goods.jpeg';
 const cx = classNames.bind(styles);
 
 function Goods({ data }) {
-  let width = 0;
-
-  if (data.percent > 100) {
-    width = 100;
-  } else {
-    width = data.percent;
-  }
+  let width = data.percent > 100 ? 100 : data.percent;
 
   return (
     <div className={cx('goods')}>
@@ -39,7 +33,7 @@ function Goods({ data }) {
       <div className={cx('goods-progressinfo')}>
         <div className={cx('goods-progressinfo-percent')}>
           <p>{data.percent}%</p>
-          <span>・ {data.amount}원</span>
+          <span>・ {data.amount.toLocaleString()}원</span>
         </div>
         <div>
           <span>{data.dueDate}일 남음</span>

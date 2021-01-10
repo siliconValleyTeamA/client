@@ -6,7 +6,7 @@ const mockGoodsList = {
       category: '뷰티',
       company: '(주)명성',
       percent: 123213,
-      amount: 1,
+      amount: 112313,
       dueDate: 19,
     },
     {
@@ -15,7 +15,7 @@ const mockGoodsList = {
       category: '뷰티',
       company: '(주)명성',
       percent: 1234,
-      amount: 2,
+      amount: 2131232,
       dueDate: 23,
     },
 

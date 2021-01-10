@@ -1,9 +1,20 @@
 .filter {
-  option {
-    font-weight: normal;
-    display: block;
-    white-space: pre;
-    min-height: 1.2em;
-    padding: 0px 2px 1px;
+  padding: 14px 0;
+
+  select {
+    height: 33px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    outline: none;
+    padding: 0.5rem;
+    width: 100%;
+
+    option {
+      font-weight: normal;
+      display: block;
+      white-space: pre;
+      min-height: 1.2em;
+      padding: 0px 2px 1px;
+    }
   }
 }
