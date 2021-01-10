@@ -10,6 +10,11 @@
     border-radius: 20px;
     width: 100%;
     height: 100%;
+
+    img {
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
   }
 
   .opening-ment {
@@ -19,11 +24,13 @@
   }
 
   .user-name {
+    text-align: center;
     font-size: 2rem;
     font-weight: 700;
   }
 
   .user-point {
+    text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
   }
