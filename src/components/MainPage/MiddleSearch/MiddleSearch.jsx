@@ -32,7 +32,7 @@ function SearchBar(props) {
         type="text"
         placeholder="검색"
         onChange={event => {}}
-        class={cx('search-input')}
+        className={cx('search-input')}
       />
       <button onClick={() => {}}>
         <FiSearch />

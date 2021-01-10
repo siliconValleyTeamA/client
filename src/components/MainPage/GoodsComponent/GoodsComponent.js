@@ -26,34 +26,38 @@ function GoodsComponent() {
   }
 
   return (
-    <div className={cx('goods')}>
-      <div className={cx('goods-img')}>
-        <img src={Img} alt="goods-detail" />
-      </div>
-      <div className={cx('goods-title')}>
-        <h3> {title} </h3>
-      </div>
-      <div className={cx('goods-catecory-company')}>
-        <span> {category} </span>
-        <span> | </span>
-        <span> {company}</span>
-      </div>
-      <div>
-        <div
-          className={cx('goods-progressbar')}
-          style={{ width: `${width}%` }}
-        />
-      </div>
-      <div className={cx('goods-progressinfo')}>
-        <div className={cx('goods-progressinfo-percent')}>
-          <p>{percent}%</p>
-          <span>・ {total}원</span>
+    <button>
+      <a href="/detail" onClick={() => {}}>
+        <div className={cx('goods')}>
+          <div className={cx('goods-img')}>
+            <img src={Img} alt="goods-detail" />
+          </div>
+          <div className={cx('goods-title')}>
+            <h3> {title} </h3>
+          </div>
+          <div className={cx('goods-catecory-company')}>
+            <span> {category} </span>
+            <span> | </span>
+            <span> {company}</span>
+          </div>
+          <div>
+            <div
+              className={cx('goods-progressbar')}
+              style={{ width: `${width}%` }}
+            />
+          </div>
+          <div className={cx('goods-progressinfo')}>
+            <div className={cx('goods-progressinfo-percent')}>
+              <p>{percent}%</p>
+              <span>・ {total}원</span>
+            </div>
+            <div>
+              <span>{dueDate}일 남음</span>
+            </div>
+          </div>
         </div>
-        <div>
-          <span>{dueDate}일 남음</span>
-        </div>
-      </div>
-    </div>
+      </a>
+    </button>
   );
 }
 
