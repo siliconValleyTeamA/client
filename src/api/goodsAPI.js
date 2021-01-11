@@ -31,6 +31,17 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
     },
+
+    {
+      id: 4,
+      title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      category: '패션-잡화',
+      company: '(주)명성',
+      category_key: 3,
+      percent: 12,
+      amount: 3,
+      dueDate: 21,
+    },
   ],
 };
 
