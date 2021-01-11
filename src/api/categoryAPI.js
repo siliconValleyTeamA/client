@@ -18,6 +18,7 @@ const mockCategoriesList = {
       img: '',
       link: 'fashion',
     },
+    
   ],
 };
 

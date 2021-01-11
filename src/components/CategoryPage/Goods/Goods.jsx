@@ -12,17 +12,15 @@ function Goods({ data }) {
   let width = data.percent > 100 ? 100 : data.percent;
 
   return (
-    <Link to="/detail">
-      <div className={cx('goods')}>
+    <div className={cx('goods')}>
+      <Link to="/detail">
         <div className={cx('goods-img')}>
           <img
             src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
             alt="goods-detail"
           />
         </div>
-        <div className={cx('goods-title')}>
-          <h3> {data.title} </h3>
-        </div>
+        <h3 className={cx('goods-title')}> {data.title} </h3>
         <div className={cx('goods-catecory-company')}>
           <span> {data.category} </span>
           <span> | </span>
@@ -43,8 +41,8 @@ function Goods({ data }) {
             <span>{data.dueDate}일 남음</span>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 

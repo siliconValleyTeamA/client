@@ -1,8 +1,9 @@
 @import 'styles/_palette.scss';
 
 .goods {
-  margin: 20px 15px 20px 0px;
-  flex-basis: 33.3%;
+  margin: 20px 1.65% 20px 1.65%;
+  flex-basis: 30%;
+  box-sizing: border-box;
 
   span {
     opacity: 0.6;
@@ -10,6 +11,7 @@
   }
 
   .goods-img img {
+    width: 100%;
     height: 170px;
     border: 0.5px solid gray;
     border-radius: 3px;
@@ -17,10 +19,8 @@
 
   .goods-title {
     margin: 10px 0px;
-    h3 {
-      text-align: left;
-      font-weight: normal;
-    }
+    text-align: left;
+    font-weight: normal;
   }
 
   .goods-catecory-company {
