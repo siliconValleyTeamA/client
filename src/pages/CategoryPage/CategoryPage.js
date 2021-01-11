@@ -17,7 +17,7 @@ function CategoryPage({ match }) {
   useEffect(() => {
     const categoryKey = match.params.category || 'all';
     dispatch(setCategory(categoryKey));
-  });
+  }, [match.params.category]);
 
   return (
     <div className={cx('category')}>

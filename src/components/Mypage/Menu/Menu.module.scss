@@ -4,7 +4,7 @@ ol {
   display: flex;
   flex-direction: column;
   list-style: none;
-  width: 40%;
+  width: 100%;
   border-radius: 0.7rem;
   margin-top: 2rem;
   background-color: $black-025 !important;
@@ -15,6 +15,7 @@ ol {
     align-items: center;
     padding: 8px 14px 8px 8px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    font-size: 1.1rem;
     cursor: pointer;
     font-weight: 600;
     height: 3rem;
