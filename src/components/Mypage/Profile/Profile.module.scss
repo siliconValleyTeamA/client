@@ -3,34 +3,37 @@
 .profile {
   display: flex;
   flex-direction: column;
+  max-width: 550px;
 
   .photo {
     margin-top: auto;
-    max-width: 400px;
-    border-radius: 20px;
     width: 100%;
     height: 100%;
 
     img {
-      max-width: 400px;
+      min-height: 300px;
+      max-width: 550px;
       margin-bottom: 1rem;
+      border-radius: 20px;
     }
   }
 
   .opening-ment {
     text-align: center;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 700;
   }
 
   .user-name {
+    margin-top: 0.2rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 700;
   }
 
   .user-point {
     text-align: center;
+    font-size: 1.2rem;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
   }

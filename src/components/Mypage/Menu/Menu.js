@@ -26,7 +26,7 @@ function Menu() {
       </li>
       <li className={cx('country')}>
         <BiWorld className={cx('BiWorld')} />
-        <div className={cx('title')}>국가 설정</div>
+        <div className={cx('title')}>개인정보 설정</div>
         <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
       </li>
     </ol>
