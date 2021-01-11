@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './Goods.module.scss';
-import Img from 'images/goods.jpeg';
 
 const cx = classNames.bind(styles);
 
