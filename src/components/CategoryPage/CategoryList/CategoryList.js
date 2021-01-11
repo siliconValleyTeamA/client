@@ -1,6 +1,7 @@
 /* External dependencies */
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
 import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 
 /* Internal dependencies */
@@ -13,9 +14,10 @@ const cx = classNames.bind(styles);
 function CategoryList() {
   const [page, setPage] = useState(0);
   const [subCategoryData, setSubCategoryData] = useState([]);
-  const CATEGORY_DISPLAY_COUNT = 9;
+  const CATEGORY_DISPLAY_COUNT = 8;
   const CATEGORY_LENGTH = mockCategoriesList.data.length;
-  const MAX_PAGE = parseInt(CATEGORY_LENGTH / CATEGORY_DISPLAY_COUNT);
+  const MAX_PAGE = parseInt(CATEGORY_LENGTH / CATEGORY_DISPLAY_COUNT) + (CATEGORY_LENGTH % CATEGORY_DISPLAY_COUNT ? 0 : -1);
+  const category = useSelector(state => state.categoryReducer).label;
 
   useEffect(() => {
     setSubCategoryData(
@@ -36,10 +38,14 @@ function CategoryList() {
       )}
 
       {subCategoryData.map(categoryData => {
-        return <Category key={categoryData.id} data={categoryData} />;
+        return categoryData.category === category ? (
+          <Category key={categoryData.id} data={categoryData} active={true} />
+        ) : (
+          <Category key={categoryData.id} data={categoryData} active={false} />
+        );
       })}
 
-      {page !== MAX_PAGE && (
+      {page < MAX_PAGE && (
         <RiArrowRightSLine
           className={cx('RiArrowRightSLine')}
           onClick={() => setPage(page + 1)}

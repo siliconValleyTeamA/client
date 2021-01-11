@@ -2,23 +2,36 @@ const SET_CATEGORY = 'category/SET_CATEGORY';
 export const setCategory = key => ({ type: SET_CATEGORY, key });
 
 const initialState = {
-  key:'all',
-  label:'전체보기'
-}
+  key: 'all',
+  label: '전체보기',
+};
 
 const LABELS = {
   all: '전체보기',
   tech: '테크-가전',
   fashion: '패션-잡화',
+  beauty: '뷰티',
+  food: '푸드',
+  homeliving: '홈리빙',
+  design: '디자인소품',
+  travel: '여행-레저',
+  sport: '스포츠-모빌리티',
+  pet: '반려동물',
+  meeting: '모임',
+  culture: '공연-컬쳐',
+  social: '소셜-캠페인',
+  education: '교육-키즈',
+  game: '게임-취미',
+  publish: '출판',
 };
 
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CATEGORY:
       return {
-        key:action.key,
-        label:LABELS[action.key]
-      }
+        key: action.key,
+        label: LABELS[action.key],
+      };
     default:
       return state;
   }

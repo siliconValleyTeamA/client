@@ -2,15 +2,31 @@
 
 .category {
   text-align: center;
-  height: 50px;
-  width: 50px;
+  height: 65px;
+  width: 65px;
   padding: 10px;
   margin: 10px;
-  
+
   .pic {
-    height: 50px;
-    width: 50px;
+    box-sizing: border-box;
+    height: 65px;
+    width: 65px;
     border-radius: 100%;
-    border: 2px solid $wadiz;
+
+    &.active {
+      border: 2px solid $wadiz;
+    }
+  }
+
+  .text {
+    margin-top: 8px;
+    line-height: 18px;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 500;
+
+    &.active {
+      color: $wadiz;
+    }
   }
 }
