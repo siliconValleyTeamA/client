@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 /* Internal dependencies */
 import styles from './GoodsList.module.scss';
-import Goods from 'components/MainPage/Goods';
+import Goods from 'components/CategoryPage/Goods';
 import mockGoodsList from 'api/goodsAPI';
 
 const cx = classNames.bind(styles);
@@ -22,24 +22,33 @@ function sortByClosing(a, b) {
   return a.dueDate < b.dueDate ? -1 : a.dueDate > b.dueDate ? 1 : 0;
 }
 
-function GoodsList() {
+function categoryFilter(category) {
+  return mockGoodsList.data.filter(goods => goods.category === category);
+}
+
+function GoodsList({ category }) {
+  const categoryToKor = {
+    tech: '테크-가전',
+    fashion: '패션-잡화',
+  };
+  const categoryData = categoryFilter(categoryToKor[category]);
   const filter = useSelector(state => state.filterReducer);
   switch (filter) {
     case 'percent':
-      mockGoodsList.data.sort(sortByPercent);
+      categoryData.sort(sortByPercent);
       break;
     case 'amount':
-      mockGoodsList.data.sort(sortByAmount);
+      categoryData.sort(sortByAmount);
       break;
     case 'closing':
-      mockGoodsList.data.sort(sortByClosing);
+      categoryData.sort(sortByClosing);
       break;
     default:
-      mockGoodsList.data.sort(sortByPercent);
+      categoryData.sort(sortByPercent);
   }
   return (
     <div className={cx('goods-list')}>
-      {mockGoodsList.data.map(goodsData => (
+      {categoryData.map(goodsData => (
         <Goods key={goodsData.id} data={goodsData} />
       ))}
     </div>

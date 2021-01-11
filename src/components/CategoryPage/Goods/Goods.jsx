@@ -16,7 +16,10 @@ function Goods({ data }) {
       <a href="/detail" onClick={() => {}}>
         <div className={cx('goods')}>
           <div className={cx('goods-img')}>
-            <img src={Img} alt="goods-detail" />
+            <img
+              src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
+              alt="goods-detail"
+            />
           </div>
           <div className={cx('goods-title')}>
             <h3> {data.title} </h3>

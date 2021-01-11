@@ -12,7 +12,7 @@ const mockGoodsList = {
     {
       id: 2,
       title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
-      category: '뷰티',
+      category: '테크-가전',
       company: '(주)명성',
       percent: 1234,
       amount: 2131232,
@@ -22,7 +22,7 @@ const mockGoodsList = {
     {
       id: 3,
       title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
-      category: '뷰티',
+      category: '패션-잡화',
       company: '(주)명성',
       percent: 12,
       amount: 3,
