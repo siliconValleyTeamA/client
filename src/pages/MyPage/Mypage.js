@@ -12,14 +12,20 @@ import LoginButton from 'components/Mypage/LoginButton';
 const cx = classNames.bind(styles);
 
 function Mypage() {
+  const signIn = true;
   return (
     <div className={cx('mypage')}>
-      <div className={cx('wrap')}>
-        <LoginButton />
-        <Profile className={cx('profile')} />
-        <Menu className={cx('menu')} />
-        <SignoutButton />
-      </div>
+      {signIn ? (
+        <div className={cx('sign-in')}>
+          <Profile className={cx('profile')} />
+          <Menu className={cx('menu')} />
+          <SignoutButton />
+        </div>
+      ) : (
+        <div className={cx('sign-out')}>
+          <LoginButton />
+        </div>
+      )}
     </div>
   );
 }
