@@ -1,5 +1,5 @@
 /* External dependencies */
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -12,17 +12,20 @@ import LoginButton from 'components/Mypage/LoginButton';
 const cx = classNames.bind(styles);
 
 function Mypage() {
-  const signIn = true;
+  const [signIn, setSignIn] = useState(false);
+
   return (
     <div className={cx('mypage')}>
       {signIn ? (
         <div className={cx('sign-in')}>
           <Profile className={cx('profile')} />
           <Menu className={cx('menu')} />
-          <SignoutButton />
+          <div onClick={() => setSignIn(false)}>
+            <SignoutButton />
+          </div>
         </div>
       ) : (
-        <div className={cx('sign-out')}>
+        <div className={cx('sign-out')} onClick={() => setSignIn(true)}>
           <LoginButton />
         </div>
       )}
