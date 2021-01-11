@@ -23,11 +23,13 @@ function sortByClosing(a, b) {
 }
 
 function categoryFilter(category) {
+  if (category === 'all') return mockGoodsList.data;
   return mockGoodsList.data.filter(goods => goods.category === category);
 }
 
 function GoodsList({ category }) {
   const categoryToKor = {
+    all: 'all',
     tech: '테크-가전',
     fashion: '패션-잡화',
   };
