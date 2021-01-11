@@ -1,12 +1,12 @@
 /* External dependencies */
 import React from 'react';
-import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 /* Internal dependencies */
 import DetailPage from 'pages/DetailPage';
 import LoginPage from 'pages/LoginPage';
-import MainPage from 'pages/MainPage';
+import CategoryPage from 'pages/CategoryPage';
 import PopularPage from 'pages/PopularPage';
 import SignupPage from 'pages/SignupPage';
 import FindIdPage from 'pages/FindIdPage';
@@ -27,8 +27,8 @@ function App() {
     <BrowserRouter>
       <MainLayout>
         <Switch>
-          <Route path="/" exact render={() => <Redirect to="/main" />} />
-          <Route path="/main" exact component={MainPage} />
+          <Route path="/" exact component={CategoryPage} />
+          <Route path="/category/:category" exact component={CategoryPage} />
           <Route path="/popular" exact component={PopularPage} />
           <Route path="/detail" component={DetailPage} />
           <Route path="/login" component={LoginPage} />

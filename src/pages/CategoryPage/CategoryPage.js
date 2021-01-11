@@ -3,21 +3,23 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
-import styles from './MainPage.module.scss';
+import styles from './CategoryPage.module.scss';
 import MiddleSearch from 'components/CategoryPage/MiddleSearch';
 import GoodsList from 'components/CategoryPage/GoodsList';
 import CategoryList from 'components/CategoryPage/CategoryList';
 
 const cx = classNames.bind(styles);
 
-function MainPage() {
+function CategoryPage({ match }) {
+  const categoryName = match.params.category || 'all';
+
   return (
-    <div>
+    <div className={cx('category')}>
       <CategoryList />
       <MiddleSearch />
-      <GoodsList />
+      <GoodsList category={categoryName} />
     </div>
   );
 }
 
-export default MainPage;
+export default CategoryPage;

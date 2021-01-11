@@ -6,7 +6,7 @@ import { FiSearch } from 'react-icons/fi';
 /* Internal dependencies */
 import styles from './MiddleSearch.module.scss';
 import Filter from 'components/global/Filter';
-import Header from 'components/MainPage/Header';
+import Header from 'components/CategoryPage/Header';
 
 const cx = classNames.bind(styles);
 
