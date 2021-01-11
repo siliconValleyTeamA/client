@@ -2,7 +2,7 @@ const mockUserList = {
   data: [
     {
       id: 1,
-      title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      title: '[비블리] 선빼고 다드려요! 2만원대 무선 미니 무선 고데기',
       category: '뷰티',
       company: '(주)명성',
       percent: 123213,
@@ -17,7 +17,7 @@ const mockUserList = {
       title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 노트북',
       category: '컴퓨터',
       company: '(주)LG',
-      percent: 1234,
+      percent: 50,
       amount: 2131232,
       dueDate: 23,
       spon: 21212,

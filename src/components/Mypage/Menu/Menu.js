@@ -5,6 +5,7 @@ import { AiFillHeart } from 'react-icons/ai';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
 import { BiWorld } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 /* Internal dependencies */
 import styles from './Menu.module.scss';
@@ -15,14 +16,18 @@ function Menu() {
   return (
     <ol className={cx('ol-menu')}>
       <li className={cx('jjim')}>
-        <AiFillHeart className={cx('AiFillHeart')} />
-        <div className={cx('title')}>내가 찜한 펀딩</div>
-        <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+        <Link to={'/mypage/jjim'}>
+          <AiFillHeart className={cx('AiFillHeart')} />
+          <div className={cx('title')}>내가 찜한 펀딩</div>
+          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+        </Link>
       </li>
       <li className={cx('support')}>
-        <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
-        <div className={cx('title')}>내가 후원한 펀딩</div>
-        <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+        <Link to={'/mypage/funding'}>
+          <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
+          <div className={cx('title')}>내가 후원한 펀딩</div>
+          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+        </Link>
       </li>
       <li className={cx('country')}>
         <BiWorld className={cx('BiWorld')} />
