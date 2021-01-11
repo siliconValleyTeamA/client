@@ -12,9 +12,13 @@ const cx = classNames.bind(styles);
 function GoodsList(props) {
   return (
     <div className={cx('goods-list')}>
-      {mockUserList.data.map(goodsData => (
-        <Goods key={goodsData.id} data={goodsData} />
-      ))}
+      {props.show == 'funding'
+        ? mockUserList.data
+            .filter(data => data.isSponsored == true)
+            .map(goodsData => <Goods key={goodsData.id} data={goodsData} />)
+        : mockUserList.data
+            .filter(data => data.isJjimed == true)
+            .map(goodsData => <Goods key={goodsData.id} data={goodsData} />)}
     </div>
   );
 }
