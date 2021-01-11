@@ -18,10 +18,10 @@
   }
 
   input {
-    width: 70%;
+    width: 80%;
     border: none;
     padding: 10px 15px;
-    background-color: rgb(240, 240, 240);
+    // background-color: rgb(240, 240, 240);
   }
 
   button {
@@ -40,10 +40,6 @@
 
   .email {
     margin-top: 20px;
-
-    .email-auth {
-      float: right;
-    }
   }
 
   .notice {
@@ -54,7 +50,6 @@
 
   .name {
     display: flex;
-    margin-bottom: 20px;
   }
   .password {
     .password-input {
@@ -113,15 +108,6 @@
     }
   }
 
-  .agree {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0px 10px 5px;
-    .agree-chkbtn {
-      width: 15px;
-      height: 15px;
-    }
-  }
   .submit {
     margin: 10px 0px 10px 5px;
   }
