@@ -4,9 +4,9 @@ import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './FindIdPage.module.scss';
-import Input from 'components/ForgotPage/Input';
-import Button from 'components/global/Button';
-import Header from 'components/ForgotPage/Header';
+import Input from 'components/Legacy/ForgotPage/Input';
+import Button from 'components/Global/Button';
+import Header from 'components/Legacy/ForgotPage/Header';
 
 const cx = classNames.bind(styles);
 

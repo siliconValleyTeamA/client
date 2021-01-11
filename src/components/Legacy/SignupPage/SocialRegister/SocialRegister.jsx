@@ -7,7 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 
 /* Internal dependencies */
 import styles from './SocialRegister.module.scss';
-import Btn from 'components/global/SignupButton';
+import Btn from 'components/Global/SignupButton';
 const cx = classNames.bind(styles);
 
 function SocialRegister() {

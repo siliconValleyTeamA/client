@@ -8,7 +8,7 @@ import { IoIosHeartDislike } from 'react-icons/io';
 
 /* Internal dependencies */
 import styles from './DetailPage.module.scss';
-import BackButton from 'components/global/BackButton';
+import BackButton from 'components/Global/BackButton';
 import Drawer from 'components/DetailPage/Drawer';
 
 const cx = classNames.bind(styles);
