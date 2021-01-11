@@ -6,15 +6,14 @@ import { FiSearch } from 'react-icons/fi';
 /* Internal dependencies */
 import styles from './MiddleSearch.module.scss';
 import Filter from 'components/global/Filter';
+import Header from 'components/MainPage/Header';
 
 const cx = classNames.bind(styles);
 
 function MiddleSearch() {
   return (
     <div className={cx('middle-navigation')}>
-      <div className={cx('header')}>
-        <h1> 전체보기 </h1>
-      </div>
+      <Header className={cx('header')} />
       <div className={cx('navigation')}>
         <SearchBar />
         <Filter />

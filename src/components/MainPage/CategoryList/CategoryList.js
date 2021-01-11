@@ -13,8 +13,8 @@ function CategoryList() {
   return (
     <div className={cx('category-list')}>
       {mockCategoriesList.data.map(categoryData => {
-        return <Category data={categoryData} />;
-      })}
+        return <Category key={categoryData.id} data={categoryData} />;
+      })} 
     </div>
   );
 }
