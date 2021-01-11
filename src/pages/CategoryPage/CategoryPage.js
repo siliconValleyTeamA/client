@@ -9,6 +9,8 @@ import MiddleSearch from 'components/CategoryPage/MiddleSearch';
 import GoodsList from 'components/CategoryPage/GoodsList';
 import CategoryList from 'components/CategoryPage/CategoryList';
 import { setCategory } from 'modules/reducers/categoryReducer';
+import NavigationBar from 'components/global/NavigationBar';
+
 const cx = classNames.bind(styles);
 
 function CategoryPage({ match }) {
@@ -21,6 +23,7 @@ function CategoryPage({ match }) {
 
   return (
     <div className={cx('category')}>
+      <NavigationBar />
       <CategoryList />
       <MiddleSearch />
       <GoodsList />
