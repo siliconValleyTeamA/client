@@ -29,8 +29,8 @@ function Menu() {
           <div className={cx('title')}>내가 후원한 펀딩</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
-      </Link>
-      <Link to="/setcountry">
+      </Link>  
+      <Link to="/mypage/setprofile">
         <li className={cx('country')}>
           <BiWorld className={cx('BiWorld')} />
           <div className={cx('title')}>개인정보 설정</div>
