@@ -4,12 +4,12 @@ import classNames from 'classnames/bind';
 import { BiWorld } from 'react-icons/bi';
 
 /* Internal dependencies */
-import styles from './SetCountryPage.module.scss';
+import styles from './SetProfilePage.module.scss';
 import SetCountry from 'components/Mypage/SetCountry/SetCountry';
 
 const cx = classNames.bind(styles);
 
-function SetCountryPage() {
+function SetProfilePage() {
   return (
     <div className={cx('setcountry')}>
       <h1 className={cx('title')}>국가 설정 및 포인트 관리</h1><br></br>
@@ -33,4 +33,4 @@ function SetCountryPage() {
     </div>
   );
 }
-export default SetCountryPage;
+export default SetProfilePage;

@@ -5,17 +5,16 @@ import { useSelector, useDispatch } from 'react-redux';
 
 /* Internal dependencies */
 import styles from './SetCountry.module.scss';
-import { setFilter } from 'modules/reducers/filterReducer';
 
 const cx = classNames.bind(styles);
 
 function SetCountry() {
-  const state = useSelector(state => state.filterReducer);
+  const state = useSelector(state => state);
   const dispatch = useDispatch();
 
   return (
     <div className={cx('filter')}>
-      <select value={state} onChange={e => dispatch(setFilter(e.target.value))}>
+      <select value={state} onChange={e => dispatch(e.target.value)}>
         <option value="korea">한국</option>
         <option value="us">미국</option>
         <option value="china">중국</option>

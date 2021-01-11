@@ -11,7 +11,7 @@ import MyPage from 'pages/MyPage';
 import MyFundingPage from 'pages/MyFundingPage';
 import MyJjimPage from 'pages/MyJjimPage';
 import GlobalStyle from 'styles/global-styles';
-import SetCountryPage from 'pages/SetCountryPage/SetCountryPage';
+import SetProfilePage from 'pages/SetProfilePage/SetProfilePage';
 
 const MainLayout = styled.div`
   width: 60%;
@@ -29,9 +29,9 @@ function App() {
           <Route path="/popular" exact component={PopularPage} />
           <Route path="/detail" component={DetailPage} />
           <Route path="/mypage/funding" component={MyFundingPage} />
-          <Route path="/mypage/jjim" component={MyJjimPage} />
-          <Route path="/mypage" component={MyPage} />
-          <Route path="/setcountry" component={SetCountryPage} />
+          <Route path="/mypage/jjim" component={MyJjimPage} />         
+          <Route path="/mypage/setprofile" component={SetProfilePage} />
+          <Route path="/mypage" component={MyPage} />          
         </Switch>
         <GlobalStyle />
       </MainLayout>
