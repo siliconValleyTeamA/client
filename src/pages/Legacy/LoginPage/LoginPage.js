@@ -8,7 +8,7 @@ import { RiKakaoTalkFill } from 'react-icons/ri';
 
 /* Internal dependencies */
 import styles from './LoginPage.module.scss';
-import Input from 'components/loginpage/InputForm';
+import Input from 'components/Legacy/loginpage/InputForm';
 
 const cx = classNames.bind(styles);
 

@@ -2,7 +2,7 @@
 import React from 'react';
 
 /* Internal dependencies */
-import Button from 'components/global/SignupButton';
+import Button from 'components/Global/SignupButton';
 
 function EmailRegister() {
   return (
