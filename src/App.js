@@ -11,6 +11,7 @@ import MyPage from 'pages/MyPage';
 import MyFundingPage from 'pages/MyFundingPage';
 import MyJjimPage from 'pages/MyJjimPage';
 import GlobalStyle from 'styles/global-styles';
+import SetCountryPage from 'pages/SetCountryPage/SetCountryPage';
 
 const MainLayout = styled.div`
   width: 60%;
@@ -30,6 +31,7 @@ function App() {
           <Route path="/mypage/funding" component={MyFundingPage} />
           <Route path="/mypage/jjim" component={MyJjimPage} />
           <Route path="/mypage" component={MyPage} />
+          <Route path="/setcountry" component={SetCountryPage} />
         </Switch>
         <GlobalStyle />
       </MainLayout>
