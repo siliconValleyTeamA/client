@@ -13,7 +13,7 @@ import MyJjimPage from 'pages/MyJjimPage';
 import GlobalStyle from 'styles/global-styles';
 
 const MainLayout = styled.div`
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   position: relative;
 `;
