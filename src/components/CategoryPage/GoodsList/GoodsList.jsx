@@ -23,18 +23,15 @@ function sortByClosing(a, b) {
 }
 
 function categoryFilter(category) {
-  if (category === 'all') return mockGoodsList.data;
+  if (category === '전체보기') return mockGoodsList.data;
   return mockGoodsList.data.filter(goods => goods.category === category);
 }
 
-function GoodsList({ category }) {
-  const categoryToKor = {
-    all: 'all',
-    tech: '테크-가전',
-    fashion: '패션-잡화',
-  };
-  const categoryData = categoryFilter(categoryToKor[category]);
+function GoodsList() {
+  const category = useSelector(state => state.categoryReducer);
   const filter = useSelector(state => state.filterReducer);
+  const categoryData = categoryFilter(category.label);
+
   switch (filter) {
     case 'percent':
       categoryData.sort(sortByPercent);

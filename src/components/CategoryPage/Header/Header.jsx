@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 function Header() {
   const category = useSelector(state => state.categoryReducer);
-  return <div className={cx('header')}>{category}</div>;
+  return <div className={cx('header')}>{category.label}</div>;
 }
 
 export default Header;
