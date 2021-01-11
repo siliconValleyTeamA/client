@@ -46,6 +46,7 @@ function Goods({ data }) {
             </div>
             <div className={cx('goods-money')}>
               <span>
+                {data.isSponsored ? '펀딩한 금액 ' : '현재 달성 금액 '}
                 {data.isSponsored
                   ? data.spon.toLocaleString()
                   : data.amount.toLocaleString()}
