@@ -1,11 +1,11 @@
 /* External dependencies */
 import React from 'react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import { AiFillHeart } from 'react-icons/ai';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
 import { BiWorld } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
 
 /* Internal dependencies */
 import styles from './Menu.module.scss';
@@ -29,11 +29,13 @@ function Menu() {
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
-      <li className={cx('country')}>
-        <BiWorld className={cx('BiWorld')} />
-        <div className={cx('title')}>개인정보 설정</div>
-        <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
-      </li>
+      <Link to="/mypage/setprofile">
+        <li className={cx('country')}>
+          <BiWorld className={cx('BiWorld')} />
+          <div className={cx('title')}>개인정보 설정</div>
+          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+        </li>
+      </Link>
     </ol>
   );
 }

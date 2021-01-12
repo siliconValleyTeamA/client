@@ -9,6 +9,7 @@ const mockGoodsList = {
       percent: 123213,
       amount: 112313,
       dueDate: 19,
+      jjim: 555,
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ const mockGoodsList = {
       percent: 1234,
       amount: 2131232,
       dueDate: 23,
+      jjim: 444,
     },
 
     {
@@ -30,6 +32,7 @@ const mockGoodsList = {
       percent: 12,
       amount: 3,
       dueDate: 21,
+      jjim: 333,
     },
 
     {
@@ -41,6 +44,7 @@ const mockGoodsList = {
       percent: 12,
       amount: 3,
       dueDate: 21,
+      jjim: 1000,
     },
   ],
 };
