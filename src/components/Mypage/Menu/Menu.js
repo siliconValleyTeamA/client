@@ -15,14 +15,14 @@ const cx = classNames.bind(styles);
 function Menu() {
   return (
     <ol className={cx('ol-menu')}>
-      <Link to={'/mypage/jjim'}>
+      <Link to="/mypage/jjim">
         <li className={cx('jjim')}>
           <AiFillHeart className={cx('AiFillHeart')} />
           <div className={cx('title')}>내가 찜한 펀딩</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
-      <Link to={'/mypage/history'}>
+      <Link to="/mypage/history">
         <li className={cx('support')}>
           <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
           <div className={cx('title')}>내가 후원한 펀딩</div>

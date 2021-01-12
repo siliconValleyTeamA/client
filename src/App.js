@@ -28,6 +28,7 @@ function App() {
           <Route path="/category/:categoryid" component={CategoryPage} />
           <Route path="/popular" component={PopularPage} />
           <Route path="/detail" component={DetailPage} />
+          <Route path="/mypage" exact component={MyPage} />
           <Route path="/mypage/history" component={MyHistoryPage} />
           <Route path="/mypage/jjim" component={MyJjimPage} />
           <Route path="/mypage" component={MyPage} />
