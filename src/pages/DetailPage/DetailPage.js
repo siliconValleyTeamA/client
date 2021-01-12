@@ -1,9 +1,9 @@
 /* External dependencies */
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
+
 import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
-import { AiFillHeart } from 'react-icons/ai';
-import { IoIosHeartDislike } from 'react-icons/io';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
 /* Internal dependencies */
 import styles from './DetailPage.module.scss';
@@ -74,7 +74,7 @@ function DetailPage() {
               onClick={() => setJjim(false)}
             />
           ) : (
-            <IoIosHeartDislike
+            <AiOutlineHeart
               className={cx('product-details-info-options-jjim')}
               onClick={() => setJjim(true)}
             />
