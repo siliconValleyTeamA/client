@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
 
@@ -10,19 +10,35 @@ import GoodsList from 'components/CategoryPage/GoodsList';
 import CategoryList from 'components/CategoryPage/CategoryList';
 import { setCategory } from 'modules/reducers/categoryReducer';
 import NavigationBar from 'components/Global/NavigationBar';
+import CountryModal from 'components/CategoryPage/CountryModal';
 
 const cx = classNames.bind(styles);
 
 function CategoryPage({ match }) {
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const getCountry = () => {
+    if (window.sessionStorage.getItem('country')) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   useEffect(() => {
     const categoryKey = match.params.category || 'all';
+    getCountry();
     dispatch(setCategory(categoryKey));
   }, [match.params.category]);
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className={cx('category')}>
+      <CountryModal isOpen={isOpen} close={closeModal} />
       <NavigationBar />
       <CategoryList />
       <MiddleSearch />
