@@ -23,12 +23,7 @@ function Goods({ data }) {
           </div>
           <div className={cx('goods-non-img')}>
             <div className={cx('goods-title')}>
-              <h3> {data.title} </h3>
-            </div>
-            <div className={cx('goods-catecory-company')}>
-              <span> {data.category} </span>
-              <span> | </span>
-              <span> {data.company}</span>
+              <h2> {data.title} </h2>
             </div>
             <div>
               <div
@@ -38,7 +33,7 @@ function Goods({ data }) {
             </div>
             <div className={cx('goods-progressinfo')}>
               <div className={cx('goods-progressinfo-percent')}>
-                <p>{data.percent}%</p>
+                <p>{data.percent.toLocaleString()}%</p>
               </div>
               <div>
                 <span>{data.dueDate}일 남음</span>

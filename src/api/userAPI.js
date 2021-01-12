@@ -11,6 +11,7 @@ const mockUserList = {
       dueDate: 19,
       isJjimed: true,
       isSponsored: true,
+      jim_date: new Date(2020, 10, 10, 11, 1),
       img: '',
     },
     {
@@ -24,6 +25,7 @@ const mockUserList = {
       dueDate: 23,
       isJjimed: true,
       isSponsored: true,
+      jim_date: new Date(2020, 10, 19, 11, 1),
       img: '',
     },
     {
@@ -37,6 +39,7 @@ const mockUserList = {
       dueDate: 21,
       isJjimed: false,
       isSponsored: false,
+      jim_date: new Date(2020, 10, 28, 11, 1),
       img: '',
     },
     {
@@ -50,6 +53,7 @@ const mockUserList = {
       dueDate: 5,
       isJjimed: true,
       isSponsored: false,
+      jim_date: new Date(2020, 11, 7, 11, 1),
       img: '',
     },
   ],
