@@ -1,7 +1,8 @@
 @import 'styles/_palette.scss';
 
 .category {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   height: 65px;
   width: 65px;
   padding: 10px;
@@ -19,6 +20,7 @@
   }
 
   .text {
+    text-align: center;
     margin-top: 8px;
     line-height: 18px;
     white-space: nowrap;

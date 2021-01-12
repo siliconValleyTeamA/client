@@ -16,7 +16,7 @@ function Category({ data, active }) {
           src={data.img}
           alt="카테고리 사진"
         />
-        <div className={cx('text', { active: active })}>{data.category}</div>
+        <span className={cx('text', { active: active })}>{data.category}</span>
       </div>
     </Link>
   );
