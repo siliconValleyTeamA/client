@@ -1,7 +1,15 @@
+@import 'styles/_palette.scss';
+
 .myfunding-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 90vh;
+
+  .RiShoppingBag3Fill {
+    color: $wadiz;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
 }
