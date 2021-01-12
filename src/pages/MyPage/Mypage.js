@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import styles from './Mypage.module.scss';
 import Menu from 'components/Mypage/Menu';
 import Profile from 'components/Mypage/Profile';
-import SignoutButton from 'components/Mypage/SignoutButton';
+import SignoutButton from 'components/Mypage/LogoutButton';
 import LoginButton from 'components/Mypage/LoginButton';
 
 const cx = classNames.bind(styles);
