@@ -1,0 +1,42 @@
+@import 'styles/_palette.scss';
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  .banner-img {
+    width: 97%;
+    border-radius: 10px;
+  }
+
+  .title {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $white;
+    z-index: 2;
+
+    div {
+      margin-bottom: 5px;
+    }
+  }
+
+  .gradation {
+    position: absolute;
+    width: 97%;
+    height: 100%;
+    bottom: 0px;
+    background-color: $black;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.1) 47%,
+      rgba(0, 0, 0, 0.4)
+    );
+  }
+}
