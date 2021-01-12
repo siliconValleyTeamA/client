@@ -1,7 +1,6 @@
 /* External dependencies */
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-
 import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 import { IoIosHeartDislike } from 'react-icons/io';
@@ -10,6 +9,7 @@ import { IoIosHeartDislike } from 'react-icons/io';
 import styles from './DetailPage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Drawer from 'components/DetailPage/Drawer';
+import Hit from 'components/DetailPage/Hit';
 
 const cx = classNames.bind(styles);
 
@@ -43,6 +43,7 @@ function DetailPage() {
           {description}
         </div>
         <div className={cx('product-details-info-name')}>{name}</div>
+        <Hit />
         <div className={cx('product-details-info-price-info')}>
           <div className={cx('product-details-info-price-info-price')}>
             <span className={cx('product-details-info-price-unit')}>
