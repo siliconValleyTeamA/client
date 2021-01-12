@@ -6,7 +6,6 @@ import { AiFillHeart } from 'react-icons/ai';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
 import { BiWorld } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
 
 /* Internal dependencies */
 import styles from './Menu.module.scss';
@@ -29,7 +28,7 @@ function Menu() {
           <div className={cx('title')}>내가 후원한 펀딩</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
-      </Link>  
+      </Link>
       <Link to="/mypage/setprofile">
         <li className={cx('country')}>
           <BiWorld className={cx('BiWorld')} />
