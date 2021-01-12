@@ -13,7 +13,7 @@ function PopularPage() {
   return (
     <div className={cx('popular-page')}>
       <Banner className={cx('banner')} />
-      <GoodsList />
+      <GoodsList popular />
     </div>
   );
 }
