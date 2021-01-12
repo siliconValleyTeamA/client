@@ -2,7 +2,7 @@ const mocHistoryList = {
   data: [
     {
       id: 1,
-      title: '1[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
       percent: 1234,
       amount: 2131232,
       dueDate: 23,
@@ -10,7 +10,7 @@ const mocHistoryList = {
     },
     {
       id: 2,
-      title: '3[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
       percent: 1234,
       amount: 2131232,
       dueDate: 23,
@@ -19,7 +19,7 @@ const mocHistoryList = {
 
     {
       id: 3,
-      title: '2[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
       percent: 1234,
       amount: 2131232,
       dueDate: 23,
@@ -28,7 +28,7 @@ const mocHistoryList = {
 
     {
       id: 4,
-      title: '4[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
       percent: 1234,
       amount: 2131232,
       dueDate: 23,

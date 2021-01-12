@@ -1,4 +1,3 @@
-
 /* External dependencies */
 import React from 'react';
 import classNames from 'classnames/bind';
@@ -23,7 +22,7 @@ function Menu() {
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
-      <Link to={'/mypage/funding'}>
+      <Link to={'/mypage/history'}>
         <li className={cx('support')}>
           <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
           <div className={cx('title')}>내가 후원한 펀딩</div>

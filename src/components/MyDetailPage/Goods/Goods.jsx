@@ -8,7 +8,7 @@ import styles from './Goods.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Goods({ data }) {
+function Goods({ data, type }) {
   let width = data.percent > 100 ? 100 : data.percent;
 
   return (
@@ -41,11 +41,8 @@ function Goods({ data }) {
             </div>
             <div className={cx('goods-money')}>
               <span>
-                {data.isSponsored ? '펀딩한 금액 ' : '현재 달성 금액 '}
-                {data.isSponsored
-                  ? data.spon.toLocaleString()
-                  : data.amount.toLocaleString()}
-                원
+                {type === 'history' ? '펀딩한 금액 ' : '현재 달성 금액 '}
+                {data.amount.toLocaleString()}원
               </span>
             </div>
           </div>
