@@ -25,15 +25,15 @@ function NavigationBar() {
   };
 
   const nav = [
-    { id: '1', name: '홈', link: '/main', ref: homeRef },
-    { id: '2', name: '카테고리', link: '/main', ref: categoryRef },
-    { id: '3', name: '인기펀딩', link: '/main', ref: popularPundingRef },
+    { id: '1', name: '홈', link: '/', ref: homeRef },
+    { id: '2', name: '카테고리', link: '/', ref: categoryRef },
+    { id: '3', name: '인기펀딩', link: '/', ref: popularPundingRef },
     { id: '4', name: '마이페이지', link: '/mypage', ref: mypageRef },
   ];
 
   useEffect(() => {
     const link = location.pathname;
-    if (link === '/main') {
+    if (link === '/') {
       changeStyle(homeRef);
     } else if (link === '/mypage') {
       changeStyle(mypageRef);

@@ -8,7 +8,7 @@ import Menu from 'components/Mypage/Menu';
 import Profile from 'components/Mypage/Profile';
 import SignoutButton from 'components/Mypage/SignoutButton';
 import LoginButton from 'components/Mypage/LoginButton';
-import NavigationBar from 'components/global/NavigationBar';
+import NavigationBar from 'components/Global/NavigationBar';
 
 const cx = classNames.bind(styles);
 

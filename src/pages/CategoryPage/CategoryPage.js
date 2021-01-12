@@ -9,7 +9,7 @@ import MiddleSearch from 'components/CategoryPage/MiddleSearch';
 import GoodsList from 'components/CategoryPage/GoodsList';
 import CategoryList from 'components/CategoryPage/CategoryList';
 import { setCategory } from 'modules/reducers/categoryReducer';
-import NavigationBar from 'components/global/NavigationBar';
+import NavigationBar from 'components/Global/NavigationBar';
 
 const cx = classNames.bind(styles);
 
