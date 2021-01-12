@@ -1,14 +1,13 @@
 @import 'styles/_palette.scss';
 
-.myjjim-page {
+.myhistory-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 
-  .AiFillHeart {
-    color: $pink;
+  .RiShoppingBag3Fill {
+    color: $wadiz;
     font-size: 3.5rem;
     margin-top: 2rem;
   }

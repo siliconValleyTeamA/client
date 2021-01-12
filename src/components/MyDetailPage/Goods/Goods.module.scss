@@ -3,41 +3,31 @@
 .goods {
   display: flex;
   align-items: center;
-  padding: 10px 5px 1px 3px;
-  margin: 10px 5px 5px 10px;
+  padding: 1.2rem;
+  margin: 1rem;
   border: 0.5px solid rgba(0, 0, 0, 0.08);
-  border-radius: 3px;
-  background-color: rgba(207, 186, 186, 0.15);
+  border-radius: 1rem;
 
   .goods-img img {
-    width: 150px;
-    height: 130px;
-    margin-right: 10px;
-    border: 0.5px solid gray;
+    width: 140px;
+    height: 120px;
+    margin-right: 15px;
     border-radius: 3px;
   }
 
   .goods-non-img {
     width: 100%;
-
     span {
       opacity: 0.6;
-      font-size: 12px;
+      font-size: 15px;
     }
 
     .goods-title {
-      margin: 10px 0px;
-      h3 {
+      margin-bottom: 1rem;
+      h2 {
+        font-size: 18px;
         text-align: left;
-        font-weight: normal;
-      }
-    }
-
-    .goods-catecory-company {
-      display: flex;
-      margin-bottom: 10px;
-      span {
-        margin-right: 3px;
+        font-weight: bold;
       }
     }
 
@@ -51,9 +41,11 @@
     .goods-progressinfo {
       display: flex;
       justify-content: space-between;
+      margin-top: 1.5rem;
       .goods-progressinfo-percent {
         display: flex;
         p {
+          font-size: 1.2rem;
           font-weight: bold;
           color: $wadiz;
           margin-right: 3px;
@@ -62,6 +54,7 @@
     }
 
     .goods-money {
+      margin-top: 0.5rem;
       text-align: right;
       font-weight: 800;
     }
