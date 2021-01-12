@@ -8,7 +8,7 @@ import DetailPage from 'pages/DetailPage';
 import CategoryPage from 'pages/CategoryPage';
 import PopularPage from 'pages/PopularPage';
 import MyPage from 'pages/MyPage';
-import MyFundingPage from 'pages/MyFundingPage';
+import MyHistoryPage from 'pages/MyHistoryPage';
 import MyJjimPage from 'pages/MyJjimPage';
 import GlobalStyle from 'styles/global-styles';
 import SetProfilePage from 'pages/SetProfilePage/SetProfilePage';
@@ -28,10 +28,9 @@ function App() {
           <Route path="/category/:categoryid" component={CategoryPage} />
           <Route path="/popular" component={PopularPage} />
           <Route path="/detail" component={DetailPage} />
-          <Route path="/mypage/funding" component={MyFundingPage} />
-          <Route path="/mypage/jjim" component={MyJjimPage} />         
-          <Route path="/mypage/setprofile" component={SetProfilePage} />
-          <Route path="/mypage" component={MyPage} />          
+          <Route path="/mypage/history" component={MyHistoryPage} />
+          <Route path="/mypage/jjim" component={MyJjimPage} />
+          <Route path="/mypage" component={MyPage} />
         </Switch>
         <GlobalStyle />
       </MainLayout>
