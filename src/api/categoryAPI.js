@@ -50,7 +50,7 @@ const mockCategoriesList = {
     },
     {
       id: 9,
-      category: '스포츠-모빌리티',
+      category: '스포츠',
       img: 'https://img-cf.kurly.com/shop/data/goods/1567143195421z0.jpg',
       link: 'sport',
     },
