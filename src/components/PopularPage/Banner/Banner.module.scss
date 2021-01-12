@@ -1,0 +1,12 @@
+@import 'styles/_palette.scss';
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .banner-img {
+    width: 97%;
+  }
+}

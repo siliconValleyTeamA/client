@@ -4,13 +4,16 @@ import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './PopularPage.module.scss';
+import GoodsList from 'components/CategoryPage/GoodsList';
+import Banner from 'components/PopularPage/Banner';
 
 const cx = classNames.bind(styles);
 
 function PopularPage() {
   return (
-    <div className={cx('popularpage')}>
-      인기상품페이지
+    <div className={cx('popular-page')}>
+      <Banner className={cx('banner')} />
+      <GoodsList />
     </div>
   );
 }
