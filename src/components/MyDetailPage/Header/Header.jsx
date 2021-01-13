@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 function Header(props) {
-  return <h1 className={cx('header')}> {props.header} </h1>;
+  return <div className={cx('header')}>{props.header} </div>;
 }
 
 export default Header;

@@ -1,53 +1,77 @@
 @import 'styles/_palette.scss';
 
 .setcountry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+
+  .BiWorld {
+    color: $purple;
+    font-size: 3.5rem;
+    margin-top: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin: 50px;
+    padding: 10px;
+  }
+
+  .profile {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    .title{
-      font-size: 2rem;
-      margin:50px;
-      padding:10px;
+
+    .picture {
+      min-height: 300px;
+      max-width: 400px;
+      border-radius: 20px;
     }
-    .profilediv{
-      display: flex;
-      flex-direction: row;
-      .userinfo{
-        margin-top: 50px;
-        font-size: x-large;
-        font-weight: bold;
-      }
-      .picture{
-        margin-right:50px;
-        margin-top: auto;
-        width: 10rem;
-        height: 10rem;
-        border-radius: 100%;
-      }    
-    }   
-    .country{
-      display: flex;
-      margin:auto 20px;
-      flex-direction: row;      
-      font-size: x-large;
-      font-weight: bold;    
-      .BiWorld{       
-        color: $purple;
-      }
-    }    
-    .point{
-      display: flex;
-      margin:auto 20px;
-      flex-direction: column;      
-      font-size: x-large;
+
+    .userinfo {
+      margin-top: 20px;
       font-weight: bold;
+
+      .user-name {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .user-login {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
     }
-}
-.subtitle{
-  margin: auto 10px;
-  padding: 20px;
-  font-size: xx-large;
-  font-weight: bold; 
+  }
+
+  .country,
+  .point {
+    box-sizing: border-box;
+    background: $light-gray;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    .edit,
+    .delete {
+      margin-right: 0.8rem;
+      color: $gray;
+    }
+
+    .content {
+      margin-top: 1.8rem;
+    }
+    .delete {
+      color: red;
+    }
+  }
 }
