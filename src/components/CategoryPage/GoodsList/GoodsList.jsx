@@ -48,9 +48,6 @@ function GoodsList({ popular }) {
       case 'closing':
         categoryData.sort(sortByClosing);
         break;
-      case 'jjim':
-        categoryData.sort(sortByJjim);
-        break;
       default:
         categoryData.sort(sortByPercent);
     }
