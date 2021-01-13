@@ -1,0 +1,25 @@
+@import 'styles/_palette.scss';
+
+.cart-footer {
+  padding: 42px 20px 100px;
+  max-width: 500px;
+  margin: auto;
+
+  .cart-footer-total-price {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .cart-footer-confirm-button {
+    padding: 10px;
+    background-color: $wadiz;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 500px;
+    font-weight: 700;
+    text-align: center;
+    color: $white;
+  }
+}
