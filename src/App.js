@@ -25,6 +25,7 @@ const MainLayout = styled.div`
 function App() {
   return (
     <BrowserRouter>
+<<<<<<< HEAD
       <ScrollToTop />
       <GlobalStyle />
       <Route
@@ -53,6 +54,21 @@ function App() {
           );
         }}
       ></Route>
+=======
+      <MainLayout>
+        <Switch>
+          <Route path="/" exact component={CategoryPage} />
+          <Route path="/category/:category" exact component={CategoryPage} />
+          <Route path="/popular" exact component={PopularPage} />
+          <Route path="/detail/:projectId" component={DetailPage} />
+          <Route path="/mypage/funding" component={MyFundingPage} />
+          <Route path="/mypage/jjim" component={MyJjimPage} />
+          <Route path="/mypage/setprofile" component={SetProfilePage} />
+          <Route path="/mypage" component={MyPage} />
+        </Switch>
+        <GlobalStyle />
+      </MainLayout>
+>>>>>>> 530bd87... [#62] fix - link
     </BrowserRouter>
   );
 }
