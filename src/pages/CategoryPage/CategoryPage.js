@@ -10,7 +10,7 @@ import GoodsList from 'components/CategoryPage/GoodsList';
 import CategoryList from 'components/CategoryPage/CategoryList';
 import { setCategory } from 'modules/reducers/categoryReducer';
 import NavigationBar from 'components/Global/NavigationBar';
-import CountryModal from 'components/CategoryPage/CountryModal';
+import LanguageModal from 'components/CategoryPage/LanguageModal';
 
 const cx = classNames.bind(styles);
 
@@ -18,8 +18,8 @@ function CategoryPage({ match }) {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
-  const getCountry = () => {
-    if (window.sessionStorage.getItem('country')) {
+  const getLanguage = () => {
+    if (window.sessionStorage.getItem('language')) {
       setIsOpen(false);
     } else {
       setIsOpen(true);
@@ -28,13 +28,13 @@ function CategoryPage({ match }) {
 
   useEffect(() => {
     const categoryKey = match.params.category || 'all';
-    getCountry();
+    getLanguage();
     dispatch(setCategory(categoryKey));
   }, [match.params.category]);
 
   return (
     <div className={cx('category')}>
-      <CountryModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <LanguageModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <NavigationBar />
       <CategoryList />
       <MiddleSearch />

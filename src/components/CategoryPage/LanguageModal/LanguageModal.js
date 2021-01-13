@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import styles from './CountryModal.module.scss';
+import styles from './LanguageModal.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CountryModal({ isOpen, setIsOpen }) {
-  const [selectCountry, setSelectCountry] = useState('korean');
+function LanguageModal({ isOpen, setIsOpen }) {
+  const [selectLanguage, setSelectLanguage] = useState('korean');
 
-  const storedCountry = () => {
+  const storedLanguage = () => {
     setIsOpen(false);
-    window.sessionStorage.setItem('country', selectCountry);
+    window.sessionStorage.setItem('language', selectLanguage);
   };
 
   return (
     <React.Fragment>
       {isOpen ? (
         <React.Fragment>
-          <div className={cx('Modal-overlay')} onClick={e => storedCountry()} />
+          <div
+            className={cx('Modal-overlay')}
+            onClick={e => storedLanguage()}
+          />
           <div className={cx('Modal')}>
             <p className={cx('title')}>국가선택</p>
             <div className={cx('content')}>
               <div>
                 <select
-                  onChange={e => setSelectCountry(e.target.value)}
-                  className={cx('country-list')}
+                  onChange={e => setSelectLanguage(e.target.value)}
+                  className={cx('language-list')}
                 >
                   <option value="korean">한국어</option>
                   <option value="english">영어</option>
@@ -34,7 +37,7 @@ function CountryModal({ isOpen, setIsOpen }) {
               <p>선택하지 않으면 자동으로 한국어가 선택됩니다.</p>
             </div>
             <div className={cx('button-wrap')}>
-              <button onClick={e => storedCountry()}>선택하기</button>
+              <button onClick={e => storedLanguage()}>선택하기</button>
             </div>
           </div>
         </React.Fragment>
@@ -43,4 +46,4 @@ function CountryModal({ isOpen, setIsOpen }) {
   );
 }
 
-export default CountryModal;
+export default LanguageModal;
