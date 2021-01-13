@@ -1,0 +1,14 @@
+@import 'styles/_palette.scss';
+
+.mycart-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .FaShoppingCart {
+    color: $green;
+    font-size: 3.5rem;
+    margin-top: 2rem;
+  }
+}

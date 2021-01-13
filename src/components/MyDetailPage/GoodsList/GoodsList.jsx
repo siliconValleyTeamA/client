@@ -26,20 +26,22 @@ function sortByHistoryTime(a, b) {
     : 0;
 }
 
+
 function GoodsList(props) {
   return (
     <div className={cx('goods-list')}>
-      {props.show === 'history'
-        ? mocHistoryList.data
-            .sort(sortByHistoryTime)
-            .map(historyData => (
-              <Goods key={historyData.id} data={historyData} type={'history'} />
-            ))
-        : mockJjimList.data
-            .sort(sortByJjimTime)
-            .map(jjimData => (
-              <Goods key={jjimData.id} data={jjimData} type={'jim'} />
-            ))}
+      {props.show === 'history' &&
+        mocHistoryList.data
+          .sort(sortByHistoryTime)
+          .map(historyData => (
+            <Goods key={historyData.id} data={historyData} type={'history'} />
+          ))}
+      {props.show === 'jjim' &&
+        mockJjimList.data
+          .sort(sortByJjimTime)
+          .map(jjimData => (
+            <Goods key={jjimData.id} data={jjimData} type={'jim'} />
+          ))}
     </div>
   );
 }
