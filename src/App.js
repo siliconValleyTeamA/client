@@ -13,6 +13,8 @@ import MyJjimPage from 'pages/MyJjimPage';
 import MyCartPage from 'pages/MyCartPage';
 import GlobalStyle from 'styles/global-styles';
 import MyProfilePage from 'pages/MyProfilePage';
+import NavigationBar from 'components/Global/NavigationBar';
+import ScrollToTop from 'components/Global/ScrollToTop';
 
 const MainLayout = styled.div`
   width: 60%;
@@ -23,6 +25,8 @@ const MainLayout = styled.div`
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <NavigationBar />
       <MainLayout>
         <Switch>
           <Route path="/" exact component={CategoryPage} />

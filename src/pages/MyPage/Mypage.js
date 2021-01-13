@@ -8,7 +8,6 @@ import Menu from 'components/Mypage/Menu';
 import Profile from 'components/Mypage/Profile';
 import SignoutButton from 'components/Mypage/LogoutButton';
 import LoginButton from 'components/Mypage/LoginButton';
-import NavigationBar from 'components/Global/NavigationBar';
 
 const cx = classNames.bind(styles);
 
@@ -16,8 +15,6 @@ function Mypage() {
   const [signIn, setSignIn] = useState(false);
 
   return (
-    <div>
-      <NavigationBar />
       <div className={cx('mypage')}>
         {signIn ? (
           <div className={cx('sign-in')}>
@@ -33,7 +30,6 @@ function Mypage() {
           </div>
         )}
       </div>
-    </div>
   );
 }
 

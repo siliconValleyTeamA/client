@@ -8,14 +8,31 @@ import styles from './NavigationBar.module.scss';
 
 const cx = classNames.bind(styles);
 
-const addStyle = name => {
-  name.current.style.backgroundColor = '#00c4c4';
+const addStyle = (name, target) => {
+  name.current.style.backgroundColor = 'black';
   name.current.style.color = 'white';
+
+  switch (target) {
+    case 'home':
+      name.current.style.width = '47px';
+      break;
+    case 'category':
+      name.current.style.width = '100px';
+      break;
+    case 'popular':
+      name.current.style.width = '100px';
+      break;
+    case 'mypage':
+      name.current.style.width = '121px';
+      break;
+    default:
+      break;
+  }
 };
 
 const initStyle = name => {
-  name.current.style.backgroundColor = 'white';
-  name.current.style.color = '#00c4c4';
+  name.current.style.color = '#90949c';
+  name.current.style.backgroundColor = null;
 };
 
 function NavigationBar() {
@@ -36,13 +53,13 @@ function NavigationBar() {
     const link = location.pathname;
     nav.forEach(menu => initStyle(menu.ref));
     if (link === '/') {
-      addStyle(homeRef);
+      addStyle(homeRef, 'home');
     } else if (link === '/category/all') {
-      addStyle(categoryRef);
+      addStyle(categoryRef, 'category');
     } else if (link === '/popular') {
-      addStyle(popularRef);
+      addStyle(popularRef, 'popular');
     } else if (link === '/mypage') {
-      addStyle(mypageRef);
+      addStyle(mypageRef, 'mypage');
     }
   });
 

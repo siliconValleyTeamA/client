@@ -9,7 +9,6 @@ import MiddleSearch from 'components/CategoryPage/MiddleSearch';
 import GoodsList from 'components/CategoryPage/GoodsList';
 import CategoryList from 'components/CategoryPage/CategoryList';
 import { setCategory } from 'modules/reducers/categoryReducer';
-import NavigationBar from 'components/Global/NavigationBar';
 import CountryModal from 'components/CategoryPage/CountryModal';
 
 const cx = classNames.bind(styles);
@@ -39,7 +38,6 @@ function CategoryPage({ match }) {
   return (
     <div className={cx('category')}>
       <CountryModal isOpen={isOpen} close={closeModal} />
-      <NavigationBar />
       <CategoryList />
       <MiddleSearch />
       <GoodsList />
