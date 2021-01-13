@@ -100,6 +100,21 @@ const GlobalStyle = createGlobalStyle`
         outline:0;
     }
   }
+  .fade-enter {
+    opacity: 0.1;
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+}
 `;
 
 export default GlobalStyle;
