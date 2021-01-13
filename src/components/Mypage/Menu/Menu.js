@@ -37,7 +37,7 @@ function Menu() {
           </li>
         </Link>
       </Link>
-      <Link to="/mypage/setprofile">
+      <Link to="/mypage/profile">
         <li className={cx('country')}>
           <BiWorld className={cx('BiWorld')} />
           <div className={cx('title')}>개인정보 설정</div>

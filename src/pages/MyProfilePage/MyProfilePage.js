@@ -4,14 +4,13 @@ import classNames from 'classnames/bind';
 import { BiWorld } from 'react-icons/bi';
 
 /* Internal dependencies */
-import styles from './SetProfilePage.module.scss';
-import SetCountry from 'components/Mypage/SetCountry/SetCountry';
+import styles from './MyProfilePage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
 
 const cx = classNames.bind(styles);
 
-function SetProfilePage() {
+function MyProfilePage() {
   return (
     <div className={cx('setcountry')}>
       <BackButton />
@@ -47,4 +46,4 @@ function SetProfilePage() {
     </div>
   );
 }
-export default SetProfilePage;
+export default MyProfilePage;
