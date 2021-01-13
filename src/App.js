@@ -10,6 +10,7 @@ import PopularPage from 'pages/PopularPage';
 import MyPage from 'pages/MyPage';
 import MyHistoryPage from 'pages/MyHistoryPage';
 import MyJjimPage from 'pages/MyJjimPage';
+import MyCartPage from 'pages/MyCartPage';
 import GlobalStyle from 'styles/global-styles';
 import SetProfilePage from 'pages/SetProfilePage/SetProfilePage';
 
@@ -31,7 +32,8 @@ function App() {
           <Route path="/mypage" exact component={MyPage} />
           <Route path="/mypage/history" component={MyHistoryPage} />
           <Route path="/mypage/jjim" component={MyJjimPage} />
-          <Route path="/mypage" component={MyPage} />
+          <Route path="/mypage/cart" component={MyCartPage} />
+          <Route path="/mypage/setprofile" component={SetProfilePage} />
         </Switch>
         <GlobalStyle />
       </MainLayout>

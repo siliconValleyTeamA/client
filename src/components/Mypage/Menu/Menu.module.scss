@@ -20,28 +20,37 @@ ol {
     font-weight: 600;
     height: 3rem;
 
-    &:last-child {
-      border-bottom: none;
-    }
-
     .title {
       margin-left: 0.7rem;
     }
 
     .AiFillHeart {
+      font-size: 1.5rem;
       color: $pink;
     }
 
     .RiShoppingBag3Fill {
+      font-size: 1.5rem;
       color: $wadiz;
     }
 
     .BiWorld {
+      font-size: 1.5rem;
       color: $purple;
     }
 
+    .FaShoppingCart {
+      font-size: 1.5rem;
+      color: $green;
+    }
+
     .RiArrowRightSLine {
+      font-size: 1.5rem;
       margin-left: auto;
+    }
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 }
