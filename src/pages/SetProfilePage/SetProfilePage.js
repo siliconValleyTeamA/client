@@ -6,30 +6,44 @@ import { BiWorld } from 'react-icons/bi';
 /* Internal dependencies */
 import styles from './SetProfilePage.module.scss';
 import SetCountry from 'components/Mypage/SetCountry/SetCountry';
+import BackButton from 'components/Global/BackButton';
+import Header from 'components/MyDetailPage/Header';
 
 const cx = classNames.bind(styles);
 
 function SetProfilePage() {
   return (
     <div className={cx('setcountry')}>
-      <h1 className={cx('title')}>국가 설정 및 포인트 관리</h1><br></br>
-        <div className={cx('profilediv')}>
-          <img className={cx('picture')} src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg" alt="snsProfile"/>
-          <div className={cx('userinfo')}>
-            <p>유창헌님</p><br/>
-            <p>(깃허브로 로그인 중)</p>
-          </div>
-        </div> 
-        <div className={cx('subtitle')}>국가 설정</div>
-        <div className={cx('country')}>
-          <BiWorld className={cx('BiWorld')}/>&emsp;            
-          <label>국가 :</label>&ensp;          
-            <SetCountry className={cx('countrylist')}></SetCountry>
+      <BackButton />
+      <BiWorld className={cx('BiWorld')} />
+      <Header header="개인정보 설정" />
+      <div className={cx('profile')}>
+        <img
+          className={cx('picture')}
+          src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
+          alt="snsProfile"
+        />
+        <div className={cx('userinfo')}>
+          <div className={cx('user-name')}>Noh Gi Jin님</div>
+          <div className={cx('user-login')}>깃허브로 로그인중</div>
         </div>
-        <div className={cx('subtitle')}>포인트 관리</div>
-        <div className={cx('point')}>       
-          잔여 포인트: 10000P
+      </div>
+
+      <div className={cx('country')}>
+        <div className={cx('row')}>
+          <span className={cx('edit')}>국가 수정</span>
+          <span className={cx('delete')}>삭제</span>
         </div>
+        <div className={cx('content')}>한국</div>
+      </div>
+
+      <div className={cx('point')}>
+        <div className={cx('row')}>
+          <span className={cx('edit')}>포인트 수정</span>
+          <span className={cx('delete')}>초기화</span>
+        </div>
+        <div className={cx('content')}>10,000 포인트</div>
+      </div>
     </div>
   );
 }
