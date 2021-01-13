@@ -3,6 +3,7 @@ const mockGoodsList = {
     {
       id: 1,
       title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      description: '유선유죄 무선무죄!',
       category: '뷰티',
       category_key: 1,
       company: '(주)명성',
@@ -10,10 +11,12 @@ const mockGoodsList = {
       amount: 112313,
       dueDate: 19,
       jjim: 555,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 2,
       title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      description: '유선유죄 무선무죄!',
       category: '테크-가전',
       category_key: 2,
       company: '(주)명성',
@@ -21,11 +24,12 @@ const mockGoodsList = {
       amount: 2131232,
       dueDate: 23,
       jjim: 444,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
-
     {
       id: 3,
       title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      description: '유선유죄 무선무죄!',
       category: '패션-잡화',
       company: '(주)명성',
       category_key: 3,
@@ -33,11 +37,12 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 333,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
-
     {
       id: 4,
       title: '[비블리X위글위글] 선빼고 다드려요! 2만원대 무선 미니 고데기',
+      description: '유선유죄 무선무죄!',
       category: '패션-잡화',
       company: '(주)명성',
       category_key: 3,
@@ -45,6 +50,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 5,
