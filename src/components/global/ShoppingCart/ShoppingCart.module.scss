@@ -1,0 +1,21 @@
+@import 'styles/_palette.scss';
+
+.cart-shortcut {
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  padding: 10px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 9999px;
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+
+  .HiShoppingCart {
+    width: 30px;
+    height: 30px;
+  }
+}

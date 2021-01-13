@@ -10,6 +10,7 @@ import styles from './DetailPage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Drawer from 'components/DetailPage/Drawer';
 import Hit from 'components/DetailPage/Hit';
+import ShoppingCart from 'components/Global/ShoppingCart';
 
 const cx = classNames.bind(styles);
 
@@ -90,6 +91,7 @@ function DetailPage() {
         <span>상세한 설명입니다.</span>
       </div>
       <Drawer open={open} setOpen={setOpen} />
+      <ShoppingCart />
     </div>
   );
 }

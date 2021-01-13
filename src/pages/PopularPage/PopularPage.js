@@ -7,6 +7,7 @@ import styles from './PopularPage.module.scss';
 import GoodsList from 'components/CategoryPage/GoodsList';
 import Banner from 'components/PopularPage/Banner';
 import NavigationBar from 'components/Global/NavigationBar';
+import ShoppingCart from 'components/Global/ShoppingCart';
 
 const cx = classNames.bind(styles);
 
@@ -16,6 +17,7 @@ function PopularPage() {
       <NavigationBar />
       <Banner className={cx('banner')} />
       <GoodsList popular />
+      <ShoppingCart />
     </div>
   );
 }

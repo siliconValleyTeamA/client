@@ -7,6 +7,7 @@ import { BiWorld } from 'react-icons/bi';
 import styles from './MyProfilePage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
+import ShoppingCart from 'components/Global/ShoppingCart';
 
 const cx = classNames.bind(styles);
 
@@ -43,6 +44,7 @@ function MyProfilePage() {
         </div>
         <div className={cx('content')}>10,000 포인트</div>
       </div>
+      <ShoppingCart />
     </div>
   );
 }
