@@ -7,7 +7,7 @@ import { AiOutlineMinus } from 'react-icons/ai';
 import styles from './Drawer.module.scss';
 const cx = classNames.bind(styles);
 
-function Drawer({ open, setOpen }) {
+function Drawer({ open, setOpen, data}) {
   const [money, setMoney] = useState('');
 
   return (
@@ -24,7 +24,7 @@ function Drawer({ open, setOpen }) {
           <div className={cx('product-details-cart')}>
             <img
               className={cx('product-details-cart-image')}
-              src="https://img-cf.kurly.com/shop/data/goods/1581930271767l0.jpg"
+              src= {data.img}
               alt="장바구니용 사진"
             />
             <div className={cx('product-details-cart-buttons')}>
@@ -43,7 +43,7 @@ function Drawer({ open, setOpen }) {
                   );
                 }}
               />
-              <div className={cx('product-details-cart-buttons-confirm')}>
+              <div onClick = { ()=>{setOpen(false)}} className={cx('product-details-cart-buttons-confirm')}>
                 펀딩하기
               </div>
             </div>

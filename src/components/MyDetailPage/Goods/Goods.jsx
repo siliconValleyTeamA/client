@@ -10,10 +10,11 @@ const cx = classNames.bind(styles);
 
 function Goods({ data, type }) {
   let width = data.percent > 100 ? 100 : data.percent;
+  const detailLink = "/detail/" + data.id;
 
   return (
     <button>
-      <Link to="/detail">
+      <Link to={detailLink}>
         <div className={cx('goods')}>
           <div className={cx('goods-img')}>
             <img
