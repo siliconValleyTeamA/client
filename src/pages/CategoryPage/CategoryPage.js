@@ -11,6 +11,8 @@ import CategoryList from 'components/CategoryPage/CategoryList';
 import { setCategory } from 'modules/reducers/categoryReducer';
 import NavigationBar from 'components/Global/NavigationBar';
 import LanguageModal from 'components/CategoryPage/LanguageModal';
+import Carousel from 'components/CategoryPage/Carousel/Slide';
+
 
 const cx = classNames.bind(styles);
 
@@ -37,6 +39,7 @@ function CategoryPage({ match }) {
       <LanguageModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <NavigationBar />
       <CategoryList />
+      <Carousel />
       <MiddleSearch />
       <GoodsList />
     </div>
