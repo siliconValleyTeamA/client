@@ -32,13 +32,9 @@ function CategoryPage({ match }) {
     dispatch(setCategory(categoryKey));
   }, [match.params.category]);
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
   return (
     <div className={cx('category')}>
-      <CountryModal isOpen={isOpen} close={closeModal} />
+      <CountryModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <NavigationBar />
       <CategoryList />
       <MiddleSearch />

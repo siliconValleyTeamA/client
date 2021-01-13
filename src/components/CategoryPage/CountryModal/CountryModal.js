@@ -4,25 +4,25 @@ import styles from './CountryModal.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CountryModal({ isOpen, close }) {
-  const [, setSelectCountry] = useState('korean');
+function CountryModal({ isOpen, setIsOpen }) {
+  const [selectCountry, setSelectCountry] = useState('korean');
 
-  const storedCountry = e => {
-    setSelectCountry(e.target.value);
-    window.sessionStorage.setItem('country', e.target.value);
+  const storedCountry = () => {
+    setIsOpen(false);
+    window.sessionStorage.setItem('country', selectCountry);
   };
 
   return (
     <React.Fragment>
       {isOpen ? (
         <React.Fragment>
-          <div className={cx('Modal-overlay')} onClick={close} />
+          <div className={cx('Modal-overlay')} onClick={e => storedCountry()} />
           <div className={cx('Modal')}>
             <p className={cx('title')}>국가선택</p>
             <div className={cx('content')}>
               <div>
                 <select
-                  onChange={e => storedCountry(e)}
+                  onChange={e => setSelectCountry(e.target.value)}
                   className={cx('country-list')}
                 >
                   <option value="korean">한국어</option>
@@ -34,7 +34,7 @@ function CountryModal({ isOpen, close }) {
               <p>선택하지 않으면 자동으로 한국어가 선택됩니다.</p>
             </div>
             <div className={cx('button-wrap')}>
-              <button onClick={close}>선택하기</button>
+              <button onClick={e => storedCountry()}>선택하기</button>
             </div>
           </div>
         </React.Fragment>
