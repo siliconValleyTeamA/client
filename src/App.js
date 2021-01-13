@@ -31,11 +31,7 @@ function App() {
         render={({ location }) => {
           return (
             <TransitionGroup>
-              <CSSTransition
-                key={location.key}
-                timeout={10000}
-                classNames="fade"
-              >
+              <CSSTransition key={location.key} timeout={100} classNames="fade">
                 <MainLayout>
                   <Switch>
                     <Route path="/" exact component={CategoryPage} />

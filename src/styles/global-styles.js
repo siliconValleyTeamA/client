@@ -108,7 +108,7 @@ const GlobalStyle = createGlobalStyle`
     transition: opacity 500ms;
   }
   .fade-exit {
-    opacity: 1;
+    opacity: 0;
   }
   .fade-exit-active {
     opacity: 0;
