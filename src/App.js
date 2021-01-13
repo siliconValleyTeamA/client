@@ -25,8 +25,8 @@ function App() {
       <MainLayout>
         <Switch>
           <Route path="/" exact component={CategoryPage} />
-          <Route path="/category/:category" exact component={CategoryPage} />
-          <Route path="/popular" exact component={PopularPage} />
+          <Route path="/category/:categoryid" component={CategoryPage} />
+          <Route path="/popular" component={PopularPage} />
           <Route path="/detail" component={DetailPage} />
           <Route path="/mypage/funding" component={MyFundingPage} />
           <Route path="/mypage/jjim" component={MyJjimPage} />         
