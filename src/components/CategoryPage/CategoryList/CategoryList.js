@@ -7,27 +7,37 @@ import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 /* Internal dependencies */
 import styles from './CategoryList.module.scss';
 import Category from 'components/CategoryPage/Category';
-import mockCategoriesList from 'api/categoryAPI';
+import { getCategoryListAPI } from 'api/categoryAPI';
 
 const cx = classNames.bind(styles);
 
 function CategoryList() {
   const [page, setPage] = useState(0);
+  const [categoryList, setCategoryList] = useState([]);
   const [subCategoryData, setSubCategoryData] = useState([]);
-  const CATEGORY_DISPLAY_COUNT = 8;
-  const CATEGORY_LENGTH = mockCategoriesList.data.length;
-  const MAX_PAGE = parseInt(CATEGORY_LENGTH / CATEGORY_DISPLAY_COUNT) + (CATEGORY_LENGTH % CATEGORY_DISPLAY_COUNT ? 0 : -1);
+  const CATEGORY_DISPLAY_COUNT = 7;
+  const CATEGORY_LENGTH = categoryList.length;
+  const MAX_PAGE =
+    parseInt(CATEGORY_LENGTH / CATEGORY_DISPLAY_COUNT) +
+    (CATEGORY_LENGTH % CATEGORY_DISPLAY_COUNT ? 0 : -1);
   const category = useSelector(state => state.categoryReducer).label;
 
   useEffect(() => {
+    getCategoryListAPI().then(result => {
+      setCategoryList(result.data);
+    });
+  }, []);
+
+  useEffect(() => {
     setSubCategoryData(
-      mockCategoriesList.data.slice(
+      categoryList.slice(
         page * CATEGORY_DISPLAY_COUNT,
         (page + 1) * CATEGORY_DISPLAY_COUNT,
       ),
     );
-  }, [page]);
+  }, [categoryList, page]);
 
+  console.log(page);
   return (
     <div className={cx('category-list')}>
       {page !== 0 && (

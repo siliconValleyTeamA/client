@@ -8,7 +8,7 @@ import Project from 'components/Global/Project';
 import {
   getScheduleProjectListAPI,
   getSoonSuccessProjectListAPI,
-} from 'api/homeAPI';
+} from 'api/projectAPI';
 
 const cx = classNames.bind(styles);
 

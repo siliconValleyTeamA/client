@@ -14,12 +14,10 @@ const cx = classNames.bind(styles);
 
 function MyProfilePage() {
   const [point, setPoint] = useState('');
-  const [language, setLanguage] = useState('');
 
   useEffect(() => {
     getPointAPI().then(result => {
       setPoint(result.data.point);
-      setLanguage(result.data.language);
     });
   }, []);
 
@@ -40,12 +38,12 @@ function MyProfilePage() {
         </div>
       </div>
 
-      <div className={cx('country')}>
+      <div className={cx('language')}>
         <div className={cx('row')}>
-          <span className={cx('edit')}>국가 수정</span>
-          <span className={cx('delete')}>삭제</span>
+          <span className={cx('edit')}>언어 수정</span>
+          <span className={cx('delete')}>기본값 적용</span>
         </div>
-        <div className={cx('content')}>{language}</div>
+        <div className={cx('content')}>한국어</div>
       </div>
 
       <div className={cx('point')}>
