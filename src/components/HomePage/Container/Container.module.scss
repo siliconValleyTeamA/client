@@ -1,0 +1,72 @@
+@import 'styles/_palette.scss';
+
+.topic-container {
+  background-color: $light-gray;
+  padding: 25px 20px 35px 20px;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .scroll-container {
+    position: relative;
+    width: 100vw;
+    max-width: 800px;
+    margin-top: 20px;
+
+    .shadow {
+      width: 50px;
+      position: absolute;
+      height: 100%;
+
+      &.left {
+        left: 0;
+        top: 0;
+        background-image: linear-gradient(
+          to right,
+          rgba(243, 243, 245, 1),
+          rgba(243, 243, 245, 0)
+        );
+      }
+
+      &.right {
+        right: 0;
+        top: 0;
+        background-image: linear-gradient(
+          to left,
+          rgba(243, 243, 245, 1),
+          rgba(243, 243, 245, 0)
+        );
+      }
+    }
+
+    .container {
+      display: grid;
+      gap: 20px;
+      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-rows: 1fr 1fr;
+      margin: auto;
+      padding: 0 20px;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .product-item {
+        min-width: 150px;
+        max-width: 250px;
+      }
+
+      .dummy {
+        width: 1px;
+      }
+    }
+  }
+}
