@@ -14,11 +14,12 @@ const cx = classNames.bind(styles);
 
 function MyProfilePage() {
   const [point, setPoint] = useState('');
+  const [language, setLanguage] = useState('');
 
   useEffect(() => {
     getPointAPI().then(result => {
-      console.log(result);
       setPoint(result.data.point);
+      setLanguage(result.data.language);
     });
   }, []);
 
@@ -44,7 +45,7 @@ function MyProfilePage() {
           <span className={cx('edit')}>국가 수정</span>
           <span className={cx('delete')}>삭제</span>
         </div>
-        <div className={cx('content')}>한국</div>
+        <div className={cx('content')}>{language}</div>
       </div>
 
       <div className={cx('point')}>
