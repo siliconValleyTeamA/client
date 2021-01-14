@@ -9,6 +9,8 @@ import NavigationBar from 'components/Global/NavigationBar';
 import LanguageModal from 'components/CategoryPage/LanguageModal';
 import Carousel from 'components/CategoryPage/Carousel/Slide';
 import Container from 'components/HomePage/Container';
+import ShoppingCart from 'components/Global/ShoppingCart';
+
 const cx = classNames.bind(styles);
 
 function HomePage() {
@@ -33,6 +35,7 @@ function HomePage() {
       <NavigationBar />
       <Carousel />
       <Container />
+      <ShoppingCart />
     </div>
   );
 }
