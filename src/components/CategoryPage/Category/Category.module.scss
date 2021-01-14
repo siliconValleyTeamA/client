@@ -1,34 +1,37 @@
 @import 'styles/_palette.scss';
 
-.category {
-  display: flex;
-  flex-direction: column;
-  height: 65px;
-  width: 65px;
-  padding: 5px;
-  margin: 10px;
-
-  .pic {
-    box-sizing: border-box;
+div {
+  cursor: pointer;
+  .category {
+    display: flex;
+    flex-direction: column;
     height: 65px;
     width: 65px;
-    border-radius: 100%;
+    padding: 5px;
+    margin: 10px;
 
-    &.active {
-      border: 1px solid $wadiz;
+    .pic {
+      box-sizing: border-box;
+      height: 65px;
+      width: 65px;
+      border-radius: 100%;
+
+      &.active {
+        border: 1px solid $wadiz;
+      }
     }
-  }
 
-  .text {
-    text-align: center;
-    margin-top: 8px;
-    line-height: 18px;
-    white-space: nowrap;
-    font-size: 13px;
-    font-weight: 500;
+    .text {
+      text-align: center;
+      margin-top: 8px;
+      line-height: 18px;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 500;
 
-    &.active {
-      color: $wadiz;
+      &.active {
+        color: $wadiz;
+      }
     }
   }
 }

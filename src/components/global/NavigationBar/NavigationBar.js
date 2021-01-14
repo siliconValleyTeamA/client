@@ -44,7 +44,7 @@ function NavigationBar() {
 
   const nav = [
     { id: '1', name: '홈', link: '/', ref: homeRef },
-    { id: '2', name: '카테고리', link: '/category/all', ref: categoryRef },
+    { id: '2', name: '카테고리', link: '/category', ref: categoryRef },
     { id: '3', name: '인기펀딩', link: '/popular', ref: popularRef },
     { id: '4', name: '마이페이지', link: '/mypage', ref: mypageRef },
   ];
@@ -54,7 +54,7 @@ function NavigationBar() {
     nav.forEach(menu => initStyle(menu.ref));
     if (link === '/') {
       addStyle(homeRef, 'home');
-    } else if (link === '/category/all') {
+    } else if (link === '/category') {
       addStyle(categoryRef, 'category');
     } else if (link === '/popular') {
       addStyle(popularRef, 'popular');
