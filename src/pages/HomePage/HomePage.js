@@ -8,8 +8,7 @@ import Logo from 'components/Global/Logo';
 import NavigationBar from 'components/Global/NavigationBar';
 import LanguageModal from 'components/CategoryPage/LanguageModal';
 import Carousel from 'components/CategoryPage/Carousel/Slide';
-import GoodsList from 'components/CategoryPage/GoodsList';
-
+import Container from 'components/HomePage/Container';
 const cx = classNames.bind(styles);
 
 function HomePage() {
@@ -33,7 +32,7 @@ function HomePage() {
       <LanguageModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <NavigationBar />
       <Carousel />
-      <GoodsList />
+      <Container />
     </div>
   );
 }
