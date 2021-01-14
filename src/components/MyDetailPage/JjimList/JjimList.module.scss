@@ -1,0 +1,10 @@
+@import 'styles/_palette.scss';
+
+.jjim-list {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(4, 200px);
+  grid-gap: 20px 20px;
+  gap: 20px 20px;
+  margin-bottom: 200px;
+}

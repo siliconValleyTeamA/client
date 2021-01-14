@@ -38,7 +38,7 @@ function App() {
                     <Route path="/" exact component={HomePage} />
                     <Route path="/category" component={CategoryPage} />
                     <Route path="/popular" component={PopularPage} />
-                    <Route path="/detail/:projectId" component={DetailPage} />
+                    <Route path="/project/:projectId" component={DetailPage} />
                     <Route path="/mypage" exact component={MyPage} />
                     <Route path="/mypage/history" component={MyHistoryPage} />
                     <Route path="/mypage/jjim" component={MyJjimPage} />
