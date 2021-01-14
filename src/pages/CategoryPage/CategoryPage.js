@@ -9,10 +9,11 @@ import MiddleSearch from 'components/CategoryPage/MiddleSearch';
 import GoodsList from 'components/CategoryPage/GoodsList';
 import CategoryList from 'components/CategoryPage/CategoryList';
 import { setCategory } from 'modules/reducers/categoryReducer';
-import CountryModal from 'components/CategoryPage/CountryModal';
-import NavigationBar from 'components/Global/NavigationBar';
 import ShoppingCart from 'components/Global/ShoppingCart';
 import Logo from 'components/Global/Logo';
+import NavigationBar from 'components/Global/NavigationBar';
+import LanguageModal from 'components/CategoryPage/LanguageModal';
+import Carousel from 'components/CategoryPage/Carousel/Slide';
 
 const cx = classNames.bind(styles);
 
@@ -20,8 +21,8 @@ function CategoryPage({ match }) {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
-  const getCountry = () => {
-    if (window.sessionStorage.getItem('country')) {
+  const getLanguage = () => {
+    if (window.sessionStorage.getItem('language')) {
       setIsOpen(false);
     } else {
       setIsOpen(true);
@@ -30,20 +31,17 @@ function CategoryPage({ match }) {
 
   useEffect(() => {
     const categoryKey = match.params.category || 'all';
-    getCountry();
+    getLanguage();
     dispatch(setCategory(categoryKey));
   }, [match.params.category]);
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
 
   return (
     <div className={cx('category')}>
       <Logo />
+      <LanguageModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <NavigationBar />
-      <CountryModal isOpen={isOpen} close={closeModal} />
       <CategoryList />
+      <Carousel />
       <MiddleSearch />
       <GoodsList />
       <ShoppingCart />
