@@ -9,6 +9,7 @@ import Profile from 'components/Mypage/Profile';
 import SignoutButton from 'components/Mypage/LogoutButton';
 import LoginButton from 'components/Mypage/LoginButton';
 import NavigationBar from 'components/Global/NavigationBar';
+import Logo from 'components/Global/Logo';
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +18,7 @@ function Mypage() {
 
   return (
     <Fragment>
+      <Logo />
       <NavigationBar />
       <div className={cx('mypage')}>
         {signIn ? (
