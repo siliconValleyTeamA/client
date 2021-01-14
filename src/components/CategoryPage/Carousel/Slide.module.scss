@@ -1,7 +1,13 @@
-.pic{
+.wrap {
+  width: 97%;
+  border-radius: 20px;
+  z-index: 1;
+  margin: 0 auto;
+
+  .pic {
+    height: 20rem;
     width: 100%;
-    height: 20vh;   
-}
-.carousel{
-    z-index:1;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
 }
