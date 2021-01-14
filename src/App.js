@@ -36,10 +36,7 @@ function App() {
                 <MainLayout>
                   <Switch>
                     <Route path="/" exact component={HomePage} />
-                    <Route
-                      path="/category/:categoryid"
-                      component={CategoryPage}
-                    />
+                    <Route path="/category" component={CategoryPage} />
                     <Route path="/popular" component={PopularPage} />
                     <Route path="/detail/:projectId" component={DetailPage} />
                     <Route path="/mypage" exact component={MyPage} />

@@ -18,7 +18,6 @@ function Container() {
 
   useEffect(() => {
     getScheduleProjectListAPI().then(result => {
-      console.log(result);
       setScheduleProjectList(result.data);
     });
     getSoonSuccessProjectListAPI().then(result => {

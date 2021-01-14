@@ -20,6 +20,7 @@ function CategoryList() {
   const MAX_PAGE =
     parseInt(CATEGORY_LENGTH / CATEGORY_DISPLAY_COUNT) +
     (CATEGORY_LENGTH % CATEGORY_DISPLAY_COUNT ? 0 : -1);
+
   const category = useSelector(state => state.categoryReducer).label;
 
   useEffect(() => {
@@ -37,7 +38,6 @@ function CategoryList() {
     );
   }, [categoryList, page]);
 
-  console.log(page);
   return (
     <div className={cx('category-list')}>
       {page !== 0 && (
@@ -46,9 +46,8 @@ function CategoryList() {
           onClick={() => setPage(page - 1)}
         />
       )}
-
       {subCategoryData.map(categoryData => {
-        return categoryData.category === category ? (
+        return categoryData.label === category ? (
           <Category key={categoryData.id} data={categoryData} active={true} />
         ) : (
           <Category key={categoryData.id} data={categoryData} active={false} />
