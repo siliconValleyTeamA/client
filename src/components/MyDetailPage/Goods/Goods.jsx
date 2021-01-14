@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 function Goods({ data, type }) {
   let width = data.percent > 100 ? 100 : data.percent;
-  const detailLink = "/detail/" + data.id;
+  const detailLink = "/project/" + data.id;
 
   return (
     <button>

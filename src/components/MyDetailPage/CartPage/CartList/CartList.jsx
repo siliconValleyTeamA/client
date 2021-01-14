@@ -19,9 +19,9 @@ function sortByCartTime(a, b) {
 function CartList() {
   return (
     <div className={cx('cart-list')}>
-      {mockCartList.data.sort(sortByCartTime).map(cartData => (
+      {/* {mockCartList.data.sort(sortByCartTime).map(cartData => (
         <CartGoods key={cartData.id} data={cartData} />
-      ))}
+      ))} */}
     </div>
   );
 }

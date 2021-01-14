@@ -9,6 +9,8 @@ import Header from 'components/MyDetailPage/Header';
 import GoodsList from 'components/MyDetailPage/GoodsList';
 import { AiFillHeart } from 'react-icons/ai';
 import ShoppingCart from 'components/Global/ShoppingCart';
+import JjimList from 'components/MyDetailPage/JjimList';
+import goodsAPI from 'api/goodsAPI';
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +20,7 @@ function MyJjimPage() {
       <BackButton />
       <AiFillHeart className={cx('AiFillHeart')} />
       <Header header="나의 찜 리스트" />
-      <GoodsList show="jjim" />
+      <JjimList jjimList={goodsAPI.data} />
       <ShoppingCart />
     </div>
   );

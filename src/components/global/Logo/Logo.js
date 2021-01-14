@@ -1,5 +1,6 @@
 /* External dependencies */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -10,9 +11,11 @@ const cx = classNames.bind(styles);
 
 function Logo() {
   return (
-    <div className={cx('logo')}>
-      <img className={cx('logo-img')} src={Img} alt="logo" />
-    </div>
+    <Link to="/">
+      <div className={cx('logo')}>
+        <img className={cx('logo-img')} src={Img} alt="logo" />
+      </div>
+    </Link>
   );
 }
 

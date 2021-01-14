@@ -62,6 +62,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 6,
@@ -73,6 +74,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 7,
@@ -84,6 +86,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 8,
@@ -95,6 +98,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 9,
@@ -106,6 +110,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 10,
@@ -117,6 +122,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 11,
@@ -128,6 +134,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 12,
@@ -139,6 +146,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
     {
       id: 13,
@@ -150,6 +158,7 @@ const mockGoodsList = {
       amount: 3,
       dueDate: 21,
       jjim: 1000,
+      img: 'https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg',
     },
   ],
 };

@@ -7,7 +7,6 @@ import styles from './Project.module.scss';
 const cx = classNames.bind(styles);
 
 function Project({ data }) {
-  
   return (
     <div
       className={cx('project')}

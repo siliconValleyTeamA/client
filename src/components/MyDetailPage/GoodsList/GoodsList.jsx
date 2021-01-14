@@ -36,12 +36,12 @@ function GoodsList(props) {
           .map(historyData => (
             <Goods key={historyData.id} data={historyData} type={'history'} />
           ))}
-      {props.show === 'jjim' &&
+      {/* {props.show === 'jjim' &&
         mockJjimList.data
           .sort(sortByJjimTime)
           .map(jjimData => (
             <Goods key={jjimData.id} data={jjimData} type={'jim'} />
-          ))}
+          ))} */}
     </div>
   );
 }
