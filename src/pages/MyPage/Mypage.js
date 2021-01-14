@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -9,6 +9,7 @@ import Profile from 'components/Mypage/Profile';
 import SignoutButton from 'components/Mypage/LogoutButton';
 import LoginButton from 'components/Mypage/LoginButton';
 import NavigationBar from 'components/Global/NavigationBar';
+import Logo from 'components/Global/Logo';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +17,8 @@ function Mypage() {
   const [signIn, setSignIn] = useState(false);
 
   return (
-    <div>
+    <Fragment>
+      <Logo />
       <NavigationBar />
       <div className={cx('mypage')}>
         {signIn ? (
@@ -33,7 +35,7 @@ function Mypage() {
           </div>
         )}
       </div>
-    </div>
+    </Fragment>
   );
 }
 

@@ -29,13 +29,13 @@ function Menu() {
           <div className={cx('title')}>펀딩 장바구니</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
-        <Link to="/mypage/history">
-          <li className={cx('support')}>
-            <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
-            <div className={cx('title')}>내가 후원한 펀딩</div>
-            <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
-          </li>
-        </Link>
+      </Link>
+      <Link to="/mypage/history">
+        <li className={cx('support')}>
+          <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
+          <div className={cx('title')}>내가 펀딩한 프로젝트</div>
+          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+        </li>
       </Link>
       <Link to="/mypage/profile">
         <li className={cx('country')}>

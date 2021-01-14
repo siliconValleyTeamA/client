@@ -9,6 +9,12 @@ ol {
   margin-top: 2rem;
   background-color: $black-025 !important;
 
+  a:last-child {
+    li {
+      border-bottom: none;
+    }
+  }
+
   li {
     display: flex;
     flex-direction: row;
@@ -47,10 +53,6 @@ ol {
     .RiArrowRightSLine {
       font-size: 1.5rem;
       margin-left: auto;
-    }
-
-    &:last-child {
-      border-bottom: none;
     }
   }
 }

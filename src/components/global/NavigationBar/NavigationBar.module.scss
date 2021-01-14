@@ -3,28 +3,33 @@
   position: sticky;
   top: 0px;
   padding: 5px;
-  background-color: $white;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  backdrop-filter: blur(20px);
   width: 100%;
   z-index: 1;
 
   .navigation_bar {
     margin: 10px 0px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
     .nav {
       list-style: none;
-      border: 0.0625rem solid #00c4c4;
-      background-color: $white;
-      color: #00c4c4;
-      border-radius: 0.7rem;
-      padding: 0.825rem;
-      font-size: 1rem;
+      color: $gray;
+      border-radius: 9999px;
+      margin-left: 2.5rem;
+      margin-right: 2.5rem;
       text-align: center;
       line-height: 1;
-      font-weight: 400;
-      box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.12);
-      width: 10rem;
+      font-size: 20px;
+      font-weight: 800;
+      padding: 0.5rem;
+
+
+      li {
+        height: 1rem;
+        box-sizing: border-box;
+      }
     }
   }
 }
