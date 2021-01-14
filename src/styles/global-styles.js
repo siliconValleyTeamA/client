@@ -23,7 +23,10 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
       line-height:1;
+      -ms-overflow-style: none;
   }
+  ::-webkit-scrollbar { display: none; }
+
   article,aside,details,figcaption,figure,
   footer,header,hgroup,menu,nav,section { 
       display:block;
