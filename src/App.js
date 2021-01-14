@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 /* Internal dependencies */
+import HomePage from 'pages/HomePage';
 import CategoryPage from 'pages/CategoryPage';
 import DetailPage from 'pages/DetailPage';
 import PopularPage from 'pages/PopularPage';
@@ -34,7 +35,7 @@ function App() {
               <CSSTransition key={location.key} timeout={100} classNames="fade">
                 <MainLayout>
                   <Switch>
-                    <Route path="/" exact component={CategoryPage} />
+                    <Route path="/" exact component={HomePage} />
                     <Route
                       path="/category/:categoryid"
                       component={CategoryPage}
