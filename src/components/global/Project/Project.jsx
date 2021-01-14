@@ -6,20 +6,21 @@ import classNames from 'classnames/bind';
 import styles from './Project.module.scss';
 const cx = classNames.bind(styles);
 
-function Project() {
+function Project({ data }) {
+  
   return (
     <div
       className={cx('project')}
       style={{
-        backgroundImage: `url("https://img-cf.kurly.com/shop/data/goods/1591167269671l0.jpg")`,
+        backgroundImage: `url("${data.img}")`,
       }}
     >
       <div className={cx('project-info')}>
-        <div className={cx('project-info-name')}>
-          [비플레인] 녹두 약산성 클렌징 폼 80ml
-        </div>
+        <div className={cx('project-info-name')}>{data.title}</div>
         <div className={cx('project-info-price')}>
-          <span className={cx('project-info-price-current')}>22,000원</span>
+          <span className={cx('project-info-price-current')}>
+            {data.percent}
+          </span>
         </div>
       </div>
     </div>

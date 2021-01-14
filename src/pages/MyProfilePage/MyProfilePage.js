@@ -1,5 +1,5 @@
 /* External dependencies */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { BiWorld } from 'react-icons/bi';
 
@@ -8,10 +8,20 @@ import styles from './MyProfilePage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
 import ShoppingCart from 'components/Global/ShoppingCart';
+import { getPointAPI } from 'api/userAPI';
 
 const cx = classNames.bind(styles);
 
 function MyProfilePage() {
+  const [point, setPoint] = useState('');
+
+  useEffect(() => {
+    getPointAPI().then(result => {
+      console.log(result);
+      setPoint(result.data.point);
+    });
+  }, []);
+
   return (
     <div className={cx('setcountry')}>
       <BackButton />
@@ -42,7 +52,7 @@ function MyProfilePage() {
           <span className={cx('edit')}>포인트 수정</span>
           <span className={cx('delete')}>초기화</span>
         </div>
-        <div className={cx('content')}>10,000 포인트</div>
+        <div className={cx('content')}>{point.toLocaleString()} 포인트</div>
       </div>
       <ShoppingCart />
     </div>
