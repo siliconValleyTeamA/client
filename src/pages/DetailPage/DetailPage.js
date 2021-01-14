@@ -92,12 +92,8 @@ function DetailPage() {
       <div className={cx('product-more-details-info')}>
         <span>상세한 설명입니다.</span>
       </div>
-<<<<<<< HEAD
-      <Drawer open={open} setOpen={setOpen} />
-      <ShoppingCart />
-=======
       <Drawer open={open} setOpen={setOpen} data={data} />
->>>>>>> 299bb01... [#62] refactor - 데이터 연결
+      <ShoppingCart />
     </div>
   );
 }
