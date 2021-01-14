@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
@@ -12,14 +12,20 @@ import BackButton from 'components/Global/BackButton';
 import Drawer from 'components/DetailPage/Drawer';
 import Hit from 'components/DetailPage/Hit';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import mockGoodsList from 'api/goodsAPI';
+import { getProjectDetailAPI } from 'api/projectAPI';
 
 const cx = classNames.bind(styles);
 
 function DetailPage() {
   const link = useLocation();
   const projectId = link.pathname.split('/')[2];
-  const data = mockGoodsList.data[projectId];
+  const [project, setProject] = useState({});
+
+  useEffect(() => {
+    getProjectDetailAPI({ projectId }).then(result => {
+      setProject(result.data);
+    });
+  }, []);
 
   const [open, setOpen] = useState(false);
   const [jjim, setJjim] = useState(false);
@@ -29,26 +35,26 @@ function DetailPage() {
       <BackButton />
       <img
         className={cx('product-details-image')}
-        src={data.img}
+        src={project.img}
         alt="product"
       />
       <div className={cx('product-details-info')}>
         <div className={cx('product-details-info-category')}>
-          {data.category}
+          {project.category}
           <RiArrowRightSLine />
-          {data.category}
+          {project.category}
         </div>
         <div className={cx('product-details-info-description')}>
-          {data.description}
+          {project.description}
         </div>
-        <div className={cx('product-details-info-name')}>{data.title}</div>
+        <div className={cx('product-details-info-name')}>{project.title}</div>
         <Hit />
         <div className={cx('product-details-info-price-info')}>
           <div className={cx('product-details-info-price-info-price')}>
             <span className={cx('product-details-info-price-unit')}>
               지금까지
             </span>
-            <span>{data.amount.toLocaleString()}</span>
+            <span>{project.amount?.toLocaleString()}</span>
             <span className={cx('product-details-info-price-unit')}>
               원 펀딩
             </span>
@@ -56,17 +62,17 @@ function DetailPage() {
         </div>
         <div className={cx('product-details-funding-info')}>
           <span className={cx('product-funding-duedate')}>
-            {data.dueDate}일 남음
+            {project.dueDate}일 남음
           </span>
           <span className={cx('product-funding-money')}>
-            {data.percent}% 달성
+            {project.percent}% 달성
           </span>
         </div>
 
         <div className={cx('product-details-funding')}>
           <div
             className={cx('product-funding-percent')}
-            style={{ width: `${data.percent}%` }}
+            style={{ width: `${project.percent}%` }}
           />
         </div>
 
@@ -92,7 +98,7 @@ function DetailPage() {
       <div className={cx('product-more-details-info')}>
         <span>상세한 설명입니다.</span>
       </div>
-      <Drawer open={open} setOpen={setOpen} data={data} />
+      <Drawer open={open} setOpen={setOpen} data={project} />
       <ShoppingCart />
     </div>
   );
