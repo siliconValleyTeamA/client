@@ -15,6 +15,7 @@ import MyCartPage from 'pages/MyCartPage';
 import GlobalStyle from 'styles/global-styles';
 import MyProfilePage from 'pages/MyProfilePage';
 import ScrollToTop from 'components/Global/ScrollToTop';
+import Logo from 'components/Global/Logo';
 
 const MainLayout = styled.div`
   width: 60%;
@@ -33,6 +34,7 @@ function App() {
             <TransitionGroup>
               <CSSTransition key={location.key} timeout={100} classNames="fade">
                 <MainLayout>
+                  <Logo />
                   <Switch>
                     <Route path="/" exact component={CategoryPage} />
                     <Route
