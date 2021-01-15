@@ -15,13 +15,6 @@ function Drawer({ open, setOpen, data }) {
 
   const [money, setMoney] = useState('');
 
-  const createCart = () => {
-    setOpen(false);
-    createCartAPI(projectId).then(result => {
-      console.log(result.data);
-    });
-  };
-
   return (
     <div className={cx('drawer')}>
       <div
@@ -36,7 +29,7 @@ function Drawer({ open, setOpen, data }) {
           <div className={cx('product-details-cart')}>
             <img
               className={cx('product-details-cart-image')}
-              src={data.img}
+              src={data.image}
               alt="장바구니용 사진"
             />
             <div className={cx('product-details-cart-buttons')}>

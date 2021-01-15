@@ -1,5 +1,5 @@
 /* External dependencies */
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
@@ -14,10 +14,12 @@ const cx = classNames.bind(styles);
 function CartGoods({ data }) {
   const link = useLocation();
   const projectId = link.pathname.split('/')[2];
-  const point = data.point;
+  const [point, setPoint] = useState('');
+
+  const cartId = 13;
 
   const modifyCart = () => {
-    modifyCartAPI({ projectId, point }).then(result => {
+    modifyCartAPI({ cartId, point }).then(result => {
       console.log(result.data);
     });
   };
@@ -38,13 +40,33 @@ function CartGoods({ data }) {
           <div
             className={cx('cart-item-info-left')}
             style={{
-              backgroundImage: `url(${data.img})`,
+              backgroundImage: `url(${data.image})`,
             }}
           ></div>
         </Link>
         <div className={cx('cart-item-info-right')}>
-          <input className={cx('cart-item-input')} />
-          <div className={cx('price')}>{data.amount}</div>
+          <input
+            type="text"
+            className={cx('cart-item-input')}
+            placeholder="금액입력"
+            value={point}
+            onChange={e => {
+              setPoint(
+                e.target.value
+                  ? parseInt(e.target.value.replace(/,/g, '')).toLocaleString()
+                  : '',
+              );
+            }}
+          />
+          <div className={cx('price')}>{data.money}</div>
+          <div className={cx('modify')}>
+            <div className={cx('modify-icon')}>
+              <MdRemoveShoppingCart className={cx('MdRemoveShoppingCart')} />
+            </div>
+            <span className={cx('modify-description')} onClick={modifyCart}>
+              수정
+            </span>
+          </div>
           <div className={cx('delete')}>
             <div className={cx('delete-icon')}>
               <MdRemoveShoppingCart className={cx('MdRemoveShoppingCart')} />
