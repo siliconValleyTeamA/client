@@ -4,7 +4,6 @@ export const getPointAPI = () => {
   return axios.get(`/api/user/point`);
 };
 
-
 export const getHistoryAPI = () => {
   return axios.get(`/api/user/history`);
 };

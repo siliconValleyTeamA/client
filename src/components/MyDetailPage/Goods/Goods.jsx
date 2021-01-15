@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 function Goods({ data, type }) {
   let width = data.percent > 100 ? 100 : data.percent;
-  const detailLink = "/project/" + data.id;
+  const detailLink = '/project/' + data.id;
 
   return (
     <button>
@@ -26,16 +26,8 @@ function Goods({ data, type }) {
             <div className={cx('goods-title')}>
               <h2> {data.title} </h2>
             </div>
-            <div>
-              <div
-                className={cx('goods-progressbar')}
-                style={{ width: `${width}%` }}
-              />
-            </div>
+
             <div className={cx('goods-progressinfo')}>
-              <div className={cx('goods-progressinfo-percent')}>
-                <p>{data.percent.toLocaleString()}%</p>
-              </div>
               <div>
                 <span>{data.dueDate}일 남음</span>
               </div>
@@ -43,7 +35,7 @@ function Goods({ data, type }) {
             <div className={cx('goods-money')}>
               <span>
                 {type === 'history' ? '펀딩한 금액 ' : '현재 달성 금액 '}
-                {data.amount.toLocaleString()}원
+                {data.money.toLocaleString()}원
               </span>
             </div>
           </div>
