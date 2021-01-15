@@ -3,15 +3,13 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { AiOutlineMinus } from 'react-icons/ai';
-import { createCartAPI } from 'api/cartAPI';
 
 /* Internal dependencies */
 import { createCartAPI } from 'api/cartAPI';
 import styles from './Drawer.module.scss';
 const cx = classNames.bind(styles);
 
-function Drawer({ open, setOpen, data, projectId }) {
-
+function Drawer({ open, setOpen, data }) {
   const link = useLocation();
   const projectId = link.pathname.split('/')[2];
 
