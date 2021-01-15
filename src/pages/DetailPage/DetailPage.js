@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
-
 import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
@@ -13,7 +12,6 @@ import Drawer from 'components/DetailPage/Drawer';
 import Hit from 'components/DetailPage/Hit';
 import ShoppingCart from 'components/Global/ShoppingCart';
 import { getProjectDetailAPI } from 'api/projectAPI';
-import mockGoodsList from 'api/goodsAPI';
 import { createJjimAPI } from 'api/jjimAPI';
 
 const cx = classNames.bind(styles);
@@ -25,13 +23,14 @@ function DetailPage() {
 
   useEffect(() => {
     getProjectDetailAPI({ projectId }).then(result => {
-      setProject(result.data);
+      setProject(result.data[0]);
     });
   }, []);
 
   const [open, setOpen] = useState(false);
   const [jjim, setJjim] = useState(false);
 
+  console.log(project);
   const createJjim = () => {
     setJjim(true);
     createJjimAPI(projectId).then(result => {
@@ -44,14 +43,12 @@ function DetailPage() {
       <BackButton />
       <img
         className={cx('product-details-image')}
-        src={project.img}
+        src={project.image}
         alt="product"
       />
       <div className={cx('product-details-info')}>
         <div className={cx('product-details-info-category')}>
-          {project.category}
-          <RiArrowRightSLine />
-          {project.category}
+          {project.company}
         </div>
         <div className={cx('product-details-info-description')}>
           {project.description}
@@ -63,7 +60,7 @@ function DetailPage() {
             <span className={cx('product-details-info-price-unit')}>
               지금까지
             </span>
-            <span>{project.amount?.toLocaleString()}</span>
+            <span>{project.funding_money}</span>
             <span className={cx('product-details-info-price-unit')}>
               원 펀딩
             </span>
@@ -71,7 +68,7 @@ function DetailPage() {
         </div>
         <div className={cx('product-details-funding-info')}>
           <span className={cx('product-funding-duedate')}>
-            {project.dueDate}일 남음
+            {project.left_days}일 남음
           </span>
           <span className={cx('product-funding-money')}>
             {project.percent}% 달성
@@ -105,9 +102,14 @@ function DetailPage() {
         </div>
       </div>
       <div className={cx('product-more-details-info')}>
-        <span>상세한 설명입니다.</span>
+        <span>{project.description}</span>
       </div>
-      <Drawer open={open} setOpen={setOpen} data={project} projectId={projectId}/>
+      <Drawer
+        open={open}
+        setOpen={setOpen}
+        data={project}
+        projectId={projectId}
+      />
       <ShoppingCart />
     </div>
   );
