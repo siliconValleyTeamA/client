@@ -10,11 +10,12 @@ const cx = classNames.bind(styles);
 
 function Goods({ data }) {
   let width = data.percent > 100 ? 100 : data.percent;
-  const detailLink = "/detail/" + data.id;
+  width = 100;
+  const detailLink = '/detail/' + data.id;
 
   return (
     <div className={cx('goods')}>
-      <Link to= {detailLink} >
+      <Link to={detailLink}>
         <div className={cx('goods-img')}>
           <img
             src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
@@ -35,11 +36,11 @@ function Goods({ data }) {
         </div>
         <div className={cx('goods-progressinfo')}>
           <div className={cx('goods-progressinfo-percent')}>
-            <p>{data.percent}%</p>
-            <span>・ {data.amount.toLocaleString()}원</span>
+            <p>100%</p>
+            <span>・ adsf원</span>
           </div>
           <div>
-            <span>{data.dueDate}일 남음</span>
+            <span>일 남음</span>
           </div>
         </div>
       </Link>

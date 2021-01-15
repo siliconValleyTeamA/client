@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 /* Internal dependencies */
 import styles from './CartList.module.scss';
 import CartGoods from 'components/MyDetailPage/CartPage/CartGoods';
-import mockCartList from 'api/cartAPI';
+// import mockCartList from 'api/cartAPI';
 
 const cx = classNames.bind(styles);
 
@@ -19,9 +19,9 @@ function sortByCartTime(a, b) {
 function CartList() {
   return (
     <div className={cx('cart-list')}>
-      {mockCartList.data.sort(sortByCartTime).map(cartData => (
+      {/* {mockCartList.data.sort(sortByCartTime).map(cartData => (
         <CartGoods key={cartData.id} data={cartData} />
-      ))}
+      ))} */}
     </div>
   );
 }

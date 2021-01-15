@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 function Category({ data, active }) {
   const dispatch = useDispatch();
   return (
-    <div onClick={() => dispatch(setCategory(data.key))}>
+    <div onClick={() => dispatch(setCategory(data))}>
       <div className={cx('category')}>
         <img
           className={cx('pic', { active: active })}
