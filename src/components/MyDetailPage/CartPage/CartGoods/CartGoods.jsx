@@ -25,7 +25,7 @@ function CartGoods({ data }) {
   };
 
   const removeCart = () => {
-    removeCartAPI(projectId).then(result => {
+    removeCartAPI({ cartId }).then(result => {
       console.log(result.data);
     });
   };
