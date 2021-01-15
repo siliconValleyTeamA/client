@@ -15,7 +15,7 @@ function Category({ data, active }) {
       <div className={cx('category')}>
         <img
           className={cx('pic', { active: active })}
-          src={data.img}
+          src={data.image}
           alt="카테고리 사진"
         />
         <span className={cx('text', { active: active })}>{data.label}</span>
