@@ -13,6 +13,8 @@ import Drawer from 'components/DetailPage/Drawer';
 import Hit from 'components/DetailPage/Hit';
 import ShoppingCart from 'components/Global/ShoppingCart';
 import { getProjectDetailAPI } from 'api/projectAPI';
+import mockGoodsList from 'api/goodsAPI';
+import { createJjimAPI } from 'api/jjimAPI';
 
 const cx = classNames.bind(styles);
 
@@ -29,6 +31,13 @@ function DetailPage() {
 
   const [open, setOpen] = useState(false);
   const [jjim, setJjim] = useState(false);
+
+  const createJjim = () => {
+    setJjim(true);
+    createJjimAPI(projectId).then(result => {
+      console.log(result.data);
+    });
+  };
 
   return (
     <div className={cx('detail')}>
@@ -85,7 +94,7 @@ function DetailPage() {
           ) : (
             <AiOutlineHeart
               className={cx('product-details-info-options-jjim')}
-              onClick={() => setJjim(true)}
+              onClick={createJjim}
             />
           )}
 
