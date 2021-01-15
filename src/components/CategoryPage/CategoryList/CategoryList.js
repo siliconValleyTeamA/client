@@ -21,7 +21,7 @@ function CategoryList() {
     parseInt(CATEGORY_LENGTH / CATEGORY_DISPLAY_COUNT) +
     (CATEGORY_LENGTH % CATEGORY_DISPLAY_COUNT ? 0 : -1);
 
-  const category = useSelector(state => state.categoryReducer).label;
+  const category = useSelector(state => state.categoryReducer);
 
   useEffect(() => {
     getCategoryListAPI().then(result => {
@@ -47,7 +47,7 @@ function CategoryList() {
         />
       )}
       {subCategoryData.map(categoryData => {
-        return categoryData.label === category ? (
+        return categoryData.id === category.id ? (
           <Category key={categoryData.id} data={categoryData} active={true} />
         ) : (
           <Category key={categoryData.id} data={categoryData} active={false} />

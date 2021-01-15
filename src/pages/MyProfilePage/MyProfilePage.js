@@ -17,7 +17,7 @@ function MyProfilePage() {
 
   useEffect(() => {
     getPointAPI().then(result => {
-      setPoint(result.data.point);
+      setPoint(result.data);
     });
   }, []);
 

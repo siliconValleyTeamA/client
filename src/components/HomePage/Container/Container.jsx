@@ -33,7 +33,11 @@ function Container() {
           <div className={cx('container')}>
             {scheduleProjectList.map(scheduleProject => {
               return (
-                <Project key={scheduleProject.id} data={scheduleProject} />
+                <Project
+                  key={scheduleProject.id}
+                  data={scheduleProject}
+                  type="open"
+                />
               );
             })}
           </div>
@@ -49,6 +53,7 @@ function Container() {
                 <Project
                   key={soonSuccessProject.id}
                   data={soonSuccessProject}
+                  type="success"
                 />
               );
             })}

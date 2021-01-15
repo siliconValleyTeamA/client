@@ -32,6 +32,9 @@ function GoodsList(props) {
     <div className={cx('goods-list')}>
       {props.show === 'history' &&
         soonHistoryList
+      {/* {props.show === 'history' &&
+        mocHistoryList.data
+          .sort(sortByHistoryTime)
           .map(historyData => (
             <Goods key={historyData.id} data={historyData} type={'history'} />
           ))}
