@@ -19,7 +19,7 @@ function Goods({ data }) {
         </div>
         <h3 className={cx('goods-title')}> {data.title} </h3>
         <div className={cx('goods-catecory-company')}>
-          <span> {data.category} </span>
+          <span> {data.category} </span> 
           <span> | </span>
           <span> {data.company}</span>
         </div>
