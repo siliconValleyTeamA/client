@@ -1,11 +1,11 @@
 /* External dependencies */
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './GoodsList.module.scss';
 import Goods from 'components/MyDetailPage/Goods';
-import mockJjimList from 'api/jjimAPI';
+import { getJjimListAPI } from 'api/jjimAPI';
 import mocHistoryList from 'api/historyAPI';
 
 const cx = classNames.bind(styles);
@@ -28,6 +28,13 @@ function sortByHistoryTime(a, b) {
 
 
 function GoodsList(props) {
+  const [jjimList, setJjimList] = useState([]);
+  useEffect(()=>{
+    getJjimListAPI().then(result =>{
+      setJjimList(result.data);
+    });
+  }, []);
+
   return (
     <div className={cx('goods-list')}>
       {props.show === 'history' &&
@@ -36,12 +43,11 @@ function GoodsList(props) {
           .map(historyData => (
             <Goods key={historyData.id} data={historyData} type={'history'} />
           ))}
-      {/* {props.show === 'jjim' &&
-        mockJjimList.data
-          .sort(sortByJjimTime)
-          .map(jjimData => (
+      {props.show === 'jjim' &&
+        jjimList.map(jjimData => (
             <Goods key={jjimData.id} data={jjimData} type={'jim'} />
-          ))} */}
+          ))
+          }
     </div>
   );
 }
