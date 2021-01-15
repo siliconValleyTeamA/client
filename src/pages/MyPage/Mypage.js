@@ -10,11 +10,18 @@ import SignoutButton from 'components/Mypage/LogoutButton';
 import LoginButton from 'components/Mypage/LoginButton';
 import NavigationBar from 'components/Global/NavigationBar';
 import Logo from 'components/Global/Logo';
+import { logOutAPI } from 'api/userAPI';
 
 const cx = classNames.bind(styles);
 
 function Mypage() {
   const [signIn, setSignIn] = useState(false);
+  const logOut = () => {
+    setSignIn(true);
+    logOutAPI().then(result => {
+      console.log(result.data);
+    });
+  };
 
   return (
     <Fragment>
@@ -25,7 +32,7 @@ function Mypage() {
           <div className={cx('sign-in')}>
             <Profile className={cx('profile')} />
             <Menu className={cx('menu')} />
-            <div onClick={() => setSignIn(false)}>
+            <div onClick={logOut}>
               <SignoutButton />
             </div>
           </div>

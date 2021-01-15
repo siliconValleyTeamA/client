@@ -1,12 +1,11 @@
 /* External dependencies */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './HomePage.module.scss';
 import Logo from 'components/Global/Logo';
 import NavigationBar from 'components/Global/NavigationBar';
-import LanguageModal from 'components/CategoryPage/LanguageModal';
 import Carousel from 'components/CategoryPage/Carousel/Slide';
 import Container from 'components/HomePage/Container';
 import ShoppingCart from 'components/Global/ShoppingCart';
@@ -14,14 +13,9 @@ import ShoppingCart from 'components/Global/ShoppingCart';
 const cx = classNames.bind(styles);
 
 function HomePage() {
-  const [isOpen, setIsOpen] = useState(false);
-
   const getLanguage = () => {
-    if (window.sessionStorage.getItem('language')) {
-      setIsOpen(false);
-    } else {
-      setIsOpen(true);
-    }
+    var userLang = navigator.language.split('-')[1];
+    window.sessionStorage.setItem('language', userLang);
   };
 
   useEffect(() => {
@@ -31,7 +25,6 @@ function HomePage() {
   return (
     <div className={cx('home-page')}>
       <Logo />
-      <LanguageModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <NavigationBar />
       <Carousel />
       <Container />

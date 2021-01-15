@@ -7,6 +7,8 @@ import styles from './GoodsList.module.scss';
 import Goods from 'components/MyDetailPage/Goods';
 import { getJjimList } from 'api/jjimAPI';
 import { getHistoryList } from 'api/historyAPI';
+import { getJjimListAPI } from 'api/jjimAPI';
+import mocHistoryList from 'api/historyAPI';
 
 const cx = classNames.bind(styles);
 
@@ -19,6 +21,10 @@ function GoodsList(props) {
     });
     getHistoryList().then(result => {
       setsoonHistoryList(result.data);
+  const [jjimList, setJjimList] = useState([]);
+  useEffect(()=>{
+    getJjimListAPI().then(result =>{
+      setJjimList(result.data);
     });
   }, []);
 
@@ -34,6 +40,10 @@ function GoodsList(props) {
           .map(jjimData => (
             <Goods key={jjimData.id} data={jjimData} type={'jim'} />
           ))}
+        jjimList.map(jjimData => (
+            <Goods key={jjimData.id} data={jjimData} type={'jim'} />
+          ))
+          }
     </div>
   );
 }
