@@ -14,12 +14,9 @@ function Goods({ data }) {
 
   return (
     <div className={cx('goods')}>
-      <Link to= {detailLink} >
+      <Link to={detailLink}>
         <div className={cx('goods-img')}>
-          <img
-            src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
-            alt="goods-detail"
-          />
+          <img src={data.image} alt="goods-detail" />
         </div>
         <h3 className={cx('goods-title')}> {data.title} </h3>
         <div className={cx('goods-catecory-company')}>
@@ -36,10 +33,10 @@ function Goods({ data }) {
         <div className={cx('goods-progressinfo')}>
           <div className={cx('goods-progressinfo-percent')}>
             <p>{data.percent}%</p>
-            <span>・ {data.amount.toLocaleString()}원</span>
+            <span>・ {data.funding_money.toLocaleString()}원</span>
           </div>
           <div>
-            <span>{data.dueDate}일 남음</span>
+            <span>{data.left_days}일 남음</span>
           </div>
         </div>
       </Link>

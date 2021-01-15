@@ -30,7 +30,7 @@ function sortByHistoryTime(a, b) {
 function GoodsList(props) {
   return (
     <div className={cx('goods-list')}>
-      {props.show === 'history' &&
+      {/* {props.show === 'history' &&
         mocHistoryList.data
           .sort(sortByHistoryTime)
           .map(historyData => (

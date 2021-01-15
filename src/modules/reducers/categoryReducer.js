@@ -1,7 +1,8 @@
 const SET_CATEGORY = 'category/SET_CATEGORY';
-export const setCategory = key => ({ type: SET_CATEGORY, key });
+export const setCategory = category => ({ type: SET_CATEGORY, category });
 
 const initialState = {
+  id: 1,
   key: 'all',
   label: '전체보기',
 };
@@ -28,10 +29,7 @@ const LABELS = {
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CATEGORY:
-      return {
-        key: action.key,
-        label: LABELS[action.key],
-      };
+      return action.category
     default:
       return state;
   }

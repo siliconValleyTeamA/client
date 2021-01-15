@@ -4,10 +4,11 @@ import classNames from 'classnames/bind';
 import { AiOutlineMinus } from 'react-icons/ai';
 
 /* Internal dependencies */
+import { createCartAPI } from 'api/cartAPI';
 import styles from './Drawer.module.scss';
 const cx = classNames.bind(styles);
 
-function Drawer({ open, setOpen, data}) {
+function Drawer({ open, setOpen, data, projectId }) {
   const [money, setMoney] = useState('');
 
   return (
@@ -24,7 +25,7 @@ function Drawer({ open, setOpen, data}) {
           <div className={cx('product-details-cart')}>
             <img
               className={cx('product-details-cart-image')}
-              src= {data.img}
+              src={data.img}
               alt="장바구니용 사진"
             />
             <div className={cx('product-details-cart-buttons')}>
@@ -43,7 +44,13 @@ function Drawer({ open, setOpen, data}) {
                   );
                 }}
               />
-              <div onClick = { ()=>{setOpen(false)}} className={cx('product-details-cart-buttons-confirm')}>
+              <div
+                onClick={() => {
+                  setOpen(false);
+                  createCartAPI({ projectId, money });
+                }}
+                className={cx('product-details-cart-buttons-confirm')}
+              >
                 펀딩하기
               </div>
             </div>
