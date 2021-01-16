@@ -9,7 +9,7 @@ import styles from './Goods.module.scss';
 const cx = classNames.bind(styles);
 
 function Goods({ data }) {
-  const detailLink = '/project/' + data.id;
+  const detailLink = '/project/' + data.project_id;
   return (
     <button>
       <Link to={detailLink}>

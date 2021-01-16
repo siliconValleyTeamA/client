@@ -24,11 +24,11 @@ function CartGoods({ data }) {
 
   return (
     <div className={cx('cart-item')}>
-      <Link to="/detail">
+      <Link to={`/project/${data.project_id}`}>
         <div className={cx('cart-item-name')}>{data.title}</div>
       </Link>
       <div className={cx('cart-item-info')}>
-        <Link to="/detail">
+        <Link to={`/project/${data.project_id}`}>
           <div
             className={cx('cart-item-info-left')}
             style={{
