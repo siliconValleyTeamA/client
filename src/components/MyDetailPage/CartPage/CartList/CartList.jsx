@@ -10,17 +10,17 @@ import { getProjectListInCartAPI } from 'api/cartAPI';
 const cx = classNames.bind(styles);
 
 function CartList() {
-  const [projectList, setProjectList] = useState([]);
+  const [cartList, setCartList] = useState([]);
 
   useEffect(() => {
     getProjectListInCartAPI().then(result => {
-      setProjectList(result.data);
+      setCartList(result.data);
     });
   }, []);
 
   return (
     <div className={cx('cart-list')}>
-      {projectList.map(cartData => (
+      {cartList.map(cartData => (
         <CartGoods key={cartData.id} data={cartData} />
       ))}
     </div>

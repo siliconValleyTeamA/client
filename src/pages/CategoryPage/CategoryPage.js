@@ -18,7 +18,7 @@ function CategoryPage() {
   const filter = useSelector(state => state.filterReducer);
   const [projectList, setProjectList] = useState([]);
   const category = useSelector(state => state.categoryReducer);
-  console.log(category.id, filter);
+
   useEffect(() => {
     getCategoryProjectAPI({
       categoryId: category.id,
