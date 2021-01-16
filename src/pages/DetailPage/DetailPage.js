@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { RiArrowRightSLine, RiShoppingBag3Fill } from 'react-icons/ri';
+import { RiShoppingBag3Fill } from 'react-icons/ri';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
 /* Internal dependencies */
@@ -11,8 +11,8 @@ import BackButton from 'components/Global/BackButton';
 import Drawer from 'components/DetailPage/Drawer';
 import Hit from 'components/DetailPage/Hit';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import { getProjectDetailAPI } from 'api/projectAPI';
-import { createJjimAPI } from 'api/jjimAPI';
+import { getProjectDetailAPI, getProjectUserJjimAPI } from 'api/projectAPI';
+import { createJjimAPI, removeJjimAPI } from 'api/jjimAPI';
 
 const cx = classNames.bind(styles);
 
@@ -20,22 +20,27 @@ function DetailPage() {
   const link = useLocation();
   const projectId = link.pathname.split('/')[2];
   const [project, setProject] = useState({});
+  const [open, setOpen] = useState(false);
+  const [jjim, setJjim] = useState(false);
 
   useEffect(() => {
     getProjectDetailAPI({ projectId }).then(result => {
       setProject(result.data[0]);
     });
+    getProjectUserJjimAPI({ projectId }).then(result => {
+      console.log(result.data);
+      setJjim(result.data.success);
+    });
   }, []);
 
-  const [open, setOpen] = useState(false);
-  const [jjim, setJjim] = useState(false);
-
-  console.log(project);
   const createJjim = () => {
     setJjim(true);
-    createJjimAPI(projectId).then(result => {
-      console.log(result.data);
-    });
+    createJjimAPI({ projectId });
+  };
+
+  const removeJim = () => {
+    setJjim(false);
+    removeJjimAPI({ projectId });
   };
 
   return (
@@ -86,7 +91,7 @@ function DetailPage() {
           {jjim ? (
             <AiFillHeart
               className={cx('product-details-info-options-jjim')}
-              onClick={() => setJjim(false)}
+              onClick={removeJim}
             />
           ) : (
             <AiOutlineHeart

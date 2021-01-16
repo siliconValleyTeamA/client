@@ -19,3 +19,7 @@ export const getPopularProjectAPI = () => {
 export const getCategoryProjectAPI = ({ categoryId, filterType }) => {
   return axios.get(`/api/project/category/${categoryId}/${filterType}`);
 };
+
+export const getProjectUserJjimAPI = ({ projectId }) => {
+  return axios.get(`/api/project/${projectId}/jjim`);
+};
