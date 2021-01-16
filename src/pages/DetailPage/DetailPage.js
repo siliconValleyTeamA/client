@@ -28,7 +28,7 @@ function DetailPage() {
       setProject(result.data[0]);
     });
     getProjectUserJjimAPI({ projectId }).then(result => {
-      setJjim(result.data.success);
+      setJjim(result.data.jjim_id);
     });
   }, []);
 
@@ -39,10 +39,8 @@ function DetailPage() {
 
   const removeJim = () => {
     setJjim(false);
-    removeJjimAPI({ projectId });
+    removeJjimAPI({ jjimId: jjim });
   };
-
-  
 
   return (
     <div className={cx('detail')}>

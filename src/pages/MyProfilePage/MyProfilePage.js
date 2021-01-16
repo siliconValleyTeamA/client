@@ -57,7 +57,7 @@ function MyProfilePage() {
             포인트 충전
           </span>
         </div>
-        <div className={cx('content')}>{point.toLocaleString()} 포인트</div>
+        <div className={cx('content')}>{point.toLocaleString()} 원</div>
       </div>
       <ShoppingCart />
     </div>

@@ -16,6 +16,25 @@
   min-width: 100px;
   max-width: 150px;
 
+  .heart-wrapper {
+    position: relative;
+    top: 0.3rem;
+    left: 0.3rem;
+    background-color: $white;
+    border-radius: 10px;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .AiFillHeart,
+  .AiOutlineHeart {
+    position: relative;
+    left: 0.1rem;
+    top: 0.1rem;
+    font-size: 1.2rem;
+    color: $pink;
+  }
+
   &-info {
     position: absolute;
     bottom: 0;

@@ -8,6 +8,6 @@ export const createJjimAPI = ({ projectId }) => {
   return axios.post(`/api/user/jjim`, { projectId });
 };
 
-export const removeJjimAPI = ({ projectId }) => {
-  return axios.delete(`/api/user/jjim`, { data: { projectId } });
+export const removeJjimAPI = ({ jjimId }) => {
+  return axios.delete(`/api/user/jjim`, { data: { jjimId } });
 };
