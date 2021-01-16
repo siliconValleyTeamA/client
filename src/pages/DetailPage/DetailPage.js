@@ -28,7 +28,6 @@ function DetailPage() {
       setProject(result.data[0]);
     });
     getProjectUserJjimAPI({ projectId }).then(result => {
-      console.log(result.data);
       setJjim(result.data.success);
     });
   }, []);

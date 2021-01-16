@@ -18,7 +18,6 @@ function PopularPage() {
 
   useEffect(() => {
     getPopularProjectAPI().then(result => {
-      console.log(result);
       setPopularProjectList(result.data);
     });
   }, []);

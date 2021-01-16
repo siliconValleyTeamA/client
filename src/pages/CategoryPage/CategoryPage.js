@@ -24,12 +24,9 @@ function CategoryPage() {
       categoryId: category.id,
       filterType: filter,
     }).then(result => {
-      console.log(result);
       setProjectList(result.data);
     });
   }, [filter, category]);
-
-  console.log(projectList);
 
   return (
     <div className={cx('category')}>
