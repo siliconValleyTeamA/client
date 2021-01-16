@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -16,11 +16,10 @@ const cx = classNames.bind(styles);
 
 function Mypage() {
   const [signIn, setSignIn] = useState(false);
+
   const logOut = () => {
     setSignIn(true);
-    logOutAPI().then(result => {
-      console.log(result.data);
-    });
+    logOutAPI();
   };
 
   return (

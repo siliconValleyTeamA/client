@@ -1,13 +1,22 @@
 /* External dependencies */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './Profile.module.scss';
+import { getPointAPI } from 'api/userAPI';
 
 const cx = classNames.bind(styles);
 
 function Profile() {
+  const [point, setPoint] = useState('');
+
+  useEffect(() => {
+    getPointAPI().then(result => {
+      setPoint(result.data);
+    });
+  }, []);
+
   return (
     <div className={cx('profile')}>
       <div className={cx('photo')}>
@@ -18,7 +27,9 @@ function Profile() {
       </div>
       <div className={cx('opening-ment')}>좋은 하루 되세요,</div>
       <div className={cx('user-name')}>Noh Gi Jin님</div>
-      <div className={cx('user-point')}>잔여 포인트: 10000P</div>
+      <div className={cx('user-point')}>
+        잔여 포인트: {point.toLocaleString()} P
+      </div>
     </div>
   );
 }

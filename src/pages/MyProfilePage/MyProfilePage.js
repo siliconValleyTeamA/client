@@ -14,12 +14,10 @@ const cx = classNames.bind(styles);
 
 function MyProfilePage() {
   const [point, setPoint] = useState('');
-  const revisePoint = 99;
+  const revisePoint = 8989;
 
   const chargePoint = () => {
-    chargePointAPI(revisePoint).then(result => {
-      console.log(result);
-    });
+    chargePointAPI(revisePoint);
   };
 
   useEffect(() => {
@@ -56,9 +54,8 @@ function MyProfilePage() {
       <div className={cx('point')}>
         <div className={cx('row')}>
           <span className={cx('edit')} onClick={chargePoint}>
-            포인트 수정
+            포인트 충전
           </span>
-          <span className={cx('delete')}>초기화</span>
         </div>
         <div className={cx('content')}>{point.toLocaleString()} 포인트</div>
       </div>

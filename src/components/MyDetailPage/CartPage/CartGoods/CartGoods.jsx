@@ -1,7 +1,6 @@
 /* External dependencies */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { MdRemoveShoppingCart } from 'react-icons/md';
 
@@ -12,22 +11,15 @@ import { modifyCartAPI, removeCartAPI } from 'api/cartAPI';
 const cx = classNames.bind(styles);
 
 function CartGoods({ data }) {
-  const link = useLocation();
-  const projectId = link.pathname.split('/')[2];
   const [point, setPoint] = useState('');
-
-  const cartId = 13;
+  const cartId = data.cart_id;
 
   const modifyCart = () => {
-    modifyCartAPI({ cartId, point }).then(result => {
-      console.log(result.data);
-    });
+    modifyCartAPI({ cartId, point });
   };
 
   const removeCart = () => {
-    removeCartAPI({ cartId }).then(result => {
-      console.log(result.data);
-    });
+    removeCartAPI({ cartId });
   };
 
   return (

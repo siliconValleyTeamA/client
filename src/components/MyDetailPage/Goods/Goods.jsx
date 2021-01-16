@@ -8,10 +8,8 @@ import styles from './Goods.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Goods({ data, type }) {
-  let width = data.percent > 100 ? 100 : data.percent;
+function Goods({ data }) {
   const detailLink = '/project/' + data.id;
-
   return (
     <button>
       <Link to={detailLink}>
@@ -27,14 +25,9 @@ function Goods({ data, type }) {
               <h2> {data.title} </h2>
             </div>
 
-            <div className={cx('goods-progressinfo')}>
-              <div>
-                <span>{data.dueDate}일 남음</span>
-              </div>
-            </div>
             <div className={cx('goods-money')}>
               <span>
-                {type === 'history' ? '펀딩한 금액 ' : '현재 달성 금액 '}
+                펀딩한 금액
                 {data.money.toLocaleString()}원
               </span>
             </div>
