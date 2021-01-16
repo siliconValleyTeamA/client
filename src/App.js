@@ -2,7 +2,6 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 /* Internal dependencies */
 import HomePage from 'pages/HomePage';
@@ -28,29 +27,19 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <GlobalStyle />
-      <Route
-        render={({ location }) => {
-          return (
-            <TransitionGroup>
-              <CSSTransition key={location.key} timeout={100} classNames="fade">
-                <MainLayout>
-                  <Switch>
-                    <Route path="/" exact component={HomePage} />
-                    <Route path="/category" component={CategoryPage} />
-                    <Route path="/popular" component={PopularPage} />
-                    <Route path="/project/:projectId" component={DetailPage} />
-                    <Route path="/mypage" exact component={MyPage} />
-                    <Route path="/mypage/history" component={MyHistoryPage} />
-                    <Route path="/mypage/jjim" component={MyJjimPage} />
-                    <Route path="/mypage/cart" component={MyCartPage} />
-                    <Route path="/mypage/profile" component={MyProfilePage} />
-                  </Switch>
-                </MainLayout>
-              </CSSTransition>
-            </TransitionGroup>
-          );
-        }}
-      ></Route>
+      <MainLayout>
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/category" component={CategoryPage} />
+          <Route path="/popular" component={PopularPage} />
+          <Route path="/project/:projectId" component={DetailPage} />
+          <Route path="/mypage" exact component={MyPage} />
+          <Route path="/mypage/history" component={MyHistoryPage} />
+          <Route path="/mypage/jjim" component={MyJjimPage} />
+          <Route path="/mypage/cart" component={MyCartPage} />
+          <Route path="/mypage/profile" component={MyProfilePage} />
+        </Switch>
+      </MainLayout>
     </BrowserRouter>
   );
 }
