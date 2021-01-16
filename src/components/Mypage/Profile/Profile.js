@@ -25,10 +25,9 @@ function Profile() {
           alt="profile"
         />
       </div>
-      <div className={cx('opening-ment')}>좋은 하루 되세요,</div>
       <div className={cx('user-name')}>Noh Gi Jin님</div>
       <div className={cx('user-point')}>
-        잔여 포인트: {point.toLocaleString()} P
+        잔여 포인트: {point.toLocaleString()} 원
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ function JjimList({ jjimList }) {
   return (
     <div className={cx('jjim-list')}>
       {jjimList.map(jjim => (
-        <Project key={jjim.id} data={jjim} jjim={true} />
+        <Project key={jjim.id} data={jjim} jjimType={true} />
       ))}
     </div>
   );

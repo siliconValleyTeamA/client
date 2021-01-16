@@ -45,20 +45,42 @@
       .price {
         font-size: 20px;
         font-weight: 700;
+        margin-right: 4px;
       }
 
-      .delete {
+      .wrap {
         display: flex;
-        span {
-          color: #f54243;
-          font-weight: 600;
-          font-size: 15px;
-          margin-top: 2px;
+        justify-content: space-around;
+        margin-right: 4px;
+        .modify {
+          display: flex;
+          span {
+            color: $gray;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 2px;
+          }
+
+          .FaCoins {
+            color: $gray;
+            margin-right: 3px;
+            font-size: 15px;
+          }
         }
 
-        .MdRemoveShoppingCart {
-          color: #f54243;
-          margin-right: 2px;
+        .delete {
+          display: flex;
+          span {
+            color: #f54243;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 2px;
+          }
+
+          .MdRemoveShoppingCart {
+            color: #f54243;
+            margin-right: 3px;
+          }
         }
       }
     }
