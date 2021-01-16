@@ -33,6 +33,20 @@
     top: 0.1rem;
     font-size: 1.2rem;
     color: $pink;
+    animation: heart;
+    animation-duration: 0.3s;
+  }
+
+  @keyframes heart {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   &-info {

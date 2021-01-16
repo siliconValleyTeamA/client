@@ -73,7 +73,7 @@ function Project({ data, type, jjimType }) {
           <div className={cx('project-info-name')}>{data.title}</div>
           <div className={cx('project-info-price')}>
             <span className={cx('project-info-price-current')}>
-              {data.percent + '% 달성'}
+              {data.left_days + '일 남음'}
             </span>
           </div>
         </div>
