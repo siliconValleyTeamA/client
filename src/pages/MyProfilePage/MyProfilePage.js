@@ -8,12 +8,19 @@ import styles from './MyProfilePage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import { getPointAPI } from 'api/userAPI';
+import { getPointAPI, chargePointAPI } from 'api/userAPI';
 
 const cx = classNames.bind(styles);
 
 function MyProfilePage() {
   const [point, setPoint] = useState('');
+  const revisePoint = 99;
+
+  const chargePoint = () => {
+    chargePointAPI(revisePoint).then(result => {
+      console.log(result);
+    });
+  };
 
   useEffect(() => {
     getPointAPI().then(result => {
@@ -48,7 +55,9 @@ function MyProfilePage() {
 
       <div className={cx('point')}>
         <div className={cx('row')}>
-          <span className={cx('edit')}>포인트 수정</span>
+          <span className={cx('edit')} onClick={chargePoint}>
+            포인트 수정
+          </span>
           <span className={cx('delete')}>초기화</span>
         </div>
         <div className={cx('content')}>{point.toLocaleString()} 포인트</div>

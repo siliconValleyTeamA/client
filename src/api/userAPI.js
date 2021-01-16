@@ -4,6 +4,10 @@ export const getPointAPI = () => {
   return axios.get(`/api/user/point`);
 };
 
+export const chargePointAPI = point => {
+  return axios.put(`/api/user/point`, { data: { point } });
+};
+
 export const getHistoryAPI = () => {
   return axios.get(`/api/user/history`);
 };
