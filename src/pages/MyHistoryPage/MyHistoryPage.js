@@ -17,7 +17,7 @@ function MyHistoryPage() {
     <div className={cx('myhistory-page')}>
       <BackButton />
       <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
-      <Header header="내가 펀딩한 프로젝트" />
+      <Header header="펀딩 기록" />
       <GoodsList show="history" />
       <ShoppingCart />
     </div>

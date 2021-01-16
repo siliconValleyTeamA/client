@@ -30,17 +30,19 @@
       margin-left: 1rem;
       justify-content: space-between;
       align-items: flex-end;
+      width: 140px;
 
       .cart-item-input {
         justify-content: space-between;
-        width: 140px;
-        height: 45px;
-        border-radius: 999px;
+        width: 120px;
+        height: 40px;
+        border-radius: 10px;
         background: $light-gray;
         border: 0;
-        font-size: 1.5rem;
-        padding-left: 1rem;
+        font-size: 1rem;
+        padding-right: 1rem;
         margin-top: 1rem;
+        text-align: right;
       }
       .price {
         font-size: 20px;
@@ -52,8 +54,10 @@
         display: flex;
         justify-content: space-around;
         margin-right: 4px;
+
         .modify {
           display: flex;
+          margin-right: 8px;
           span {
             color: $gray;
             font-weight: 600;

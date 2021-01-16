@@ -47,14 +47,14 @@
 
     .container {
       .product-details-cart {
-        padding: 0 30px 27px;
+        padding: 0 35px 27px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-
+        
         .product-details-cart-image {
-          width: 130px;
+          width: 150px;
           height: 190px;
           border-radius: 10px;
         }
@@ -64,23 +64,24 @@
             height: 45px;
             width: 200px;
             display: flex;
-            padding-left: 1rem;
-            border-radius: 9999px;
+            padding-right: 1rem;
+            border-radius: 10px;
             border: 0.5px solid $gray;
             background-color: transparent;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: $black-400;
+            text-align: right;
           }
         }
 
         .product-details-cart-buttons-confirm {
           cursor: pointer;
           background-color: $wadiz;
-          border-radius: 9999px;
+          border-radius: 10px;
           color: #fff;
-          font-size: 17px;
-          font-weight: 600;
+          font-size: 20px;
+          font-weight: 700;
           height: 45px;
           display: flex;
           align-items: center;

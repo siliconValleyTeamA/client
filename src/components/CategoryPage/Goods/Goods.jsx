@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 function Goods({ data }) {
   let width = data.percent > 100 ? 100 : data.percent;
-  const detailLink = "/project/" + data.id;
+  const detailLink = '/project/' + data.id;
 
   return (
     <div className={cx('goods')}>
@@ -20,8 +20,6 @@ function Goods({ data }) {
         </div>
         <h3 className={cx('goods-title')}> {data.title} </h3>
         <div className={cx('goods-catecory-company')}>
-          <span> {data.category} </span>
-          <span> | </span>
           <span> {data.company}</span>
         </div>
         <div>
