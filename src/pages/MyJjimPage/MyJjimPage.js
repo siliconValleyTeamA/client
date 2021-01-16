@@ -26,7 +26,7 @@ function MyJjimPage() {
     <div className={cx('myjjim-page')}>
       <BackButton />
       <AiFillHeart className={cx('AiFillHeart')} />
-      <Header header="나의 찜 리스트" />
+      <Header header="찜 목록" />
       <JjimList jjimList={jjimList} />
       <ShoppingCart />
     </div>
