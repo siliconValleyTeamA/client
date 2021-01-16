@@ -42,6 +42,8 @@ function DetailPage() {
     removeJjimAPI({ projectId });
   };
 
+  
+
   return (
     <div className={cx('detail')}>
       <BackButton />
