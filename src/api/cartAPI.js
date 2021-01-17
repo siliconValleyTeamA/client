@@ -4,8 +4,8 @@ export const getProjectListInCartAPI = () => {
   return axios.get(`/api/user/carts`);
 };
 
-export const createCartAPI = ({ projectId, money }) => {
-  return axios.post(`/api/user/carts`, { projectId, money });
+export const createCartAPI = ({ projectId, point }) => {
+  return axios.post(`/api/user/carts`, { projectId, point });
 };
 
 export const modifyCartAPI = ({ cartId, point }) => {
