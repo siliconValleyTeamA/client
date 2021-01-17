@@ -13,7 +13,7 @@ function Drawer({ open, setOpen, data }) {
   const link = useLocation();
   const projectId = link.pathname.split('/')[2];
 
-  const [money, setMoney] = useState('');
+  const [point, setPoint] = useState('');
 
   return (
     <div className={cx('drawer')}>
@@ -37,9 +37,9 @@ function Drawer({ open, setOpen, data }) {
                 type="text"
                 className={cx('funding-input')}
                 placeholder="금액입력"
-                value={money}
+                value={point}
                 onChange={e => {
-                  setMoney(
+                  setPoint(
                     e.target.value
                       ? parseInt(
                           e.target.value.replace(/,/g, ''),
@@ -51,7 +51,7 @@ function Drawer({ open, setOpen, data }) {
               <div
                 onClick={() => {
                   setOpen(false);
-                  createCartAPI({ projectId, money });
+                  createCartAPI({ projectId, point });
                 }}
                 className={cx('product-details-cart-buttons-confirm')}
               >
