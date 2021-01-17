@@ -27,8 +27,6 @@ function MyProfilePage() {
     setDialog(false);
   };
 
-  console.log(dialog);
-
   return (
     <div className={cx('setcountry')}>
       <BackButton />
@@ -63,11 +61,10 @@ function MyProfilePage() {
             }}
           >
             포인트 충전
-            {dialog && <PointDialog closeDialog={closeDialog} />}
           </span>
+          {dialog && <PointDialog closeDialog={closeDialog} />}
         </div>
         <div className={cx('content')}>{point.toLocaleString()} 원</div>
-        {dialog.toString()}
       </div>
       <ShoppingCart />
     </div>
