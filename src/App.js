@@ -17,7 +17,7 @@ import MyProfilePage from 'pages/MyProfilePage';
 import ScrollToTop from 'components/Global/ScrollToTop';
 
 const MainLayout = styled.div`
-  width: 60%;
+  max-width: 850px;
   margin: 0 auto;
   position: relative;
 `;
