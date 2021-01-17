@@ -67,7 +67,6 @@ function MyProfilePage() {
           </span>
         </div>
         <div className={cx('content')}>{point.toLocaleString()} 원</div>
-        <div onClick={() => closeDialog()}>hi</div>
         {dialog.toString()}
       </div>
       <ShoppingCart />

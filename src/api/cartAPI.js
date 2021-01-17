@@ -9,7 +9,7 @@ export const createCartAPI = ({ projectId, money }) => {
 };
 
 export const modifyCartAPI = ({ cartId, point }) => {
-  return axios.put('api/user/carts', { data: { cartId, point } });
+  return axios.put('api/user/carts', { cartId, point });
 };
 
 export const removeCartAPI = ({ cartId }) => {

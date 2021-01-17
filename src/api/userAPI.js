@@ -13,5 +13,5 @@ export const getPointAPI = () => {
 };
 
 export const chargePointAPI = point => {
-  return axios.put(`/api/user/point`, { data: { point } });
+  return axios.put(`/api/user/point`, { point });
 };
