@@ -17,7 +17,7 @@
     font-size: 18px;
     font-weight: 700;
     color: $black;
-    
+
     .container {
       background: $white;
       border-radius: 20px;
@@ -42,6 +42,7 @@
       }
 
       .button {
+        width: 100%;
         margin-top: 1em;
         text-align: center;
         background: #9a47ed;
