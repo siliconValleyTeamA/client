@@ -1,6 +1,18 @@
-.header {
-  flex: none;
-  padding: 20px 15px;
-  font-size: 24px;
-  font-weight: 700;
+.wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .header {
+    flex: none;
+    padding: 20px 15px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .RiArrowDownSLine {
+    position: relative;
+    right:10px;
+    top:15px;
+    font-size: 30px;
+  }
 }

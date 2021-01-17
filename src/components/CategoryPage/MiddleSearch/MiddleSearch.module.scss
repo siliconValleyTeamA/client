@@ -1,9 +1,7 @@
 .middle-navigation {
   display: flex;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
 
-  .header,
   .search {
     flex: none;
     padding: 20px 15px;
