@@ -20,7 +20,7 @@ function PointDialog({ closeDialog }) {
   }
 
   return (
-    <div className={cx('point-dialog')}>
+    <div className={cx('point-dialog')} onClick={() => closeDialog()}>
       <div className={cx('body')}>
         <div className={cx('container')}>
           <div className={cx('title')}>포인트 충전</div>
