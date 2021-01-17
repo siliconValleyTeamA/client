@@ -8,23 +8,26 @@ import styles from './MyProfilePage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import { getPointAPI, chargePointAPI } from 'api/userAPI';
+import { getPointAPI } from 'api/userAPI';
+import PointDialog from 'components/MyDetailPage/PointDialog';
 
 const cx = classNames.bind(styles);
 
 function MyProfilePage() {
   const [point, setPoint] = useState('');
-  const revisePoint = 8989;
-
-  const chargePoint = () => {
-    chargePointAPI(revisePoint);
-  };
+  const [dialog, setDialog] = useState(true);
 
   useEffect(() => {
     getPointAPI().then(result => {
       setPoint(result.data);
     });
   }, []);
+
+  const closeDialog = () => {
+    setDialog(false);
+  };
+
+  console.log(dialog);
 
   return (
     <div className={cx('setcountry')}>
@@ -53,11 +56,19 @@ function MyProfilePage() {
 
       <div className={cx('point')}>
         <div className={cx('row')}>
-          <span className={cx('edit')} onClick={chargePoint}>
+          <span
+            className={cx('edit')}
+            onClick={() => {
+              setDialog(true);
+            }}
+          >
             포인트 충전
+            {dialog && <PointDialog closeDialog={closeDialog} />}
           </span>
         </div>
         <div className={cx('content')}>{point.toLocaleString()} 원</div>
+        <div onClick={() => closeDialog()}>hi</div>
+        {dialog.toString()}
       </div>
       <ShoppingCart />
     </div>
