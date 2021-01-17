@@ -16,15 +16,13 @@
     pointer-events: all;
   }
 
-
-
   .body {
     position: fixed;
     left: 50%;
     z-index: 2;
     bottom: 0;
     width: 100%;
-    max-width: 60%;
+    max-width: 850px;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 50px rgba(0, 0, 0, 0.3);
     background-color: $light-gray;
