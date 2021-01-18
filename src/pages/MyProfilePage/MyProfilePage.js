@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 function MyProfilePage() {
   const [point, setPoint] = useState('');
-  const [dialog, setDialog] = useState(true);
+  const [dialog, setDialog] = useState(false);
 
   useEffect(() => {
     getPointAPI().then(result => {
@@ -26,6 +26,8 @@ function MyProfilePage() {
   const closeDialog = () => {
     setDialog(false);
   };
+
+  console.log(dialog);
 
   return (
     <div className={cx('setcountry')}>

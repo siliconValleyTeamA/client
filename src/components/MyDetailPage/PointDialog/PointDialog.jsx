@@ -20,7 +20,7 @@ function PointDialog({ closeDialog }) {
   }
 
   return (
-    <div className={cx('point-dialog')} onClick={() => closeDialog()}>
+    <div className={cx('point-dialog')}>
       <div className={cx('body')}>
         <div className={cx('container')}>
           <div className={cx('title')}>포인트 충전</div>
@@ -30,9 +30,14 @@ function PointDialog({ closeDialog }) {
             onChange={onChange}
             type="text"
           />
-          <button className={cx('button')} onClick={() => chargePoint()}>
-            수정
-          </button>
+          <div className={cx('btn-wrapper')}>
+            <button className={cx('confirm')} onClick={() => chargePoint()}>
+              수정
+            </button>
+            <button className={cx('cancel')} onClick={() => closeDialog()}>
+              취소
+            </button>
+          </div>
         </div>
       </div>
     </div>
