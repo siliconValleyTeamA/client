@@ -18,10 +18,14 @@ function MyProfilePage() {
   const [dialog, setDialog] = useState(false);
 
   useEffect(() => {
+    update();
+  }, []);
+
+  const update = () => {
     getPointAPI().then(result => {
       setPoint(result.data);
     });
-  }, []);
+  };
 
   const closeDialog = () => {
     setDialog(false);
@@ -64,7 +68,7 @@ function MyProfilePage() {
           >
             포인트 충전
           </span>
-          {dialog && <PointDialog closeDialog={closeDialog} />}
+          {dialog && <PointDialog closeDialog={closeDialog} update={update} />}
         </div>
         <div className={cx('content')}>{point.toLocaleString()} 원</div>
       </div>

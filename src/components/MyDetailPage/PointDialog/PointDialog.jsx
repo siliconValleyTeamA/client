@@ -7,7 +7,7 @@ import { chargePointAPI } from 'api/userAPI';
 import styles from './PointDialog.module.scss';
 const cx = classNames.bind(styles);
 
-function PointDialog({ closeDialog }) {
+function PointDialog({ closeDialog, update }) {
   const [point, setPoint] = useState();
 
   const onChange = e => {
@@ -15,7 +15,10 @@ function PointDialog({ closeDialog }) {
   };
 
   function chargePoint() {
-    chargePointAPI(point);
+    chargePointAPI(point).then(result => {
+      update();
+    });
+
     closeDialog();
   }
 
