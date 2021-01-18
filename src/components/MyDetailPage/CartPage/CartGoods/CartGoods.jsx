@@ -11,16 +11,20 @@ import { modifyCartAPI, removeCartAPI } from 'api/cartAPI';
 
 const cx = classNames.bind(styles);
 
-function CartGoods({ data }) {
+function CartGoods({ data, update }) {
   const [point, setPoint] = useState('');
   const cartId = data.cart_id;
 
   const modifyCart = () => {
-    modifyCartAPI({ cartId, point });
+    modifyCartAPI({ cartId, point }).then(result => {
+      update();
+    });
   };
 
   const removeCart = () => {
-    removeCartAPI({ cartId });
+    removeCartAPI({ cartId }).then(result => {
+      update();
+    });
   };
 
   return (
@@ -53,21 +57,17 @@ function CartGoods({ data }) {
           />
           <div className={cx('price')}>{data.money.toLocaleString()}원</div>
           <div className={cx('wrap')}>
-            <div className={cx('modify')}>
+            <div className={cx('modify')} onClick={modifyCart}>
               <div className={cx('modify-icon')}>
                 <FaCoins className={cx('FaCoins')} />
               </div>
-              <span className={cx('modify-description')} onClick={modifyCart}>
-                수정
-              </span>
+              <span className={cx('modify-description')}>수정</span>
             </div>
-            <div className={cx('delete')}>
+            <div className={cx('delete')} onClick={removeCart}>
               <div className={cx('delete-icon')}>
                 <MdRemoveShoppingCart className={cx('MdRemoveShoppingCart')} />
               </div>
-              <span className={cx('delete-description')} onClick={removeCart}>
-                삭제
-              </span>
+              <span className={cx('delete-description')}>삭제</span>
             </div>
           </div>
         </div>
