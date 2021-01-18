@@ -9,6 +9,7 @@ import NavigationBar from 'components/Global/NavigationBar';
 import Carousel from 'components/CategoryPage/Carousel/Slide';
 import Container from 'components/HomePage/Container';
 import ShoppingCart from 'components/Global/ShoppingCart';
+import { getUser } from 'api/userAPI';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +21,7 @@ function HomePage() {
 
   useEffect(() => {
     getLanguage();
+    getUser();
   }, []);
 
   return (
