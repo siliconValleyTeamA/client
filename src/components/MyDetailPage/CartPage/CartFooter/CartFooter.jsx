@@ -7,10 +7,12 @@ import styles from './CartFooter.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CartFooter() {
+function CartFooter({ totalPrice }) {
   return (
     <div className={cx('cart-footer')}>
-      <div className={cx('cart-footer-total-price')}>101023원</div>
+      <div className={cx('cart-footer-total-price')}>
+        {totalPrice.toLocaleString()}원
+      </div>
       <button className={cx('cart-footer-confirm-button')}>결제하기</button>
     </div>
   );
