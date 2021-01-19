@@ -1,11 +1,11 @@
 import axios from './axios';
 
 export const getUserAPI = () => {
-  return axios.get('api/user');
+  return axios.get('/api/user');
 };
 
 export const logOutAPI = () => {
-  return axios.post('api/user/logout');
+  return axios.get('/auth/logout');
 };
 
 export const getPointAPI = () => {
