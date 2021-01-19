@@ -4,12 +4,12 @@ import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './Profile.module.scss';
-import usePoint from 'hooks/usePoint';
+import useUser from 'hooks/useUser';
 
 const cx = classNames.bind(styles);
 
 function Profile() {
-  const point = usePoint();
+  const user = useUser();
 
   return (
     <div className={cx('profile')}>
@@ -19,9 +19,9 @@ function Profile() {
           alt="profile"
         />
       </div>
-      <div className={cx('user-name')}>Noh Gi Jin님</div>
+      <div className={cx('user-name')}>{user?.name}님</div>
       <div className={cx('user-point')}>
-        잔여 포인트: {point.toLocaleString()} 원
+        잔여 포인트: {user?.point.toLocaleString()} 원
       </div>
     </div>
   );

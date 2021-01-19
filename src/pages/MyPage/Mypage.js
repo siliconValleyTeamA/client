@@ -11,14 +11,15 @@ import LoginButton from 'components/Mypage/LoginButton';
 import NavigationBar from 'components/Global/NavigationBar';
 import Logo from 'components/Global/Logo';
 import { logOutAPI } from 'api/userAPI';
+import useUser from 'hooks/useUser';
 
 const cx = classNames.bind(styles);
 
 function Mypage() {
-  const [signIn, setSignIn] = useState(false);
+  const user = useUser();
+  console.log(user);
 
   const logOut = () => {
-    setSignIn(true);
     logOutAPI();
   };
 
@@ -27,16 +28,16 @@ function Mypage() {
       <Logo />
       <NavigationBar />
       <div className={cx('mypage')}>
-        {signIn ? (
+        {user?.id ? (
           <div className={cx('sign-in')}>
             <Profile className={cx('profile')} />
             <Menu className={cx('menu')} />
             <div onClick={logOut}>
-              <SignoutButton />
+              <SignoutButton onClick={() => logOut()} />
             </div>
           </div>
         ) : (
-          <div className={cx('sign-out')} onClick={() => setSignIn(true)}>
+          <div className={cx('sign-out')}>
             <LoginButton />
           </div>
         )}

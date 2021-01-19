@@ -1,6 +1,6 @@
 import axios from './axios';
 
-export const getUser = () => {
+export const getUserAPI = () => {
   return axios.get('api/user');
 };
 
