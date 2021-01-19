@@ -9,12 +9,12 @@ import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
 import ShoppingCart from 'components/Global/ShoppingCart';
 import PointDialog from 'components/MyDetailPage/PointDialog';
-import useProfile from 'hooks/useProfile';
+import usePoint from 'hooks/usePoint';
 
 const cx = classNames.bind(styles);
 
 function MyProfilePage() {
-  const { point, dialog, update, closeDialog, setDialog } = useProfile();
+  const { point, dialog, update, closeDialog, setDialog } = usePoint();
 
   return (
     <div className={cx('setcountry')}>

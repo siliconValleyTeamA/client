@@ -6,14 +6,23 @@ import { getPointAPI } from 'api/userAPI';
 
 function usePoint() {
   const [point, setPoint] = useState('');
+  const [dialog, setDialog] = useState(false);
 
   useEffect(() => {
+    update();
+  }, []);
+
+  const update = () => {
     getPointAPI().then(result => {
       setPoint(result.data);
     });
-  }, []);
+  };
 
-  return point;
+  const closeDialog = () => {
+    setDialog(false);
+  };
+
+  return { point, dialog, update, closeDialog, setDialog };
 }
 
 export default usePoint;

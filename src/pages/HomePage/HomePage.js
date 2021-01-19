@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -9,16 +9,10 @@ import NavigationBar from 'components/Global/NavigationBar';
 import Carousel from 'components/CategoryPage/Carousel/Slide';
 import Container from 'components/HomePage/Container';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import { getUser } from 'api/userAPI';
 
 const cx = classNames.bind(styles);
 
 function HomePage() {
-  
-  useEffect(() => {
-    getUser();
-  }, []);
-
   return (
     <div className={cx('home-page')}>
       <Logo />
