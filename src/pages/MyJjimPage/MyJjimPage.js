@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -9,26 +9,12 @@ import Header from 'components/MyDetailPage/Header';
 import { AiFillHeart } from 'react-icons/ai';
 import ShoppingCart from 'components/Global/ShoppingCart';
 import JjimList from 'components/MyDetailPage/JjimList';
-import { getJjimListAPI } from 'api/jjimAPI';
+import useJjim from 'hooks/useJjim';
 
 const cx = classNames.bind(styles);
 
 function MyJjimPage() {
-  const [jjimList, setJjimList] = useState([]);
-
-  useEffect(() => {
-    handleJjimList();
-  }, []);
-
-  const handleJjimList = function () {
-    getJjimListAPI().then(result => {
-      setJjimList(result.data);
-    });
-  };
-
-  function onRemove(jjim_id) {
-    setJjimList(jjimList.filter(jjim => jjim.jjim_id !== jjim_id));
-  }
+  const { jjimList, onRemove } = useJjim();
 
   return (
     <div className={cx('myjjim-page')}>

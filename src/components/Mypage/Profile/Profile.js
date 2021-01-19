@@ -1,21 +1,15 @@
 /* External dependencies */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './Profile.module.scss';
-import { getPointAPI } from 'api/userAPI';
+import usePoint from 'hooks/usePoint';
 
 const cx = classNames.bind(styles);
 
 function Profile() {
-  const [point, setPoint] = useState('');
-
-  useEffect(() => {
-    getPointAPI().then(result => {
-      setPoint(result.data);
-    });
-  }, []);
+  const point = usePoint();
 
   return (
     <div className={cx('profile')}>

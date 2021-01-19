@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
@@ -11,37 +11,18 @@ import BackButton from 'components/Global/BackButton';
 import Drawer from 'components/DetailPage/Drawer';
 import Hit from 'components/DetailPage/Hit';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import { getProjectDetailAPI, getProjectUserJjimAPI } from 'api/projectAPI';
-import { createJjimAPI, removeJjimAPI } from 'api/jjimAPI';
+import useDetail from 'hooks/useDetail';
+import useProjectJjim from 'hooks/useProjectJjim';
 
 const cx = classNames.bind(styles);
 
 function DetailPage() {
   const link = useLocation();
   const projectId = link.pathname.split('/')[2];
-  const [project, setProject] = useState({});
   const [open, setOpen] = useState(false);
-  const [jjim, setJjim] = useState(false);
-
-  useEffect(() => {
-    getProjectDetailAPI({ projectId }).then(result => {
-      setProject(result.data[0]);
-    });
-    getProjectUserJjimAPI({ projectId }).then(result => {
-      setJjim(result.data.jjim_id);
-    });
-  }, [projectId]);
-
-  const createJjim = () => {
-    setJjim(true);
-    createJjimAPI({ projectId });
-  };
-
-  const removeJim = () => {
-    setJjim(false);
-    removeJjimAPI({ jjimId: jjim });
-  };
-
+  const { jjim, createJjim, removeJim } = useProjectJjim(projectId);
+  const { project } = useDetail(projectId);
+  
   return (
     <div className={cx('detail')}>
       <BackButton />

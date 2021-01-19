@@ -1,30 +1,16 @@
 /* External dependencies */
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './Container.module.scss';
 import Project from 'components/Global/Project';
-import {
-  getScheduleProjectListAPI,
-  getSoonSuccessProjectListAPI,
-} from 'api/projectAPI';
+import useMainData from 'hooks/useMain';
 
 const cx = classNames.bind(styles);
 
 function Container() {
-  const [scheduleProjectList, setScheduleProjectList] = useState([]);
-  const [soonSuccessProjectList, setSoonSuccessProjectList] = useState([]);
-
-  useEffect(() => {
-    getScheduleProjectListAPI().then(result => {
-      setScheduleProjectList(result.data);
-    });
-    getSoonSuccessProjectListAPI().then(result => {
-      setSoonSuccessProjectList(result.data);
-    });
-  }, []);
-
+  const { scheduleProjectList, soonSuccessProjectList } = useMainData();
   return (
     <Fragment>
       <div className={cx('topic-container')}>

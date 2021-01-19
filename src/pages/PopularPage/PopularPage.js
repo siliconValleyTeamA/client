@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -9,18 +9,12 @@ import Banner from 'components/PopularPage/Banner';
 import NavigationBar from 'components/Global/NavigationBar';
 import ShoppingCart from 'components/Global/ShoppingCart';
 import Logo from 'components/Global/Logo';
-import { getPopularProjectAPI } from 'api/projectAPI';
+import usePopular from 'hooks/usePopular';
 
 const cx = classNames.bind(styles);
 
 function PopularPage() {
-  const [popularProjectList, setPopularProjectList] = useState([]);
-
-  useEffect(() => {
-    getPopularProjectAPI().then(result => {
-      setPopularProjectList(result.data);
-    });
-  }, []);
+  const popularProjectList = usePopular();
 
   return (
     <div className={cx('popular-page')}>
