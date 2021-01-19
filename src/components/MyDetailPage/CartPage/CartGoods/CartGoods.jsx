@@ -11,19 +11,19 @@ import { modifyCartAPI, removeCartAPI } from 'api/cartAPI';
 
 const cx = classNames.bind(styles);
 
-function CartGoods({ data, update }) {
+function CartGoods({ data, onModify, onRemove }) {
   const [point, setPoint] = useState('');
   const cartId = data.cart_id;
 
   const modifyCart = () => {
     modifyCartAPI({ cartId, point }).then(result => {
-      update();
+      onModify(cartId);
     });
   };
 
   const removeCart = () => {
     removeCartAPI({ cartId }).then(result => {
-      update();
+      onRemove(cartId);
     });
   };
 

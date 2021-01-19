@@ -19,10 +19,10 @@ function MyCartPage() {
   let cartPrice = 0;
 
   useEffect(() => {
-    update();
+    handleCartList();
   }, []);
 
-  const update = function () {
+  const handleCartList = function () {
     getProjectListInCartAPI().then(result => {
       setCartList(result.data);
       result.data.forEach(cart => {
@@ -32,12 +32,20 @@ function MyCartPage() {
     });
   };
 
+  function onModify(cart_id) {
+    handleCartList();
+  }
+
+  function onRemove(cart_id) {
+    setCartList(cartList.filter(cart => cart.cart_id !== cart_id));
+  }
+
   return (
     <div className={cx('mycart-page')}>
       <BackButton />
       <FaShoppingCart className={cx('FaShoppingCart')} />
       <Header header="펀딩 장바구니" />
-      <CartList cartList={cartList} update={update} />
+      <CartList cartList={cartList} onModify={onModify} onRemove={onRemove} />
       <CartFooter totalPrice={totalPrice} />
     </div>
   );

@@ -10,7 +10,7 @@ import { createJjimAPI, removeJjimAPI } from 'api/jjimAPI';
 import styles from './Project.module.scss';
 const cx = classNames.bind(styles);
 
-function Project({ data, type, jjimType }) {
+function Project({ data, type, jjimType, onRemove }) {
   const [jjim, setJjim] = useState(true);
   const projectId = jjimType ? data.project_id : data.id;
   const jjimId = jjimType ? data.jjim_id : '';
@@ -22,7 +22,9 @@ function Project({ data, type, jjimType }) {
 
   const removeJim = () => {
     setJjim(false);
-    removeJjimAPI({ jjimId });
+    removeJjimAPI({ jjimId }).then(result => {
+      onRemove(jjimId);
+    });
   };
 
   if (!jjimType) {
