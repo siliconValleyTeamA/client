@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */

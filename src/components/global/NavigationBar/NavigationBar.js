@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -42,15 +42,18 @@ function NavigationBar() {
   const popularRef = useRef();
   const mypageRef = useRef();
 
-  const nav = [
-    { id: '1', name: '홈', link: '/', ref: homeRef },
-    { id: '2', name: '카테고리', link: '/category', ref: categoryRef },
-    { id: '3', name: '인기펀딩', link: '/popular', ref: popularRef },
-    { id: '4', name: '마이페이지', link: '/mypage', ref: mypageRef },
-  ];
+  const nav = useMemo(
+    () => [
+      { id: '1', name: '홈', link: '/', ref: homeRef },
+      { id: '2', name: '카테고리', link: '/category', ref: categoryRef },
+      { id: '3', name: '인기펀딩', link: '/popular', ref: popularRef },
+      { id: '4', name: '마이페이지', link: '/mypage', ref: mypageRef },
+    ],
+    [homeRef, categoryRef, popularRef, mypageRef],
+  );
+  const link = location.pathname;
 
   useEffect(() => {
-    const link = location.pathname;
     nav.forEach(menu => initStyle(menu.ref));
     if (link === '/') {
       addStyle(homeRef, 'home');
@@ -61,7 +64,7 @@ function NavigationBar() {
     } else if (link === '/mypage') {
       addStyle(mypageRef, 'mypage');
     }
-  });
+  }, [link, nav]);
 
   return (
     <div className={cx('Header')}>
