@@ -17,17 +17,25 @@ function MyJjimPage() {
   const [jjimList, setJjimList] = useState([]);
 
   useEffect(() => {
+    handleJjimList();
+  }, []);
+
+  const handleJjimList = function () {
     getJjimListAPI().then(result => {
       setJjimList(result.data);
     });
-  }, []);
+  };
+
+  function onRemove(jjim_id) {
+    setJjimList(jjimList.filter(jjim => jjim.jjim_id !== jjim_id));
+  }
 
   return (
     <div className={cx('myjjim-page')}>
       <BackButton />
       <AiFillHeart className={cx('AiFillHeart')} />
       <Header header="찜 목록" />
-      <JjimList jjimList={jjimList} />
+      <JjimList jjimList={jjimList} onRemove={onRemove} />
       <ShoppingCart />
     </div>
   );

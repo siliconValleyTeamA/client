@@ -8,11 +8,17 @@ import CartGoods from 'components/MyDetailPage/CartPage/CartGoods';
 
 const cx = classNames.bind(styles);
 
-function CartList({ cartList,update }) {
+function CartList({ cartList, onModify, onRemove }) {
+
   return (
     <div className={cx('cart-list')}>
       {cartList.map(cartData => (
-        <CartGoods key={cartData.id} data={cartData} update={update} />
+        <CartGoods
+          key={cartData.id}
+          data={cartData}
+          onModify={onModify}
+          onRemove={onRemove}
+        />
       ))}
     </div>
   );
