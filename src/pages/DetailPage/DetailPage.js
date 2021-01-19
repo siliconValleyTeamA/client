@@ -30,7 +30,7 @@ function DetailPage() {
     getProjectUserJjimAPI({ projectId }).then(result => {
       setJjim(result.data.jjim_id);
     });
-  }, []);
+  }, [projectId]);
 
   const createJjim = () => {
     setJjim(true);
