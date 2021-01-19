@@ -1,0 +1,28 @@
+@import 'styles/_palette.scss';
+
+.addprojectdiv{
+    width: 700px;
+    margin: 2rem auto; 
+    text-align: center;
+    //align-items: center;
+    .titlediv{
+        text-align: center;
+        margin-bottom: 2rem; 
+        .title{
+            font-size: 2.5rem;
+        }
+    }     
+    button{
+        color: white;
+        background: $wadiz;
+        padding: .375rem .75rem;
+        border: 1px solid $wadiz;
+        border-radius: 10px;
+    }
+    span{    
+        display: flex;
+        text-align: left;
+        margin-left: 100px; 
+    }
+}
+
