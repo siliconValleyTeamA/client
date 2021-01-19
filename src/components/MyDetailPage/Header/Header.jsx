@@ -11,4 +11,4 @@ function Header(props) {
   return <div className={cx('header')}>{props.header} </div>;
 }
 
-export default Header;
+export default React.memo(Header);

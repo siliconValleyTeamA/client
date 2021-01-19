@@ -1,24 +1,17 @@
 /* External dependencies */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
 import styles from './GoodsList.module.scss';
 import Goods from 'components/MyDetailPage/Goods';
-
-import { getHistoryAPI } from 'api/historyAPI';
+import useHistory from 'hooks/useHistory';
 
 const cx = classNames.bind(styles);
 
-function GoodsList(props) {
-  const [historyList, setHistoryList] = useState([]);
-
-  useEffect(() => {
-    getHistoryAPI().then(result => {
-      setHistoryList(result.data);
-    });
-  }, []);
-
+function GoodsList() {
+  const historyList = useHistory();
+  
   return (
     <div className={cx('goods-list')}>
       {historyList.map(history => (

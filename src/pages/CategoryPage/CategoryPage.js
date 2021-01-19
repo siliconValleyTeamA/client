@@ -1,7 +1,6 @@
 /* External dependencies */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import { useSelector } from 'react-redux';
 
 /* Internal dependencies */
 import styles from './CategoryPage.module.scss';
@@ -11,18 +10,14 @@ import ShoppingCart from 'components/Global/ShoppingCart';
 import Logo from 'components/Global/Logo';
 import NavigationBar from 'components/Global/NavigationBar';
 import Drawer from 'components/CategoryPage/Drawer';
-import { getCategoryProjectAPI } from 'api/projectAPI';
-import { getCategoryListAPI } from 'api/categoryAPI';
 import Header from 'components/CategoryPage/Header';
+import useCategory from 'hooks/useCategory';
 
 const cx = classNames.bind(styles);
 
 function CategoryPage() {
-  const filter = useSelector(state => state.filterReducer);
-  const [projectList, setProjectList] = useState([]);
-  const [categoryList, setCategoryList] = useState([]);
   const [open, setOpen] = useState(false);
-  const category = useSelector(state => state.categoryReducer);
+  const { projectList, categoryList } = useCategory();
 
   const headerClick = () => {
     setOpen(true);
@@ -31,21 +26,6 @@ function CategoryPage() {
   const selectFinish = () => {
     setOpen(false);
   };
-
-  useEffect(() => {
-    getCategoryProjectAPI({
-      categoryId: category.id,
-      filterType: filter,
-    }).then(result => {
-      setProjectList(result.data);
-    });
-  }, [filter, category]);
-
-  useEffect(() => {
-    getCategoryListAPI().then(result => {
-      setCategoryList(result.data);
-    });
-  }, []);
 
   return (
     <div className={cx('category')}>

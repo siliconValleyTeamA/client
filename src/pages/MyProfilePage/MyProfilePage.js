@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import { BiWorld } from 'react-icons/bi';
 
@@ -8,30 +8,13 @@ import styles from './MyProfilePage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import { getPointAPI } from 'api/userAPI';
 import PointDialog from 'components/MyDetailPage/PointDialog';
+import useProfile from 'hooks/useProfile';
 
 const cx = classNames.bind(styles);
 
 function MyProfilePage() {
-  const [point, setPoint] = useState('');
-  const [dialog, setDialog] = useState(false);
-
-  useEffect(() => {
-    update();
-  }, []);
-
-  const update = () => {
-    getPointAPI().then(result => {
-      setPoint(result.data);
-    });
-  };
-
-  const closeDialog = () => {
-    setDialog(false);
-  };
-
-  console.log(dialog);
+  const { point, dialog, update, closeDialog, setDialog } = useProfile();
 
   return (
     <div className={cx('setcountry')}>

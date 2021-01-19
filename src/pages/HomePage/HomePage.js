@@ -14,13 +14,8 @@ import { getUser } from 'api/userAPI';
 const cx = classNames.bind(styles);
 
 function HomePage() {
-  const getLanguage = () => {
-    var userLang = navigator.language.split('-')[1];
-    window.sessionStorage.setItem('language', userLang);
-  };
-
+  
   useEffect(() => {
-    getLanguage();
     getUser();
   }, []);
 
