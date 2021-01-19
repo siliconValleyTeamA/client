@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
@@ -17,11 +17,12 @@ const cx = classNames.bind(styles);
 
 function Mypage() {
   const user = useUser();
-  console.log(user);
 
-  const logOut = () => {
-    logOutAPI();
-  };
+  function logOut() {
+    logOutAPI().then(result => {
+      window.location.reload();
+    });
+  }
 
   return (
     <Fragment>
@@ -33,7 +34,7 @@ function Mypage() {
             <Profile className={cx('profile')} />
             <Menu className={cx('menu')} />
             <div onClick={logOut}>
-              <SignoutButton onClick={() => logOut()} />
+              <SignoutButton />
             </div>
           </div>
         ) : (
