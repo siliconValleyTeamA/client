@@ -4,25 +4,49 @@
     width: 700px;
     margin: 2rem auto; 
     text-align: center;
-    //align-items: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
     .titlediv{
         text-align: center;
         margin-bottom: 2rem; 
         .title{
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
     }     
     button{
         color: white;
+        font-weight: bold;
         background: $wadiz;
         padding: .375rem .75rem;
         border: 1px solid $wadiz;
+        width:200px;
+        height: 50px;      
         border-radius: 10px;
+    }    
+}
+.discription{
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+    border-radius: 0.7rem;
+    margin-top: 2rem;
+    background-color: $black-025 !important;
+    label{    
+        margin-left: 100px;
+        margin-right: 100px;
+        font-size: 1.1rem;
+        font-weight: 600;       
+        padding:10px
     }
-    span{    
-        display: flex;
-        text-align: left;
-        margin-left: 100px; 
+    input{
+        border-radius: 5px;
+        align-items: right;
+    }
+    textarea{
+        border-radius: 5px;
+    }
+    select{
+        border-radius: 5px;
     }
 }
-
