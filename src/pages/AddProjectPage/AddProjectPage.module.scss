@@ -26,6 +26,8 @@
     }    
 }
 .discription{
+    display: flex;
+    flex-direction: row;
     padding: 20px;
     text-align: left;
     width: 100%;
@@ -48,5 +50,18 @@
     }
     select{
         border-radius: 5px;
+    }
+    .leftside{
+        display: flex;
+        flex-direction: column;
+    }
+    .rightside{
+        display: flex;
+        flex-direction: column;
+        margin-left: 100px;
+        margin-right: 100px;
+        font-size: 1.1rem;
+        font-weight: 600;       
+        padding:10px
     }
 }

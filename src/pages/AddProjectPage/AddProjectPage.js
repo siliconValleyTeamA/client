@@ -43,8 +43,8 @@ function AddProjectPage(props) {
   const onStartDate = (event) => {
     setStartDate(event.currentTarget.value)
   }
-  const onEndDate = (event) => {
-    setEndDate(event.currentTarget.value)
+  const onEndDate = (event) => {    
+      setEndDate(event.currentTarget.value);
   }
   const onDescriptionChange = (event) => {
     setDescriptionValue(event.currentTarget.value)
@@ -60,6 +60,8 @@ function AddProjectPage(props) {
     if (!TitleValue || !DescriptionValue || !CompanyTitleValue || !GoalPriceValue || 
       !StartDate || !EndDate||!CategoryValue || !Images) {
         return alert('모든 항목을 채워주세요!')
+    }else if(StartDate>EndDate){
+      return alert('날짜 설정을 확인해주세요!')
     }
     const variables = { 
       title: TitleValue,
@@ -70,8 +72,8 @@ function AddProjectPage(props) {
       description: DescriptionValue,     
       images: Images,
       category: CategoryValue   
-  } 
-  axios.post('/api/project/uploadproject', variables)
+  }    
+    axios.post('/api/project/uploadproject', variables)
     .then(response => {
       if (response.data.success) {
         alert('상품을 성공적으로 업로드하였습니다.')
@@ -79,8 +81,9 @@ function AddProjectPage(props) {
       }else {
         alert('상품을 업로드하는데 실패하였습니다.')
       }
-    })       
-  }
+    })    
+  }         
+
    return (
     <div className={cx('addprojectdiv')}>
       <div className={cx('titlediv')}>
@@ -90,31 +93,35 @@ function AddProjectPage(props) {
         <FileUpload refreshFunction={updateImages} />
         <br/><br/>
         <div className={cx('discription')}>
-          <label >프로젝트명</label>&ensp;&ensp;&ensp;
-          <input type="text" onChange={onTitleChange} value={TitleValue}/>        
-          <br/><br/>
-          <label >기업명</label>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-          <input type="text" onChange={onCompanyTitleValue} value={CompanyTitleValue}/> 
-          <br/><br/>
-          <label >목표금액</label>&ensp;&ensp;&ensp;&ensp;&ensp;
-          <input type="number" onChange={onGoalPriceValue} value={GoalPriceValue}/> 
-          <br/><br/>
-          <label >시작일</label>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-          <input type="date" onChange={onStartDate} value={StartDate}/> 
-          <br/><br/>
-          <label >종료일</label>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-          <input type="date" onChange={onEndDate} value={EndDate}/> 
-          <br/><br/>
-          <label >프로젝트 설명</label>
-          <textarea onChange={onDescriptionChange} value={DescriptionValue}/>
-          <br /><br />
-          <label >카테고리</label>&emsp;&emsp;&ensp;
-          <select onChange={onCategorySelectChange} value={CategoryValue}>
-            {Category.map(item => (<option key={item.key} value={item.key}>{item.value} </option>))}
-          </select>
-        </div>
-        <br/><br/>              
-        <button onClick={onSubmit}>업로드</button>
+          <div className={cx('leftside')}>
+            <label >프로젝트명</label>
+            <label >기업명</label>
+            <label >목표금액</label>
+            <label >시작일</label>
+            <label >종료일</label>
+            <label >프로젝트 설명</label>
+            <label >카테고리</label>
+          </div>
+          <div className={cx('rightside')}>
+            <input type="text" onChange={onTitleChange} value={TitleValue}/>
+            <br/>
+            <input type="text" onChange={onCompanyTitleValue} value={CompanyTitleValue}/> 
+            <br/>
+            <input type="number" onChange={onGoalPriceValue} value={GoalPriceValue}/> 
+            <br/>
+            <input type="date" onChange={onStartDate} value={StartDate}/> 
+            <br/>
+            <input type="date" onChange={onEndDate} value={EndDate}/> 
+            <br/>
+            <textarea onChange={onDescriptionChange} value={DescriptionValue}/>
+            <br/>
+            <select onChange={onCategorySelectChange} value={CategoryValue}>
+            <br/>
+              {Category.map(item => (<option key={item.key} value={item.key}>{item.value} </option>))}
+            </select>
+          </div>  
+        </div>          
+        <button onClick={onSubmit}>다음</button>
     </form>
     </div>
     )
