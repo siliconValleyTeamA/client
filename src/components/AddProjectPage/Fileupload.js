@@ -18,7 +18,7 @@ function FileUpload(props) {
   }
   formData.append("file", files[0])
   //save the Image we chose inside the Node Server 
-  axios.post(`/api/project/uploadproject`, formData, config).then(response => {             
+  axios.post(`/api/project/uploadimage`, formData, config).then(response => {             
     if (response.data.success) {
       setImages([...Images, response.data.image])
       props.refreshFunction([...Images, response.data.image])
@@ -47,8 +47,7 @@ function FileUpload(props) {
             </Dropzone>
             <div className={cx('preview')}>
               {Images.map((image, index) => (
-                <div onClick={() => onDelete(image)}>
-                    console.log(image);
+                <div onClick={() => onDelete(image)}>  
                   <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`http://localhost:8080/${image}`} alt={`productImg-${index}`} />
                 </div>
                 ))}
