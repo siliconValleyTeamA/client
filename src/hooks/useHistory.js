@@ -11,7 +11,7 @@ function useHistory() {
     getHistoryAPI().then(result => {
       setHistoryList(result.data);
     });
-  }, []);
+  }, [historyList]);
 
   return historyList;
 }
