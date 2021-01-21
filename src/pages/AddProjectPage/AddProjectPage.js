@@ -23,36 +23,63 @@ const Category = [
 
 function AddProjectPage(props) {
   const [TitleValue, setTitleValue] = useState("")
+  const [CompanyTitleValue, setCompanyTitleValue] = useState("")
   const [DescriptionValue, setDescriptionValue] = useState("")
-  const [PriceValue, setPriceValue] = useState(0)
+  const [GoalPriceValue, setGoalPriceValue] = useState(0)
+  const [StartDate, setStartDate] = useState(new Date())
+  const [EndDate, setEndDate] = useState(new Date())  
   const [CategoryValue, setCategoryValue] = useState(1)   
   const [Images, setImages] = useState([])
 
   const onTitleChange = (event) => {
-      setTitleValue(event.currentTarget.value)
+    setTitleValue(event.currentTarget.value)
+  } 
+  const onCompanyTitleValue = (event) => {
+    setCompanyTitleValue(event.currentTarget.value)
   }
-const onDescriptionChange = (event) => {
-  setDescriptionValue(event.currentTarget.value)
-}
-
-const onPriceChange = (event) => {
-  setPriceValue(event.currentTarget.value)
-}
-
-const onCategorySelectChange = (event) => {
-  setCategoryValue(event.currentTarget.value)
-}
-
-const updateImages = (newImages) => {
-  setImages(newImages)
-}
-
-const onSubmit = (event) => {
-  event.preventDefault();
-  if (!TitleValue || !DescriptionValue || !PriceValue ||
-     !CategoryValue || !Images) {
+  const onGoalPriceValue = (event) => {
+    setGoalPriceValue(event.currentTarget.value)
+  }
+  const onStartDate = (event) => {
+    setStartDate(event.currentTarget.value)
+  }
+  const onEndDate = (event) => {
+    setEndDate(event.currentTarget.value)
+  }
+  const onDescriptionChange = (event) => {
+    setDescriptionValue(event.currentTarget.value)
+  }
+  const onCategorySelectChange = (event) => {
+    setCategoryValue(event.currentTarget.value)
+  }
+  const updateImages = (newImages) => {
+    setImages(newImages)
+  }
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (!TitleValue || !DescriptionValue || !CompanyTitleValue || !GoalPriceValue || 
+      !StartDate || !EndDate||!CategoryValue || !Images) {
         return alert('모든 항목을 채워주세요!')
-    }        
+    }
+    const variables = { 
+      title: TitleValue,
+      company: CompanyTitleValue,
+      goalmoney: GoalPriceValue,
+      start_date: StartDate,
+      end_date: EndDate,
+      description: DescriptionValue,     
+      images: Images,
+      category: CategoryValue   
+  } 
+  axios.post('/api/project/uploadproject', variables)
+    .then(response => {
+      if (response.data.success) {
+        alert('상품을 성공적으로 업로드하였습니다.')
+          props.history.push('/')
+      }else {
+        alert('상품을 업로드하는데 실패하였습니다.')
+      }
+    })       
   }
    return (
     <div className={cx('addprojectdiv')}>
@@ -66,12 +93,21 @@ const onSubmit = (event) => {
           <label >프로젝트명</label>&ensp;&ensp;&ensp;
           <input type="text" onChange={onTitleChange} value={TitleValue}/>        
           <br/><br/>
+          <label >기업명</label>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+          <input type="text" onChange={onCompanyTitleValue} value={CompanyTitleValue}/> 
+          <br/><br/>
+          <label >목표금액</label>&ensp;&ensp;&ensp;&ensp;&ensp;
+          <input type="number" onChange={onGoalPriceValue} value={GoalPriceValue}/> 
+          <br/><br/>
+          <label >시작일</label>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+          <input type="date" onChange={onStartDate} value={StartDate}/> 
+          <br/><br/>
+          <label >종료일</label>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+          <input type="date" onChange={onEndDate} value={EndDate}/> 
+          <br/><br/>
           <label >프로젝트 설명</label>
           <textarea onChange={onDescriptionChange} value={DescriptionValue}/>
           <br /><br />
-          <label >가격(원)</label>&emsp;&emsp;&ensp;&ensp;
-          <input onChange={onPriceChange} value={PriceValue} type="number"/>
-          <br/><br/>
           <label >카테고리</label>&emsp;&emsp;&ensp;
           <select onChange={onCategorySelectChange} value={CategoryValue}>
             {Category.map(item => (<option key={item.key} value={item.key}>{item.value} </option>))}
