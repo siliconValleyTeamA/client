@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# Fuding
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Funding Service
 
-## Available Scripts
+## ✋Team Members
 
-In the project directory, you can run:
+- [![title](https://img.shields.io/badge/DEVLOPER-최윤선-123456)](https://github.com/OMEGA-Y)
+- [![title](https://img.shields.io/badge/DEVLOPER-이연정-123456)](https://github.com/YeonJeongLee00)
+- [![title](https://img.shields.io/badge/DEVLOPER-유창헌-123456)](https://github.com/dbckdgjs369)
+- [![title](https://img.shields.io/badge/DEVLOPER-노기진-123456)](https://github.com/nohgijin)
 
-### `yarn start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🧞Quick Start 1
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 1. Clone & Install Packages
 
-### `yarn test`
+```bash
+git clone https://github.com/siliconValleyTeamA/client.git
+cd client
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git clone https://github.com/siliconValleyTeamA/server.git
+cd server
+npm install
+```
 
-### `yarn build`
+### 2. Add config.json / secret.json / auth.json in server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+add cofing.json in db folder
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+confing.json
+{
+    "host": “${serverIP}”,
+    "user": “${dbUser}”,
+    "password”: “${dbPassword}”,
+    "database": “${dbName}”
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+add secret.json in root folder
 
-### `yarn eject`
+```bash
+secret.json
+{
+    "SECRET_KEY": “${loginKEY}”
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+add auth.json in root folder
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+auth.json
+{
+    "CLIENT_ID": "${githubPassPortID}",
+    "CLIENT_SECRET": "${githubPassPortID}",
+    "CALLBACK_URL": "${githubCallbackURL}"
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 3. Run develop client
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Run develop server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run dev
+```
 
-### Code Splitting
+Then, you can access to your server http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🐳Quick Start 2 - docker
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+https://github.com/siliconValleyTeamA/docker
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 기술 스택
 
-### Advanced Configuration
+**Frontend**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- ![title](https://img.shields.io/badge/-HTML5-E34F26?&logo=html5&logoColor=white)
+- ![title](https://img.shields.io/badge/-SCSS-CC6699?&logo=Sass&logoColor=white)
+- ![title](https://img.shields.io/badge/-Webpack-7ac5f1?&logo=Webpack&logoColor=white)
+- ![title](https://img.shields.io/badge/-Babel-eece4f?&logo=Babel&logoColor=white)
 
-### Deployment
+**Backend**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- ![title](https://img.shields.io/badge/-Node.js-339933?&logo=Node.js&logoColor=white)
+- ![title](https://img.shields.io/badge/-Express-191919?&logo=Node.js&logoColor=white)
+- ![title](https://img.shields.io/badge/-MySQL-4479A1?&logo=MySQL&logoColor=white)
 
-### `yarn build` fails to minify
+**ETC**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- ![title](https://img.shields.io/badge/-EC2-232F3E?&logo=Amazon-AWS&logoColor=white)
+- ![title](https://img.shields.io/badge/-Github-181717?&logo=Github&logoColor=white)
+- ![title](https://img.shields.io/badge/-Slack-4A154B?&logo=Slack&logoColor=white)
+
+---
+
+## 프로젝트 구조
+
+```bash
+|-- client
+    |
+    |-- public
+    |   |
+    |   |
+    |   |-- src
+    |   |   |-- api
+    |   |   |    ... // api 호출 함수 모음
+    |   |   |
+    |   |   |-- components
+    |   |   |   ...  // 컴포넌트 파일
+    |   |   |
+    |   |   |-- images
+    |   |   |   ... //페이지 구성 이미지
+    |   |   |
+    |   |   |-- modules
+    |   |   |  ... //reducer 모음
+    |   |
+    |   |-- pages
+    |   |  ...// 페이지 모음
+    |   |-- styles
+    |   |  ...//글로벌 palette 및 스타일 모음
+    |   |
+    |   |-- App.js
+    |   |     라우팅
+    |   |       ...  // 페이지 별 라우팅 장소
+    |   |
+    |   |-- index.js
+            ... // 페이지 최종 모음
+    |
+    |-- package.json //설치 모듈 및 버전
+```
+
+```bash
+|-- server // Backend
+    |-- bin
+    |   |-- www
+    |
+    |-- public
+    |   |-- docs
+    |   |   ... // 스웨거 관련 파일
+    |   |
+    |   |-- swagger.yaml
+    |   |
+    |-- db
+    |   ... // 데이터베이스 작업 처리
+    |
+    |-- routes
+    |   ... // 라우터 요청에 따른 작업 처리
+    |
+    |-- views
+    |   ...  // pug 파일
+    |
+    |-- app.js
+```
