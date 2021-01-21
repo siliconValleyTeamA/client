@@ -1,0 +1,62 @@
+@import 'styles/_palette.scss';
+
+.goods {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  margin: 1rem;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+
+  .goods-img img {
+    width: 140px;
+    height: 120px;
+    margin-right: 15px;
+    border-radius: 3px;
+  }
+
+  .goods-non-img {
+    width: 100%;
+    span {
+      opacity: 0.6;
+      font-size: 15px;
+    }
+
+    .goods-title {
+      margin-bottom: 1rem;
+      h2 {
+        font-size: 18px;
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+
+    .goods-progressbar {
+      height: 5px;
+      background-color: $wadiz;
+      margin-bottom: 10px;
+      margin: 0px 2px 10px 2px;
+    }
+
+    .goods-progressinfo {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      .goods-progressinfo-percent {
+        display: flex;
+        p {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: $wadiz;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    .goods-money {
+      margin-top: 0.5rem;
+      text-align: right;
+      font-weight: 800;
+    }
+  }
+}

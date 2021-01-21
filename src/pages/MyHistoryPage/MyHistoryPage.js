@@ -7,18 +7,21 @@ import { RiShoppingBag3Fill } from 'react-icons/ri';
 import styles from './MyHistoryPage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
-import GoodsList from 'components/MyDetailPage/GoodsList';
 import ShoppingCart from 'components/Global/ShoppingCart';
+import HistoryList from 'components/MyDetailPage/HistoryList';
+import useHistory from 'hooks/useHistory';
 
 const cx = classNames.bind(styles);
 
 function MyHistoryPage() {
+  const historyList = useHistory();
+
   return (
     <div className={cx('myhistory-page')}>
       <BackButton />
       <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
       <Header header="펀딩 기록" />
-      <GoodsList />
+      <HistoryList historyList={historyList} />
       <ShoppingCart />
     </div>
   );
