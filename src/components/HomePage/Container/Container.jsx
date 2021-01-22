@@ -16,7 +16,7 @@ function Container() {
   return (
     <Fragment>
       <div className={cx('topic-container')}>
-        <div className={cx('title')}>🎉 Project to be released</div>
+        <div className={cx('title')}>🎉Upcoming project</div>
         <div className={cx('scroll-container')}>
           <div className={cx('container')}>
             {scheduleProjectList.map(scheduleProject => {
@@ -33,7 +33,7 @@ function Container() {
         </div>
       </div>
       <div className={cx('topic-container')}>
-        <div className={cx('title')}>🤭 Success Project</div>
+        <div className={cx('title')}>🤭 Project to be accomplished soon</div>
         <div className={cx('scroll-container')}>
           <div className={cx('container')}>
             {soonSuccessProjectList.map(soonSuccessProject => {
