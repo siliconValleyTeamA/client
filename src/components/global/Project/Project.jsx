@@ -41,8 +41,8 @@ function Project({ data, type, jjimType, onRemove }) {
             <div className={cx('project-info-price')}>
               <span className={cx('project-info-price-current')}>
                 {type === 'open'
-                  ? data.open_left_days + '일 뒤 공개'
-                  : data.percent + '% 달성'}
+                  ? 'Released after' + data.open_left_days 
+                  : data.percent + '% achieved'}
               </span>
             </div>
           </div>
@@ -75,7 +75,7 @@ function Project({ data, type, jjimType, onRemove }) {
           <div className={cx('project-info-name')}>{data.title}</div>
           <div className={cx('project-info-price')}>
             <span className={cx('project-info-price-current')}>
-              {data.left_days + '일 남음'}
+              {data.left_days + 'days left'}
             </span>
           </div>
         </div>

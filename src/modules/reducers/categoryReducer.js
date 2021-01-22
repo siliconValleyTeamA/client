@@ -4,7 +4,7 @@ export const setCategory = category => ({ type: SET_CATEGORY, category });
 const initialState = {
   id: 1,
   key: 'all',
-  label: '전체보기',
+  label: 'All',
 };
 
 const LABELS = {
@@ -29,7 +29,7 @@ const LABELS = {
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CATEGORY:
-      return action.category
+      return action.category;
     default:
       return state;
   }

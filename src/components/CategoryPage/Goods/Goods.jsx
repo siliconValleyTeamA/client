@@ -31,10 +31,10 @@ function Goods({ data }) {
         <div className={cx('goods-progressinfo')}>
           <div className={cx('goods-progressinfo-percent')}>
             <p>{data.percent}%</p>
-            <span>・ {data.funding_money.toLocaleString()}원</span>
+            <span>${data.funding_money.toLocaleString()}</span>
           </div>
           <div>
-            <span>{data.left_days}일 남음</span>
+            <span>{data.left_days}days to go</span>
           </div>
         </div>
       </Link>

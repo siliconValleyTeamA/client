@@ -27,8 +27,8 @@ function Goods({ data }) {
 
             <div className={cx('goods-money')}>
               <span>
-                펀딩한 금액
-                {data.money.toLocaleString()}원
+                Funded amount
+                {data.money.toLocaleString()}$
               </span>
             </div>
           </div>

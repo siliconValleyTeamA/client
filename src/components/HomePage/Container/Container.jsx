@@ -1,20 +1,22 @@
 /* External dependencies */
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
-
+import cookie from 'react-cookies';
 /* Internal dependencies */
 import styles from './Container.module.scss';
 import Project from 'components/Global/Project';
 import useMainData from 'hooks/useMain';
+import { googleTranslate } from 'api/translateAPI';
 
 const cx = classNames.bind(styles);
 
 function Container() {
   const { scheduleProjectList, soonSuccessProjectList } = useMainData();
+
   return (
     <Fragment>
       <div className={cx('topic-container')}>
-        <div className={cx('title')}>🎉 공개예정 프로젝트</div>
+        <div className={cx('title')}>🎉 Project to be released</div>
         <div className={cx('scroll-container')}>
           <div className={cx('container')}>
             {scheduleProjectList.map(scheduleProject => {
@@ -31,7 +33,7 @@ function Container() {
         </div>
       </div>
       <div className={cx('topic-container')}>
-        <div className={cx('title')}>🤭 성공임박 프로젝트</div>
+        <div className={cx('title')}>🤭 Success Project</div>
         <div className={cx('scroll-container')}>
           <div className={cx('container')}>
             {soonSuccessProjectList.map(soonSuccessProject => {

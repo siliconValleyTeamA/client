@@ -11,6 +11,8 @@
 # production
 /build
 
+src/api/translateAPI.js
+
 # misc
 .DS_Store
 .env.local
@@ -23,3 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
+

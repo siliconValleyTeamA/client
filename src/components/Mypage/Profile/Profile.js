@@ -19,9 +19,9 @@ function Profile() {
           alt="profile"
         />
       </div>
-      <div className={cx('user-name')}>{user?.name}님</div>
+      <div className={cx('user-name')}>{user?.name}</div>
       <div className={cx('user-point')}>
-        잔여 포인트: {user?.point.toLocaleString()} 원
+        Point : {user?.point.toLocaleString()} 💰
       </div>
     </div>
   );

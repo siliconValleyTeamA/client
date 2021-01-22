@@ -14,9 +14,9 @@ function Filter() {
   return (
     <div className={cx('filter')}>
       <select value={state} onChange={e => dispatch(setFilter(e.target.value))}>
-        <option value="percent">펀딩률순</option>
-        <option value="amount">펀딩금액순</option>
-        <option value="closing">마감임박순</option>
+        <option value="percent">funding rate</option>
+        <option value="amount">funding amount</option>
+        <option value="closing">deadline</option>
       </select>
     </div>
   );

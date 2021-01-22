@@ -19,28 +19,28 @@ function Menu() {
       <Link to="/mypage/jjim">
         <li className={cx('jjim')}>
           <AiFillHeart className={cx('AiFillHeart')} />
-          <div className={cx('title')}>내가 찜한 펀딩</div>
+          <div className={cx('title')}>My selected funding </div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
       <Link to="/mypage/cart">
         <li className={cx('support')}>
           <FaShoppingCart className={cx('FaShoppingCart')} />
-          <div className={cx('title')}>펀딩 장바구니</div>
+          <div className={cx('title')}>My funding cart</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
       <Link to="/mypage/history">
         <li className={cx('support')}>
           <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
-          <div className={cx('title')}>내가 펀딩한 프로젝트</div>
+          <div className={cx('title')}>My funding project</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
       <Link to="/mypage/profile">
         <li className={cx('country')}>
           <BiWorld className={cx('BiWorld')} />
-          <div className={cx('title')}>개인정보 설정</div>
+          <div className={cx('title')}>My profile setting</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
