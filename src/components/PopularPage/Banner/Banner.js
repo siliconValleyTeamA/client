@@ -13,8 +13,8 @@ function Banner() {
     <div className={cx('banner')}>
       <img className={cx('banner-img')} src={Img} alt="banner" />
       <div className={cx('title')}>
-        <div>a popular hot project</div>
-        <div>Don't miss</div>
+        <div>Popular project</div>
+        <div>Don't miss!</div>
       </div>
       <div className={cx('gradation')} />
     </div>

@@ -12,7 +12,6 @@ import NavigationBar from 'components/Global/NavigationBar';
 import Drawer from 'components/CategoryPage/Drawer';
 import Header from 'components/CategoryPage/Header';
 import useCategory from 'hooks/useCategory';
-import LanguageSelector from 'components/Global/LanguageSelector';
 
 const cx = classNames.bind(styles);
 
@@ -44,7 +43,6 @@ function CategoryPage() {
         selectFinish={selectFinish}
         categoryList={categoryList}
       />
-      <LanguageSelector/>
     </div>
   );
 }
