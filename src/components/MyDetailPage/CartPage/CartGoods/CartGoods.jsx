@@ -55,19 +55,19 @@ function CartGoods({ data, onModify, onRemove }) {
               );
             }}
           />
-          <div className={cx('price')}>{data.money.toLocaleString()}원</div>
+          <div className={cx('price')}>{data.money.toLocaleString()}$</div>
           <div className={cx('wrap')}>
             <div className={cx('modify')} onClick={modifyCart}>
               <div className={cx('modify-icon')}>
                 <FaCoins className={cx('FaCoins')} />
               </div>
-              <span className={cx('modify-description')}>수정</span>
+              <span className={cx('modify-description')}>modifiy</span>
             </div>
             <div className={cx('delete')} onClick={removeCart}>
               <div className={cx('delete-icon')}>
                 <MdRemoveShoppingCart className={cx('MdRemoveShoppingCart')} />
               </div>
-              <span className={cx('delete-description')}>삭제</span>
+              <span className={cx('delete-description')}>delete</span>
             </div>
           </div>
         </div>

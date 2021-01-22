@@ -15,7 +15,7 @@ function BackButton() {
   return (
     <button className={cx('back-button')} onClick={goBack}>
       <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
-      <span>뒤로가기</span>
+      <span>Back</span>
     </button>
   );
 }

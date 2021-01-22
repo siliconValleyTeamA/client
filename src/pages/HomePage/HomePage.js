@@ -9,6 +9,7 @@ import NavigationBar from 'components/Global/NavigationBar';
 import Carousel from 'components/CategoryPage/Carousel/Slide';
 import Container from 'components/HomePage/Container';
 import ShoppingCart from 'components/Global/ShoppingCart';
+import LanguageSelector from 'components/Global/LanguageSelector';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +21,7 @@ function HomePage() {
       <Carousel />
       <Container />
       <ShoppingCart />
+      <LanguageSelector/>
     </div>
   );
 }

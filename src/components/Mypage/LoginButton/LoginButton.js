@@ -12,7 +12,7 @@ function LoginButton() {
     <a href={'http://localhost:8080/auth/github/'}>
       <button className={cx('login')}>
         <AiFillGithub className={cx('AiFillGithub')} />
-        GitHub으로 로그인
+        GitHub Login
       </button>
     </a>
   );

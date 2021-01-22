@@ -23,7 +23,7 @@ function MiddleSearch() {
 function SearchBar() {
   return (
     <div className={cx('search')}>
-      <input type="text" placeholder="검색" className={cx('search-input')} />
+      <input type="text" placeholder="search" className={cx('search-input')} />
       <button onClick={() => {}}>
         <FiSearch />
       </button>

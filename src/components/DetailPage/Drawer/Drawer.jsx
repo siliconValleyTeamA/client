@@ -36,7 +36,7 @@ function Drawer({ open, setOpen, data }) {
               <input
                 type="text"
                 className={cx('funding-input')}
-                placeholder="금액입력"
+                placeholder="$"
                 value={point}
                 onChange={e => {
                   setPoint(
@@ -55,7 +55,7 @@ function Drawer({ open, setOpen, data }) {
                 }}
                 className={cx('product-details-cart-buttons-confirm')}
               >
-                펀딩하기
+                Funding
               </div>
             </div>
           </div>

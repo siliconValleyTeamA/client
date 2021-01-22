@@ -8,7 +8,7 @@ import styles from './LogoutButton.module.scss';
 const cx = classNames.bind(styles);
 
 function LogoutButton() {
-  return <button className={cx('sign-out')}>로그아웃 하시게요? 😢</button>;
+  return <button className={cx('sign-out')}>Logout? 😢</button>;
 }
 
 export default LogoutButton;

@@ -1,10 +1,11 @@
 /* External dependencies */
-import React, { useRef, useEffect, useMemo } from 'react';
+import React, { useRef, useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
-
+import cookie from 'react-cookies';
 /* Internal dependencies */
 import styles from './NavigationBar.module.scss';
+import { googleTranslate } from 'api/translateAPI';
 
 const cx = classNames.bind(styles);
 
@@ -44,10 +45,10 @@ function NavigationBar() {
 
   const nav = useMemo(
     () => [
-      { id: '1', name: '홈', link: '/', ref: homeRef },
-      { id: '2', name: '카테고리', link: '/category', ref: categoryRef },
-      { id: '3', name: '인기펀딩', link: '/popular', ref: popularRef },
-      { id: '4', name: '마이페이지', link: '/mypage', ref: mypageRef },
+      { id: '1', name: 'Home', link: '/', ref: homeRef },
+      { id: '2', name: 'Category', link: '/category', ref: categoryRef },
+      { id: '3', name: 'Popular Project', link: '/popular', ref: popularRef },
+      { id: '4', name: 'MyPage', link: '/mypage', ref: mypageRef },
     ],
     [homeRef, categoryRef, popularRef, mypageRef],
   );
