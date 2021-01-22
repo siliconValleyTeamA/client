@@ -1,11 +1,11 @@
 /* External dependencies */
 import React, { useState } from 'react';
-import FileUpload from '../../components/AddProjectPage/Fileupload';
 import classNames from 'classnames/bind';
-import { postUploadProjectAPI } from 'api/projectAPI';
+import axios from '../../api/axios';
 
 /* Internal dependencies */
 import styles from './AddProjectPage.module.scss';
+import FileUpload from 'components/AddProjectPage/Fileupload';
 
 const cx = classNames.bind(styles);
 
@@ -82,8 +82,8 @@ function AddProjectPage(props) {
       category: CategoryValue,
     };
 
-    postUploadProjectAPI(variables).then(response => {
-      if (response.data.success) {
+    axios.post('/api/project/uploadproject', variables).then(result => {
+      if (result.data.success) {
         alert('상품을 성공적으로 업로드하였습니다.');
         props.history.push('/');
       } else {
