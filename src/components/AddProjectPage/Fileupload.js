@@ -42,20 +42,18 @@ function FileUpload(props) {
           <div className={cx('picturediv')} {...getRootProps()}>
             <input {...getInputProps()} />
             <AiOutlinePlusSquare className={cx('icon')}></AiOutlinePlusSquare>
+            {Images.map((image, index) => (
+              <div onClick={() => onDelete(image)}>
+                <img
+                  style={{ minWidth: '300px', width: '300px', height: '240px' }}
+                  src={`http://localhost:8080/${image}`}
+                  alt={`productImg-${index}`}
+                />
+              </div>
+            ))}
           </div>
         )}
       </Dropzone>
-      <div className={cx('preview')}>
-        {Images.map((image, index) => (
-          <div onClick={() => onDelete(image)}>
-            <img
-              style={{ minWidth: '300px', width: '300px', height: '240px' }}
-              src={`http://localhost:8080/${image}`}
-              alt={`productImg-${index}`}
-            />
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
