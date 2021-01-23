@@ -8,10 +8,9 @@ import styles from './History.module.scss';
 const cx = classNames.bind(styles);
 
 function History({ data }) {
-  const detailLink = '/project/' + data.project_id;
   return (
     <button>
-      <Link to={`/project/${projectId}`}>
+      <Link to={`/project/${data.project_id}`}>
         <div className={cx('goods')}>
           <div className={cx('goods-img')}>
             <img
