@@ -1,8 +1,7 @@
 /* External dependencies */
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 /* Internal dependencies */
-import { createPorjectInfoAPI } from 'api/projectAPI';
 
 const Category = [
   { key: 1, value: '패션-잡화' },
