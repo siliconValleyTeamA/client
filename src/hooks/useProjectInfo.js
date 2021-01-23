@@ -20,23 +20,23 @@ const Category = [
 ];
 
 function useProjectInfo() {
-  const [titleValue, setTitleValue] = useState('');
-  const [companyTitleValue, setCompanyTitleValue] = useState('');
-  const [goalPriceValue, setGoalPriceValue] = useState(0);
+  const [title, setTitle] = useState('');
+  const [company, setCompany] = useState('');
+  const [goalMoney, setGoalMoney] = useState(0);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const [categoryValue, setCategoryValue] = useState(1);
+  const [categoryId, setCategoryId] = useState(1);
 
-  function onTitleChange(event) {
-    setTitleValue(event.currentTarget.value);
+  function onTitle(event) {
+    setTitle(event.currentTarget.value);
   }
 
-  function onCompanyTitleValue(event) {
-    setCompanyTitleValue(event.currentTarget.value);
+  function onCompany(event) {
+    setCompany(event.currentTarget.value);
   }
 
-  function onGoalPriceValue(event) {
-    setGoalPriceValue(event.currentTarget.value);
+  function onGoalMoney(event) {
+    setGoalMoney(event.currentTarget.value);
   }
 
   function onStartDate(event) {
@@ -47,30 +47,30 @@ function useProjectInfo() {
     setEndDate(event.currentTarget.value);
   }
 
-  function onCategorySelectChange(event) {
-    setCategoryValue(event.currentTarget.value);
+  function onCategoryId(event) {
+    setCategoryId(event.currentTarget.value);
   }
 
-  const value = {
-    titleValue,
-    companyTitleValue,
-    goalPriceValue,
+  const info = {
+    title,
+    company,
+    goalMoney,
     startDate,
     endDate,
-    categoryValue,
+    categoryId,
   };
   const func = {
-    onTitleChange,
-    onCompanyTitleValue,
-    onGoalPriceValue,
+    onTitle,
+    onCompany,
+    onGoalMoney,
     onStartDate,
     onEndDate,
-    onCategorySelectChange,
+    onCategoryId,
   };
 
   return {
     Category,
-    value,
+    info,
     func,
   };
 }

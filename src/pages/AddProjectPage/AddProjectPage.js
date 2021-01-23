@@ -11,7 +11,7 @@ import ProjectInfo from 'components/Global/ProjectInfo';
 const cx = classNames.bind(styles);
 
 function AddProjectPage() {
-  const { Category, value, func } = useProjectInfo();
+  const { Category, info, func } = useProjectInfo();
   const [Images, setImages] = useState([]);
 
   const updateImages = newImages => {
@@ -24,7 +24,7 @@ function AddProjectPage() {
         <h1 className={cx('title')}>프로젝트 업로드</h1>
       </div>
       <FileUpload refreshFunction={updateImages} />
-      <ProjectInfo Category={Category} value={value} func={func} />
+      <ProjectInfo Category={Category} info={info} func={func} />
     </div>
   );
 }
