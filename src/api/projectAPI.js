@@ -24,10 +24,6 @@ export const getProjectUserJjimAPI = ({ projectId }) => {
   return axios.get(`/api/project/${projectId}/jjim`);
 };
 
-export const postUploadProjectAPI = ({ variables }) => {
-  return axios.post(`/api/project/uploadproject`);
-};
-
-export const postUploadImageAPI = ({ formData, config }) => {
-  return axios.post(`/api/project/uploadimage`);
+export const createPorjectInfoAPI = () => {
+  return axios.post(`/api/project/projectinfo`);
 };
