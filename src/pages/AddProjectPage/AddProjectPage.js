@@ -6,80 +6,55 @@ import axios from '../../api/axios';
 /* Internal dependencies */
 import styles from './AddProjectPage.module.scss';
 import FileUpload from 'components/AddProjectPage/Fileupload';
+import useProjectInfo from 'hooks/useProjectInfo';
 
 const cx = classNames.bind(styles);
 
-const Category = [
-  { key: 1, value: '테크/가전' },
-  { key: 2, value: '패션/잡화' },
-  { key: 3, value: '푸드' },
-  { key: 4, value: '홈리빙' },
-  { key: 5, value: '디자인소품' },
-  { key: 6, value: '여행/레저' },
-  { key: 7, value: '스포츠/모빌리티' },
-  { key: 8, value: '반려동물' },
-  { key: 9, value: '기타' },
-];
-
 function AddProjectPage(props) {
-  const [TitleValue, setTitleValue] = useState('');
-  const [CompanyTitleValue, setCompanyTitleValue] = useState('');
-  const [DescriptionValue, setDescriptionValue] = useState('');
-  const [GoalPriceValue, setGoalPriceValue] = useState(0);
-  const [StartDate, setStartDate] = useState(new Date());
-  const [EndDate, setEndDate] = useState(new Date());
-  const [CategoryValue, setCategoryValue] = useState(1);
+  const {
+    Category,
+    titleValue,
+    companyTitleValue,
+    goalPriceValue,
+    startDate,
+    endDate,
+    categoryValue,
+    onTitleChange,
+    onCompanyTitleValue,
+    onGoalPriceValue,
+    onStartDate,
+    onEndDate,
+    onCategorySelectChange,
+  } = useProjectInfo();
+
   const [Images, setImages] = useState([]);
 
-  const onTitleChange = event => {
-    setTitleValue(event.currentTarget.value);
-  };
-  const onCompanyTitleValue = event => {
-    setCompanyTitleValue(event.currentTarget.value);
-  };
-  const onGoalPriceValue = event => {
-    setGoalPriceValue(event.currentTarget.value);
-  };
-  const onStartDate = event => {
-    setStartDate(event.currentTarget.value);
-  };
-  const onEndDate = event => {
-    setEndDate(event.currentTarget.value);
-  };
-  const onDescriptionChange = event => {
-    setDescriptionValue(event.currentTarget.value);
-  };
-  const onCategorySelectChange = event => {
-    setCategoryValue(event.currentTarget.value);
-  };
   const updateImages = newImages => {
     setImages(newImages);
   };
   const onSubmit = event => {
     event.preventDefault();
     if (
-      !TitleValue ||
-      !DescriptionValue ||
-      !CompanyTitleValue ||
-      !GoalPriceValue ||
-      !StartDate ||
-      !EndDate ||
-      !CategoryValue ||
+      !titleValue ||
+      !companyTitleValue ||
+      !goalPriceValue ||
+      !startDate ||
+      !endDate ||
+      !categoryValue ||
       !Images
     ) {
       return alert('모든 항목을 채워주세요!');
-    } else if (StartDate > EndDate) {
+    } else if (startDate > endDate) {
       return alert('날짜 설정을 확인해주세요!');
     }
     const variables = {
-      title: TitleValue,
-      company: CompanyTitleValue,
-      goalmoney: GoalPriceValue,
-      start_date: StartDate,
-      end_date: EndDate,
-      description: DescriptionValue,
+      title: titleValue,
+      company: companyTitleValue,
+      goalmoney: goalPriceValue,
+      start_date: startDate,
+      end_date: endDate,
       images: Images,
-      category: CategoryValue,
+      category: categoryValue,
     };
 
     axios.post('/api/project/uploadproject', variables).then(result => {
@@ -112,27 +87,25 @@ function AddProjectPage(props) {
             <label>카테고리</label>
           </div>
           <div className={cx('rightside')}>
-            <input type="text" onChange={onTitleChange} value={TitleValue} />
+            <input type="text" onChange={onTitleChange} value={titleValue} />
             <br />
             <input
               type="text"
               onChange={onCompanyTitleValue}
-              value={CompanyTitleValue}
+              value={companyTitleValue}
             />
             <br />
             <input
               type="number"
               onChange={onGoalPriceValue}
-              value={GoalPriceValue}
+              value={goalPriceValue}
             />
             <br />
-            <input type="date" onChange={onStartDate} value={StartDate} />
+            <input type="date" onChange={onStartDate} value={startDate} />
             <br />
-            <input type="date" onChange={onEndDate} value={EndDate} />
+            <input type="date" onChange={onEndDate} value={endDate} />
             <br />
-            <textarea onChange={onDescriptionChange} value={DescriptionValue} />
-            <br />
-            <select onChange={onCategorySelectChange} value={CategoryValue}>
+            <select onChange={onCategorySelectChange} value={categoryValue}>
               <br />
               {Category.map(item => (
                 <option key={item.key} value={item.key}>
