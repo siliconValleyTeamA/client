@@ -1,0 +1,42 @@
+@import 'styles/_palette.scss';
+
+.discription {
+  display: flex;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+  border-radius: 0.7rem;
+  margin-top: 2rem;
+  background-color: $black-025 !important;
+  label {
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px;
+  }
+  input {
+    border-radius: 5px;
+    align-items: right;
+  }
+  textarea {
+    border-radius: 5px;
+  }
+  select {
+    border-radius: 5px;
+  }
+  .leftside {
+    display: flex;
+    flex-direction: column;
+  }
+  .rightside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px;
+  }
+}
