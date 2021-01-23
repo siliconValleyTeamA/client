@@ -24,6 +24,6 @@ export const getProjectUserJjimAPI = ({ projectId }) => {
   return axios.get(`/api/project/${projectId}/jjim`);
 };
 
-export const createPorjectInfoAPI = () => {
-  return axios.post(`/api/project/projectinfo`);
+export const createPorjectInfoAPI = ({ value }) => {
+  return axios.post(`/api/project/projectinfo`, value);
 };
