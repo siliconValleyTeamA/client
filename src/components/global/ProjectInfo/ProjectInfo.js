@@ -9,9 +9,9 @@ import { createPorjectInfoAPI } from 'api/projectAPI';
 
 const cx = classNames.bind(styles);
 
-function ProjectInfo({ Category, value, func }) {
+function ProjectInfo({ Category, info, func }) {
   const createProjectInfo = () => {
-    createPorjectInfoAPI(value).then(result => {
+    createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
         alert('상품을 성공적으로 업로드하였습니다.');
       } else {
@@ -32,31 +32,20 @@ function ProjectInfo({ Category, value, func }) {
           <label>카테고리</label>
         </div>
         <div className={cx('rightside')}>
-          <input
-            type="text"
-            onChange={func.onTitleChange}
-            value={value.titleValue}
-          />
-          <input
-            type="text"
-            onChange={func.onCompanyTitleValue}
-            value={value.companyTitleValue}
-          />
+          <input type="text" onChange={func.onTitle} value={info.title} />
+          <input type="text" onChange={func.onCompany} value={info.company} />
           <input
             type="number"
-            onChange={func.onGoalPriceValue}
-            value={value.goalPriceValue}
+            onChange={func.onGoalMoney}
+            value={info.goalMoney}
           />
           <input
             type="date"
             onChange={func.onStartDate}
-            value={value.startDate}
+            value={info.startDate}
           />
-          <input type="date" onChange={func.onEndDate} value={value.endDate} />
-          <select
-            onChange={func.onCategorySelectChange}
-            value={value.categoryValue}
-          >
+          <input type="date" onChange={func.onEndDate} value={info.endDate} />
+          <select onChange={func.onCategoryId} value={info.categoryId}>
             {Category.map(item => (
               <option key={item.key} value={item.key}>
                 {item.value}{' '}
@@ -66,7 +55,7 @@ function ProjectInfo({ Category, value, func }) {
         </div>
       </div>
       <Link to={`/`}>
-        <button onClick={createProjectInfo(value)}>다음</button>
+        <button onClick={createProjectInfo}>다음</button>
       </Link>
     </div>
   );
