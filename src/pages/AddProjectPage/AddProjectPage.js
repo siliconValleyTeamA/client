@@ -7,26 +7,12 @@ import axios from '../../api/axios';
 import styles from './AddProjectPage.module.scss';
 import FileUpload from 'components/AddProjectPage/Fileupload';
 import useProjectInfo from 'hooks/useProjectInfo';
+import ProjectInfo from 'components/Global/ProjectInfo';
 
 const cx = classNames.bind(styles);
 
 function AddProjectPage(props) {
-  const {
-    Category,
-    titleValue,
-    companyTitleValue,
-    goalPriceValue,
-    startDate,
-    endDate,
-    categoryValue,
-    onTitleChange,
-    onCompanyTitleValue,
-    onGoalPriceValue,
-    onStartDate,
-    onEndDate,
-    onCategorySelectChange,
-  } = useProjectInfo();
-
+  const { Category, value, func } = useProjectInfo();
   const [Images, setImages] = useState([]);
 
   const updateImages = newImages => {
@@ -35,26 +21,26 @@ function AddProjectPage(props) {
   const onSubmit = event => {
     event.preventDefault();
     if (
-      !titleValue ||
-      !companyTitleValue ||
-      !goalPriceValue ||
-      !startDate ||
-      !endDate ||
-      !categoryValue ||
+      !value.titleValue ||
+      !value.companyTitleValue ||
+      !value.goalPriceValue ||
+      !value.startDate ||
+      !value.endDate ||
+      !value.categoryValue ||
       !Images
     ) {
       return alert('모든 항목을 채워주세요!');
-    } else if (startDate > endDate) {
+    } else if (value.startDate > value.endDate) {
       return alert('날짜 설정을 확인해주세요!');
     }
     const variables = {
-      title: titleValue,
-      company: companyTitleValue,
-      goalmoney: goalPriceValue,
-      start_date: startDate,
-      end_date: endDate,
+      title: value.titleValue,
+      company: value.companyTitleValue,
+      goalmoney: value.goalPriceValue,
+      start_date: value.startDate,
+      end_date: value.endDate,
       images: Images,
-      category: categoryValue,
+      category: value.categoryValue,
     };
 
     axios.post('/api/project/uploadproject', variables).then(result => {
@@ -74,47 +60,7 @@ function AddProjectPage(props) {
       </div>
       <form onSubmit={onSubmit}>
         <FileUpload refreshFunction={updateImages} />
-        <br />
-        <br />
-        <div className={cx('discription')}>
-          <div className={cx('leftside')}>
-            <label>프로젝트명</label>
-            <label>기업명</label>
-            <label>목표금액</label>
-            <label>시작일</label>
-            <label>종료일</label>
-            <label>프로젝트 설명</label>
-            <label>카테고리</label>
-          </div>
-          <div className={cx('rightside')}>
-            <input type="text" onChange={onTitleChange} value={titleValue} />
-            <br />
-            <input
-              type="text"
-              onChange={onCompanyTitleValue}
-              value={companyTitleValue}
-            />
-            <br />
-            <input
-              type="number"
-              onChange={onGoalPriceValue}
-              value={goalPriceValue}
-            />
-            <br />
-            <input type="date" onChange={onStartDate} value={startDate} />
-            <br />
-            <input type="date" onChange={onEndDate} value={endDate} />
-            <br />
-            <select onChange={onCategorySelectChange} value={categoryValue}>
-              <br />
-              {Category.map(item => (
-                <option key={item.key} value={item.key}>
-                  {item.value}{' '}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
+        <ProjectInfo Category={Category} value={value} func={func} />
         <button onClick={onSubmit}>다음</button>
       </form>
     </div>
