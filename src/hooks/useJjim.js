@@ -11,7 +11,7 @@ function useJjim() {
     getJjimListAPI().then(result => {
       setJjimList(result.data);
     });
-  }, [jjimList]);
+  }, []);
 
   function onRemove(jjim_id) {
     setJjimList(jjimList.filter(jjim => jjim.jjim_id !== jjim_id));
