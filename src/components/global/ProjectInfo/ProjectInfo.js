@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import styles from './ProjectInfo.module.scss';
 const cx = classNames.bind(styles);
 
-function ProjectInfo({ value, func }) {
+function ProjectInfo({ Category, value, func }) {
   return (
     <div className={cx('discription')}>
       <div className={cx('leftside')}>
@@ -43,7 +43,7 @@ function ProjectInfo({ value, func }) {
           onChange={func.onCategorySelectChange}
           value={value.categoryValue}
         >
-          {value.Category.map(item => (
+          {Category.map(item => (
             <option key={item.key} value={item.key}>
               {item.value}{' '}
             </option>
