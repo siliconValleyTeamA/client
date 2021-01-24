@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import classNames from 'classnames/bind';
-import axios from '../../api/axios';
+import axios from '../../../api/axios';
 
 /* Internal dependencies */
 import styles from './Fileupload.module.scss';
@@ -20,6 +20,7 @@ function FileUpload(props) {
     formData.append('file', files[0]);
     //save the Image we chose inside the Node Server
     axios.post(`/api/project/uploadimage`, formData, config).then(result => {
+      console.log(result.data);
       if (result.data.success) {
         setImages([...Images, result.data.image]);
         props.refreshFunction([...Images, result.data.image]);
