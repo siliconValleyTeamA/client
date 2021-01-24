@@ -1,12 +1,10 @@
 /* External dependencies */
 import React, { Fragment, useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import cookie from 'react-cookies';
 /* Internal dependencies */
 import styles from './Container.module.scss';
 import Project from 'components/Global/Project';
 import useMainData from 'hooks/useMain';
-import { googleTranslate } from 'api/translateAPI';
 
 const cx = classNames.bind(styles);
 
