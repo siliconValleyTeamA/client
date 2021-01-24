@@ -2,10 +2,9 @@
 import React, { useRef, useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
-import cookie from 'react-cookies';
+
 /* Internal dependencies */
 import styles from './NavigationBar.module.scss';
-import { googleTranslate } from 'api/translateAPI';
 
 const cx = classNames.bind(styles);
 

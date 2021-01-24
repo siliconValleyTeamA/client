@@ -39,8 +39,6 @@ function useCart() {
     getTotalPrice();
   }
 
-  console.log(totalPrice);
-
   return { cartList, onModify, onRemove, totalPrice };
 }
 

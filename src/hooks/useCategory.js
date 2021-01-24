@@ -18,12 +18,10 @@ function useCategory() {
       filterType: filter,
     }).then(result => {
       setProjectList(result.data);
-      console.log(result.data);
     });
 
     getCategoryListAPI().then(result => {
       setCategoryList(result.data);
-      console.log(result.data);
     });
   }, [filter, category]);
 
