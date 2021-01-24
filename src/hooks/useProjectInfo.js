@@ -26,6 +26,7 @@ function useProjectInfo() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [categoryId, setCategoryId] = useState(1);
+  const [images, setImages] = useState([]);
 
   function onTitle(event) {
     setTitle(event.currentTarget.value);
@@ -51,6 +52,10 @@ function useProjectInfo() {
     setCategoryId(event.currentTarget.value);
   }
 
+  const onImages = newImages => {
+    setImages(newImages[0]);
+  };
+
   const info = {
     title,
     company,
@@ -58,6 +63,7 @@ function useProjectInfo() {
     startDate,
     endDate,
     categoryId,
+    images,
   };
   const func = {
     onTitle,
@@ -66,6 +72,7 @@ function useProjectInfo() {
     onStartDate,
     onEndDate,
     onCategoryId,
+    onImages,
   };
 
   return {
