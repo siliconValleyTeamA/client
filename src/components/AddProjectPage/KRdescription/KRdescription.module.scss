@@ -1,0 +1,45 @@
+@import 'styles/_palette.scss';
+
+.inputfield{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    // margin: 50px;
+    margin-bottom: 5px;
+    button{
+        color: white;
+        font-weight: bold;
+        background: $wadiz;
+        padding: .375rem .75rem;
+        border: 1px solid $wadiz;
+        width:200px;
+        height: 50px;      
+        border-radius: 10px;
+        margin-left: 50px;
+    }  
+    .rightside{
+        padding-left: 100px;
+        textarea{
+            margin:10px;
+            padding:10px;
+            width:500px;
+            height:250px;
+        }
+    }
+      
+}
+.icon{
+    padding:50px;
+    width:30px;
+    height: 30px;
+}
+.submitbtn{
+    color: white;
+    font-weight: bold;
+    background: $wadiz;
+    padding: .375rem .75rem;
+    border: 1px solid $wadiz;
+    width:200px;
+    height: 50px;      
+    border-radius: 10px;
+}  
