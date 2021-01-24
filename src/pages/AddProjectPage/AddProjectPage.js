@@ -15,7 +15,7 @@ function AddProjectPage() {
   const [Images, setImages] = useState([]);
 
   const updateImages = newImages => {
-    setImages(newImages);
+    setImages(newImages[0]);
   };
 
   return (
