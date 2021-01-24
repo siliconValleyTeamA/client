@@ -3,6 +3,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { AiFillHeart } from 'react-icons/ai';
+import { IoIosFolder } from 'react-icons/io';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
 import { BiWorld } from 'react-icons/bi';
@@ -34,6 +35,13 @@ function Menu() {
         <li className={cx('support')}>
           <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
           <div className={cx('title')}>My funding project</div>
+          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
+        </li>
+      </Link>
+      <Link to="/addproject">
+        <li className={cx('support')}>
+          <IoIosFolder className={cx('IoIosFolder')} />
+          <div className={cx('title')}>Register funding project</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
