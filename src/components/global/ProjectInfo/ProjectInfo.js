@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 /* Internal dependencies */
 import styles from './ProjectInfo.module.scss';
+import FileUpload from 'components/AddProjectPage/Fileupload';
 import { createPorjectInfoAPI } from 'api/projectAPI';
 
 const cx = classNames.bind(styles);
@@ -22,6 +23,7 @@ function ProjectInfo({ Category, info, func }) {
 
   return (
     <div>
+      <FileUpload refreshFunction={func.onImages} />
       <div className={cx('discription')}>
         <div className={cx('leftside')}>
           <label>프로젝트명</label>

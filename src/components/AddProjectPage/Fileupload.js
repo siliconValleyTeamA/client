@@ -16,6 +16,7 @@ function FileUpload(props) {
     const config = {
       header: { 'content-type': 'multipart/form-data' },
     };
+
     formData.append('file', files[0]);
     //save the Image we chose inside the Node Server
     axios.post(`/api/project/uploadimage`, formData, config).then(result => {
