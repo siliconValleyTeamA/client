@@ -1,66 +1,71 @@
 @import 'styles/_palette.scss';
 
-.discription {
+.whole {
+  padding: 1rem 0 0 0;
+  justify-content: space-between;
   display: flex;
-  padding: 20px;
-  text-align: left;
-  width: 100%;
-  border-radius: 0.7rem;
-  margin-top: 2rem;
-  background-color: $black-025 !important;
-  label {
-    margin-left: 100px;
-    margin-right: 100px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 10px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+
+  .empty {
+    padding: 10rem 0 10rem 0;
+    margin: 3rem 0.5rem 1rem 0;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid lightgray;
   }
-  input {
-    border-radius: 5px;
-    align-items: right;
-  }
-  textarea {
-    border-radius: 5px;
-  }
-  select {
-    border-radius: 5px;
-  }
-  .leftside {
+
+  .image-button {
     display: flex;
-    flex-direction: column;
-  }
-  .rightside {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 100px;
-    margin-right: 100px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 10px;
+
+    .uploaddiv {
+      padding: 10px;
+
+      .picturediv {
+        width: 110px;
+        height: 120px;
+        border: 2px solid lightgray;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 }
 
-.uploaddiv {
+.description {
   display: flex;
-  justify-content: center;
-  .picturediv {
-    width: 300px;
-    height: 240px;
-    border: 2px solid lightgray;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 3rem 2rem 1rem 0;
+  align-items: center;
+
+  label {
+    text-align: left;
+    margin: 0 0.5rem 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.6rem;
   }
-  .preview {
-    display: flex;
-    width: 300px;
-    height: 240px;
-    overflow-x: scroll;
+
+  input,
+  textarea,
+  select {
+    border-radius: 5px;
+    padding: 0.2rem 0 0.2rem;
+    margin: 0.5rem 0 0 0.2rem;
   }
-  .icon {
-    width: 30px;
-    height: 30px;
+
+  .leftside,
+  .rightside {
+    display: flex;
+    flex-direction: column;
   }
 }
