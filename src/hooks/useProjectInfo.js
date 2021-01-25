@@ -52,10 +52,6 @@ function useProjectInfo() {
     setCategoryId(event.currentTarget.value);
   }
 
-  const onImages = newImages => {
-    setImages(newImages[0]);
-  };
-
   const info = {
     title,
     company,
@@ -72,7 +68,6 @@ function useProjectInfo() {
     onStartDate,
     onEndDate,
     onCategoryId,
-    onImages,
   };
 
   return {
