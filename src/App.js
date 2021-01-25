@@ -18,7 +18,7 @@ import ScrollToTop from 'components/Global/ScrollToTop';
 import AddProjectPage from 'pages/AddProjectPage';
 
 const MainLayout = styled.div`
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
 `;
