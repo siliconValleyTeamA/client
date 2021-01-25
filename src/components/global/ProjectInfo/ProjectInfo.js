@@ -41,60 +41,146 @@ function ProjectInfo({ Category, info, func }) {
 
   return (
     <div>
-      <div className={cx('uploaddiv')}>
-        <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
-          {({ getRootProps, getInputProps }) => (
-            <div className={cx('picturediv')} {...getRootProps()}>
-              <input {...getInputProps()} />
-              <AiOutlinePlusSquare className={cx('icon')}></AiOutlinePlusSquare>
-              {images.map((image, index) => (
-                <div onClick={() => []}>
-                  <img
-                    style={{
-                      minWidth: '300px',
-                      width: '300px',
-                      height: '240px',
-                    }}
-                    src={`${image.filename}`}
-                    alt={`productImg-${index}`}
-                  />
-                </div>
-              ))}
+      <div className={cx('whole')}>
+        <div className={cx('image')}>
+          <div className={cx('empty')}>
+            This section will be showed by first image.
+          </div>
+          <div className={cx('image-button')}>
+            <div className={cx('uploaddiv')}>
+              <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
+                {({ getRootProps, getInputProps }) => (
+                  <div className={cx('picturediv')} {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <AiOutlinePlusSquare
+                      className={cx('icon')}
+                    ></AiOutlinePlusSquare>
+                    {images.map((image, index) => (
+                      <div onClick={() => []}>
+                        <img
+                          style={{
+                            minWidth: '300px',
+                            width: '300px',
+                            height: '240px',
+                          }}
+                          src={`${image.filename}`}
+                          alt={`productImg-${index}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </Dropzone>
             </div>
-          )}
-        </Dropzone>
-      </div>
-
-      <div className={cx('discription')}>
-        <div className={cx('leftside')}>
-          <label>Project Name</label>
-          <label>Company</label>
-          <label>Goal Money</label>
-          <label>Start Date</label>
-          <label>End Date</label>
-          <label>Category</label>
+            <div className={cx('uploaddiv')}>
+              <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
+                {({ getRootProps, getInputProps }) => (
+                  <div className={cx('picturediv')} {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <AiOutlinePlusSquare
+                      className={cx('icon')}
+                    ></AiOutlinePlusSquare>
+                    {images.map((image, index) => (
+                      <div onClick={() => []}>
+                        <img
+                          style={{
+                            minWidth: '300px',
+                            width: '300px',
+                            height: '240px',
+                          }}
+                          src={`${image.filename}`}
+                          alt={`productImg-${index}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </Dropzone>
+            </div>
+            <div className={cx('uploaddiv')}>
+              <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
+                {({ getRootProps, getInputProps }) => (
+                  <div className={cx('picturediv')} {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <AiOutlinePlusSquare
+                      className={cx('icon')}
+                    ></AiOutlinePlusSquare>
+                    {images.map((image, index) => (
+                      <div onClick={() => []}>
+                        <img
+                          style={{
+                            minWidth: '300px',
+                            width: '300px',
+                            height: '240px',
+                          }}
+                          src={`${image.filename}`}
+                          alt={`productImg-${index}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </Dropzone>
+            </div>
+            <div className={cx('uploaddiv')}>
+              <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
+                {({ getRootProps, getInputProps }) => (
+                  <div className={cx('picturediv')} {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <AiOutlinePlusSquare
+                      className={cx('icon')}
+                    ></AiOutlinePlusSquare>
+                    {images.map((image, index) => (
+                      <div onClick={() => []}>
+                        <img
+                          style={{
+                            minWidth: '300px',
+                            width: '300px',
+                            height: '240px',
+                          }}
+                          src={`${image.filename}`}
+                          alt={`productImg-${index}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </Dropzone>
+            </div>
+          </div>
         </div>
-        <div className={cx('rightside')}>
-          <input type="text" onChange={func.onTitle} value={info.title} />
-          <input type="text" onChange={func.onCompany} value={info.company} />
-          <input
-            type="number"
-            onChange={func.onGoalMoney}
-            value={info.goalMoney}
-          />
-          <input
-            type="date"
-            onChange={func.onStartDate}
-            value={info.startDate}
-          />
-          <input type="date" onChange={func.onEndDate} value={info.endDate} />
-          <select onChange={func.onCategoryId} value={info.categoryId}>
-            {Category.map(item => (
-              <option key={item.key} value={item.key}>
-                {item.value}{' '}
-              </option>
-            ))}
-          </select>
+
+        <div className={cx('description')}>
+          <div className={cx('leftside')}>
+            <label>Project Name</label>
+            <label>Company</label>
+            <label>Goal Money</label>
+            <label>Start Date</label>
+            <label>End Date</label>
+            <label>Category</label>
+          </div>
+          <div className={cx('rightside')}>
+            <input type="text" onChange={func.onTitle} value={info.title} />
+            <input type="text" onChange={func.onCompany} value={info.company} />
+            <input
+              type="number"
+              onChange={func.onGoalMoney}
+              value={info.goalMoney}
+            />
+            <input
+              type="date"
+              onChange={func.onStartDate}
+              value={info.startDate}
+            />
+            <input type="date" onChange={func.onEndDate} value={info.endDate} />
+            <select onChange={func.onCategoryId} value={info.categoryId}>
+              {Category.map(item => (
+                <option key={item.key} value={item.key}>
+                  {item.value}{' '}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
       <Link to={`/`}>
