@@ -214,7 +214,7 @@ function ProjectInfo({ Category, info, func }) {
                   <div onClick={() => []}>
                     <img
                       style={{
-                        width: '400px',
+                        width: '450px',
                         height: '330px',
                       }}
                       src={images[4].filename}
@@ -252,7 +252,7 @@ function ProjectInfo({ Category, info, func }) {
                   <div onClick={() => []}>
                     <img
                       style={{
-                        width: '400px',
+                        width: '450px',
                         height: '330px',
                       }}
                       src={images[5].filename}
@@ -290,7 +290,7 @@ function ProjectInfo({ Category, info, func }) {
                   <div onClick={() => []}>
                     <img
                       style={{
-                        width: '400px',
+                        width: '450px',
                         height: '330px',
                       }}
                       src={images[6].filename}
@@ -328,7 +328,7 @@ function ProjectInfo({ Category, info, func }) {
                   <div onClick={() => []}>
                     <img
                       style={{
-                        width: '400px',
+                        width: '450px',
                         height: '330px',
                       }}
                       src={images[7].filename}
