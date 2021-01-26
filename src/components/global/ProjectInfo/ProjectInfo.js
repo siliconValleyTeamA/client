@@ -55,19 +55,20 @@ function ProjectInfo({ Category, info, func }) {
                     <AiOutlinePlusSquare
                       className={cx('icon')}
                     ></AiOutlinePlusSquare>
-                    {images.map((image, index) => (
+                    {images[0] ? (
                       <div onClick={() => []}>
                         <img
                           style={{
-                            minWidth: '300px',
-                            width: '300px',
-                            height: '240px',
+                            width: '110px',
+                            height: '120px',
                           }}
-                          src={`${image.filename}`}
-                          alt={`productImg-${index}`}
+                          src={images[0].filename}
+                          alt={`productImg - 0`}
                         />
                       </div>
-                    ))}
+                    ) : (
+                      ''
+                    )}
                   </div>
                 )}
               </Dropzone>
@@ -80,19 +81,20 @@ function ProjectInfo({ Category, info, func }) {
                     <AiOutlinePlusSquare
                       className={cx('icon')}
                     ></AiOutlinePlusSquare>
-                    {images.map((image, index) => (
+                    {images[1] ? (
                       <div onClick={() => []}>
                         <img
                           style={{
-                            minWidth: '300px',
-                            width: '300px',
-                            height: '240px',
+                            width: '110px',
+                            height: '120px',
                           }}
-                          src={`${image.filename}`}
-                          alt={`productImg-${index}`}
+                          src={images[1].filename}
+                          alt={`productImg - 1`}
                         />
                       </div>
-                    ))}
+                    ) : (
+                      ''
+                    )}
                   </div>
                 )}
               </Dropzone>
@@ -105,19 +107,20 @@ function ProjectInfo({ Category, info, func }) {
                     <AiOutlinePlusSquare
                       className={cx('icon')}
                     ></AiOutlinePlusSquare>
-                    {images.map((image, index) => (
+                    {images[2] ? (
                       <div onClick={() => []}>
                         <img
                           style={{
-                            minWidth: '300px',
-                            width: '300px',
-                            height: '240px',
+                            width: '110px',
+                            height: '120px',
                           }}
-                          src={`${image.filename}`}
-                          alt={`productImg-${index}`}
+                          src={images[2].filename}
+                          alt={`productImg - 2`}
                         />
                       </div>
-                    ))}
+                    ) : (
+                      ''
+                    )}
                   </div>
                 )}
               </Dropzone>
@@ -130,19 +133,20 @@ function ProjectInfo({ Category, info, func }) {
                     <AiOutlinePlusSquare
                       className={cx('icon')}
                     ></AiOutlinePlusSquare>
-                    {images.map((image, index) => (
+                    {images[3] ? (
                       <div onClick={() => []}>
                         <img
                           style={{
-                            minWidth: '300px',
-                            width: '300px',
-                            height: '240px',
+                            width: '110px',
+                            height: '120px',
                           }}
-                          src={`${image.filename}`}
-                          alt={`productImg-${index}`}
+                          src={images[3].filename}
+                          alt={`productImg - 3`}
                         />
                       </div>
-                    ))}
+                    ) : (
+                      ''
+                    )}
                   </div>
                 )}
               </Dropzone>
