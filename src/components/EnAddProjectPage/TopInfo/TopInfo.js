@@ -48,7 +48,7 @@ function ProjectInfo({ Category, info, func }) {
   };
 
   return (
-    <div>
+    <div className={cx('en-info')}>
       <div className={cx('whole')}>
         <div className={cx('image')}>
           <div className={cx('empty')}>
@@ -195,6 +195,7 @@ function ProjectInfo({ Category, info, func }) {
           </div>
         </div>
       </div>
+
       <div className={cx('image-description')}>
         <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
           {({ getRootProps, getInputProps }) => (
@@ -205,7 +206,7 @@ function ProjectInfo({ Category, info, func }) {
                 <div onClick={() => []}>
                   <img
                     style={{
-                      width: '400px',
+                      width: '450px',
                       height: '330px',
                     }}
                     src={images[4].filename}
@@ -227,7 +228,7 @@ function ProjectInfo({ Category, info, func }) {
                 <div onClick={() => []}>
                   <img
                     style={{
-                      width: '400px',
+                      width: '450px',
                       height: '330px',
                     }}
                     src={images[5].filename}
