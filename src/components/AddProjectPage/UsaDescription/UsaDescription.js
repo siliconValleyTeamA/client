@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './UsaDescription.module.scss';
-import FileUpload from '../Fileupload';
+import FileUpload from '../ImageUpload';
 
 const cx = classNames.bind(styles);
 
 function UsaDescription({ Category, info, func }) {
   return (
     <div className={cx('usa-component')}>
-      <h1 className={cx('usa-title')}> USA Detail</h1>
+      <h1 className={cx('usa-title')}> Detail Description</h1>
       <FileUpload refreshFunction={func.onImages} />
       <FileUpload refreshFunction={func.onImages} />
       <textarea
