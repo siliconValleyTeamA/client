@@ -15,7 +15,7 @@ import MyCartPage from 'pages/MyCartPage';
 import GlobalStyle from 'styles/global-styles';
 import MyProfilePage from 'pages/MyProfilePage';
 import ScrollToTop from 'components/Global/ScrollToTop';
-import AddProjectPage from 'pages/AddProjectPage';
+import EnAddProjectPage from 'pages/EnAddProjectPage';
 
 const MainLayout = styled.div`
   max-width: 900px;
@@ -39,7 +39,7 @@ function App() {
           <Route path="/mypage/jjim" component={MyJjimPage} />
           <Route path="/mypage/cart" component={MyCartPage} />
           <Route path="/mypage/profile" component={MyProfilePage} />
-          <Route path="/addproject" component={AddProjectPage} />
+          <Route path="/en/addproject" component={EnAddProjectPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
