@@ -16,7 +16,11 @@ import GlobalStyle from 'styles/global-styles';
 import MyProfilePage from 'pages/MyProfilePage';
 import ScrollToTop from 'components/Global/ScrollToTop';
 import EnAddProjectPage from 'pages/EnAddProjectPage';
+<<<<<<< HEAD
 import ArAddProjectPage from 'pages/ArAddProjectPage';
+=======
+import KrAddProjectPage from 'pages/KrAddProjectPage';
+>>>>>>> [#139] feat - 한국 프로젝트 등록페이지
 
 const MainLayout = styled.div`
   max-width: 900px;
@@ -41,7 +45,11 @@ function App() {
           <Route path="/mypage/cart" component={MyCartPage} />
           <Route path="/mypage/profile" component={MyProfilePage} />
           <Route path="/en/addproject" component={EnAddProjectPage} />
+<<<<<<< HEAD
           <Route path="/ar/addproject" component={ArAddProjectPage} />
+=======
+          <Route path="/kr/addproject" component={KrAddProjectPage} />
+>>>>>>> [#139] feat - 한국 프로젝트 등록페이지
         </Switch>
       </MainLayout>
     </BrowserRouter>
