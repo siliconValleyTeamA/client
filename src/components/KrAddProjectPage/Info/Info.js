@@ -14,12 +14,14 @@ const cx = classNames.bind(styles);
 
 function ProjectInfo({ Category, info, func }) {
   const [images, setImages] = useState([]);
-  const [text, setText] = useState('');
-  // const [description, setDescription] = useState([]);
+  const [text1, setText1] = useState('');
+  const [text2, setText2] = useState('');
+  const [text3, setText3] = useState('');
+  const [text4, setText4] = useState('');
 
   const createProjectInfo = () => {
     info.images = images;
-    info.description = text;
+    info.description = text1 + '&' + text2 + '&' + text3 + '&' + text4;
     createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
         alert('상품을 성공적으로 업로드하였습니다.');
@@ -29,9 +31,17 @@ function ProjectInfo({ Category, info, func }) {
     });
   };
 
-  function onText(event) {
-    setText(event.currentTarget.value);
-    // setDescription([...description, { idx: text }]);
+  function onText1(event) {
+    setText1(event.currentTarget.value);
+  }
+  function onText2(event) {
+    setText2(event.currentTarget.value);
+  }
+  function onText3(event) {
+    setText3(event.currentTarget.value);
+  }
+  function onText4(event) {
+    setText4(event.currentTarget.value);
   }
 
   const onDrop = files => {
@@ -229,8 +239,8 @@ function ProjectInfo({ Category, info, func }) {
           </Dropzone>
           <textarea
             type="text"
-            onChange={onText}
-            value={text}
+            onChange={onText1}
+            value={text1}
             className={cx('text-description')}
             placeholder="Please write description about your project"
           ></textarea>
@@ -267,8 +277,8 @@ function ProjectInfo({ Category, info, func }) {
           </Dropzone>
           <textarea
             type="text"
-            onChange={onText}
-            value={text}
+            onChange={onText2}
+            value={text2}
             className={cx('text-description')}
             placeholder="Please write description about your project"
           ></textarea>
@@ -305,8 +315,8 @@ function ProjectInfo({ Category, info, func }) {
           </Dropzone>
           <textarea
             type="text"
-            onChange={onText}
-            value={text}
+            onChange={onText3}
+            value={text3}
             className={cx('text-description')}
             placeholder="Please write description about your project"
           ></textarea>
@@ -343,8 +353,8 @@ function ProjectInfo({ Category, info, func }) {
           </Dropzone>
           <textarea
             type="text"
-            onChange={onText}
-            value={text}
+            onChange={onText4}
+            value={text4}
             className={cx('text-description')}
             placeholder="Please write description about your project"
           ></textarea>
