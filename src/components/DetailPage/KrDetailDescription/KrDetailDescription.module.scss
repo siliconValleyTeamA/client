@@ -1,0 +1,16 @@
+.detail-set {
+  display: flex;
+
+  .product-details-image {
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 15px auto;
+    height: auto;
+  }
+
+  .product-details-description {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+  }
+}
