@@ -14,6 +14,7 @@ function Project({ data, type, jjimType, onRemove }) {
   const [jjim, setJjim] = useState(true);
   const projectId = jjimType ? data.project_id : data.id;
   const jjimId = jjimType ? data.jjim_id : '';
+  const image = data.image.split('&')[0];
 
   const createJjim = () => {
     setJjim(true);
@@ -33,7 +34,7 @@ function Project({ data, type, jjimType, onRemove }) {
         <div
           className={cx('project')}
           style={{
-            backgroundImage: `url("${data.image}")`,
+            backgroundImage: `url("${image}")`,
           }}
         >
           <div className={cx('project-info')}>
