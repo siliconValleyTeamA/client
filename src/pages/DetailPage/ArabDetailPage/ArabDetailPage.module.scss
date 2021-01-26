@@ -1,0 +1,173 @@
+@import 'styles/_palette.scss';
+
+.detail .top {
+  margin:50px;
+  width: 100%;
+  margin-top: 150px;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  writing-mode: horizontal-tb;
+
+  .rightside{
+    padding:20px;
+    margin-right: 100px;
+    width: 500px;
+    height: 450px;
+    //margin-right: 100px;
+    .product-details-image {
+        margin: 30px;
+        max-width: 450px;
+        width:auto;
+        border-radius: 10px;
+        margin: 30px auto auto;
+        max-height: 450px;
+        height: auto;                
+    }
+  }
+  .leftside{
+    display: flex;
+    flex-direction: row;
+    .product-details-info {     //제일 왼쪽         
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin: 20px;
+        height: auto;
+        width: 500px;
+        padding: 30px 40px;
+        border-radius: 20px;
+        background-color: $light-gray;
+        text-align: right;
+        
+        .product-details-info-description {
+            font-weight: 600;
+            color: $gray;
+            margin-bottom: 10px;
+        }
+        .product-details-info-category {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .product-details-info-name {
+            font-weight: 600;
+            font-size: 25px;
+            margin-bottom: 32px;
+        }
+
+        .product-details-info-price-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+        .product-details-info-price-info-price {
+            margin-left: auto;
+            display: flex;
+            align-items: flex-end;
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .product-details-info-price-unit {
+            font-size: 17px;
+            font-weight: normal;
+            margin-left: 0.3rem;
+            margin-right: 0.3rem;
+        }
+      }
+
+        .product-details-funding-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+        .product-funding-duedate {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .product-funding-money {
+            font-size: 20px;
+            font-weight: 700;
+        }
+      }
+
+        .product-details-funding {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $white;
+
+        .product-funding-percent {
+            margin-right: auto;
+            height: 0.3rem;
+            background-color: $wadiz;
+        }
+      }
+
+        .product-details-info-options {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 30px;
+            margin-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+        .product-details-info-options-jjim {
+            color: $pink;
+            width: 40px;
+            height: auto;
+            cursor: pointer;
+            animation: heart;
+            animation-duration: 0.3s;
+        }
+
+        .product-details-info-options-funding {
+            color: $wadiz;
+            width: 40px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        @keyframes heart {
+            0% {
+            transform: scale(1);
+            }
+            50% {
+            transform: scale(1.15);
+            }
+            100% {
+            transform: scale(1);
+            }
+        }
+      }
+    }
+    .product-more-details-info {//가운데
+        
+        border: 1px solid black;
+        box-sizing: border-box;
+        width: 70%;
+        height: auto;
+        // max-width: 600px;
+        padding: 30px 40px;
+        margin: 20px;
+  
+        border-radius: 20px;
+        background-color: $light-gray;
+        text-align: right;
+     } 
+    }
+    
+}
+.bottom{
+    border:1px solid black;
+    width: 100%;
+    border-radius: 20px;
+    background-color: $light-gray;
+    text-align: right;
+    height: 100px;
+    padding: 30px;
+}
