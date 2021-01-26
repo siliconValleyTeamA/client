@@ -20,7 +20,7 @@ function MyJjimPage() {
     <div className={cx('myjjim-page')}>
       <BackButton />
       <AiFillHeart className={cx('AiFillHeart')} />
-      <Header header="찜 목록" />
+      <Header header="Selected List" />
       <JjimList jjimList={jjimList} onRemove={onRemove} />
       <ShoppingCart />
     </div>

@@ -20,7 +20,7 @@ function MyProfilePage() {
     <div className={cx('setcountry')}>
       <BackButton />
       <BiWorld className={cx('BiWorld')} />
-      <Header header="개인정보 설정" />
+      <Header header="Profile Setting" />
       <div className={cx('profile')}>
         <img
           className={cx('picture')}
@@ -35,7 +35,7 @@ function MyProfilePage() {
 
       <div className={cx('language')}>
         <div className={cx('row')}>
-          <span className={cx('edit')}>언어 수정</span>
+          <span className={cx('edit')}>Change language</span>
           <span className={cx('delete')}>기본값 적용</span>
         </div>
         <div className={cx('content')}>한국어</div>
@@ -49,7 +49,7 @@ function MyProfilePage() {
               setDialog(true);
             }}
           >
-            포인트 충전
+            Charge point
           </span>
           {dialog && <PointDialog closeDialog={closeDialog} update={update} />}
         </div>
