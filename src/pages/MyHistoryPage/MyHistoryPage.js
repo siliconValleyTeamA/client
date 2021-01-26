@@ -20,7 +20,7 @@ function MyHistoryPage() {
     <div className={cx('myhistory-page')}>
       <BackButton />
       <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
-      <Header header="펀딩 기록" />
+      <Header header="Funding History" />
       <HistoryList historyList={historyList} />
       <ShoppingCart />
     </div>

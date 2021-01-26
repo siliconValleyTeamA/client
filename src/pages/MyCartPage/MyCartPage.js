@@ -19,7 +19,7 @@ function MyCartPage() {
     <div className={cx('mycart-page')}>
       <BackButton />
       <FaShoppingCart className={cx('FaShoppingCart')} />
-      <Header header="펀딩 장바구니" />
+      <Header header="Funding Cart" />
       <CartList cartList={cartList} onModify={onModify} onRemove={onRemove} />
       <CartFooter totalPrice={totalPrice} />
     </div>
