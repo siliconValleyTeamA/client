@@ -2,11 +2,7 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import classNames from 'classnames/bind';
-<<<<<<< Updated upstream:src/components/AddProjectPage/Fileupload/Fileupload.js
-import axios from '../../../api/axios';
-=======
 import axios from 'api/axios';
->>>>>>> Stashed changes:src/components/AddProjectPage/ImageUpload.js
 
 /* Internal dependencies */
 import styles from './ImageUpload.module.scss';
@@ -25,7 +21,6 @@ function ImageUpload(props) {
 
     //save the Image we chose inside the Node Server
     axios.post(`/api/project/uploadimage`, formData, config).then(result => {
-<<<<<<< Updated upstream:src/components/AddProjectPage/Fileupload/Fileupload.js
       console.log(result.data);
       if (result.data.success) {
         setImages([...Images, result.data.image]);
@@ -33,10 +28,6 @@ function ImageUpload(props) {
       } else {
         alert('Failed to save the Image in Server');
       }
-=======
-      setImages([...images, { filename: result.data.image }]);
-      props.upload([...images, { filename: result.data.image }]);
->>>>>>> Stashed changes:src/components/AddProjectPage/ImageUpload.js
     });
   };
 
