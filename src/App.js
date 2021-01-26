@@ -16,6 +16,7 @@ import GlobalStyle from 'styles/global-styles';
 import MyProfilePage from 'pages/MyProfilePage';
 import ScrollToTop from 'components/Global/ScrollToTop';
 import EnAddProjectPage from 'pages/EnAddProjectPage';
+import ArAddProjectPage from 'pages/ArAddProjectPage';
 
 const MainLayout = styled.div`
   max-width: 900px;
@@ -40,6 +41,7 @@ function App() {
           <Route path="/mypage/cart" component={MyCartPage} />
           <Route path="/mypage/profile" component={MyProfilePage} />
           <Route path="/en/addproject" component={EnAddProjectPage} />
+          <Route path="/ar/addproject" component={ArAddProjectPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
