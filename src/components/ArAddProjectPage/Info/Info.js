@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Dropzone from 'react-dropzone';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import classNames from 'classnames/bind';
@@ -14,12 +14,12 @@ const cx = classNames.bind(styles);
 
 function Info({ Category, info, func }) {
   const [images, setImages] = useState([]);
-  const [text, setText] = useState('');
-  // const [description, setDescription] = useState([]);
+  const [text1, setText1] = useState('');
+  const [text2, setText2] = useState('');
 
-  const createProjectInfo = () => {
+  const handleInfo = () => {
     info.images = images;
-    info.description = text;
+    info.description = text1 + '&' + text2;
     createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
         alert('상품을 성공적으로 업로드하였습니다.');
@@ -29,9 +29,12 @@ function Info({ Category, info, func }) {
     });
   };
 
-  function onText(event) {
-    setText(event.currentTarget.value);
-    // setDescription([...description, { idx: text }]);
+  function onText1(event) {
+    setText1(event.currentTarget.value);
+  }
+
+  function onText2(event) {
+    setText2(event.currentTarget.value);
   }
 
   const onDrop = files => {
@@ -79,8 +82,8 @@ function Info({ Category, info, func }) {
 
         <textarea
           type="text"
-          onChange={onText}
-          value={text}
+          onChange={onText1}
+          value={text1}
           className={cx('text-middle')}
           placeholder="Please write description about your project"
         ></textarea>
@@ -121,13 +124,13 @@ function Info({ Category, info, func }) {
 
       <textarea
         type="text"
-        onChange={onText}
-        value={text}
+        onChange={onText2}
+        value={text2}
         className={cx('text-bottom')}
         placeholder="Please write description about your project"
       ></textarea>
       <Link to={`/`}>
-        <button onClick={createProjectInfo}>Upload</button>
+        <button onClick={handleInfo}>Upload</button>
       </Link>
     </div>
   );
