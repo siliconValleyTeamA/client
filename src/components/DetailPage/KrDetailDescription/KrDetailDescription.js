@@ -9,9 +9,18 @@ function KrDetailDescription({ image, description }) {
   const imageLinkList = image !== undefined ? image.split('&') : [];
   const descriptionList =
     description !== undefined ? description.split('&') : [];
-
   return (
     <div>
+      <div className={cx('detail-set')}>
+        <img
+          className={cx('product-details-image')}
+          src={imageLinkList[4]}
+          alt="product"
+        />
+        <span className={cx('product-details-description')}>
+          {descriptionList[0]}
+        </span>
+      </div>
       <div className={cx('detail-set')}>
         <img
           className={cx('product-details-image')}
@@ -50,16 +59,6 @@ function KrDetailDescription({ image, description }) {
         />
         <span className={cx('product-details-description')}>
           {descriptionList[4]}
-        </span>
-      </div>
-      <div className={cx('detail-set')}>
-        <img
-          className={cx('product-details-image')}
-          src={imageLinkList[9]}
-          alt="product"
-        />
-        <span className={cx('product-details-description')}>
-          {descriptionList[5]}
         </span>
       </div>
     </div>

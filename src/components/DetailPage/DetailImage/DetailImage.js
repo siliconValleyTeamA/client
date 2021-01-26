@@ -8,16 +8,22 @@ const cx = classNames.bind(styles);
 function DetailImage({ image }) {
   const imageLinkList = image !== undefined ? image.split('&') : [];
   // const [defaultImage, setDefaultImage] = useState();
-  const [mainImage, setMainImage] = useState(imageLinkList[1]);
+  const [mainImage, setMainImage] = useState(imageLinkList[0]);
 
   useEffect(() => {
     const imageLinkList = image !== undefined ? image.split('&') : [];
-    setMainImage(imageLinkList[1]);
+    setMainImage(imageLinkList[0]);
   }, [image]);
   // 메인페이지 수정
   return (
     <div className={cx('detail-image-component')}>
       <div className={cx('sub')}>
+        <img
+          className={cx('product-details-image')}
+          src={imageLinkList[0]}
+          alt="product"
+          onMouseOver={e => setMainImage(e.target.src)}
+        />
         <img
           className={cx('product-details-image')}
           src={imageLinkList[1]}
@@ -33,12 +39,6 @@ function DetailImage({ image }) {
         <img
           className={cx('product-details-image')}
           src={imageLinkList[3]}
-          alt="product"
-          onMouseOver={e => setMainImage(e.target.src)}
-        />
-        <img
-          className={cx('product-details-image')}
-          src={imageLinkList[4]}
           alt="product"
           onMouseOver={e => setMainImage(e.target.src)}
         />
