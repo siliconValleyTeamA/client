@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import axios from 'api/axios';
 
 /* Internal dependencies */
-import styles from './TopInfo.module.scss';
+import styles from './Info.module.scss';
 import { createPorjectInfoAPI } from 'api/projectAPI';
 
 const cx = classNames.bind(styles);

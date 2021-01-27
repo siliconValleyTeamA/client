@@ -18,7 +18,7 @@ const cx = classNames.bind(styles);
 
 function EnDetailPage() {
   const link = useLocation();
-  const projectId = link.pathname.split('/')[3];
+  const projectId = link.pathname.split('/')[2];
   const [open, setOpen] = useState(false);
   const { jjim, createJjim, removeJim } = useProjectJjim(projectId);
   const { project } = useDetail(projectId);
