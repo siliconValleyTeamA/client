@@ -41,7 +41,7 @@ function Drawer({ open, setOpen, selectFinish, categoryList }) {
                       selectFinish();
                     }}
                   >
-                    {category.label}
+                    {category.key}
                   </li>
                 );
               })}
