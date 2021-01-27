@@ -8,3 +8,5 @@ export { default as MyPage } from './MyPage';
 export { default as MyProfilePage } from './MyProfilePage';
 export { default as PopularPage } from './PopularPage';
 export { default as EnAddProjectPage } from './EnAddProjectPage';
+export { default as KoAddProjectPage } from './KoAddProjectPage';
+export { default as ArAddProjectPage } from './ArAddProjectPage';
