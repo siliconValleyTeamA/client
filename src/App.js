@@ -6,7 +6,7 @@ import styled from 'styled-components';
 /* Internal dependencies */
 import HomePage from 'pages/HomePage';
 import CategoryPage from 'pages/CategoryPage';
-import DetailPage from 'pages/DetailPage/EnDetailPage';
+import EnDetailPage from 'pages/DetailPage/EnDetailPage';
 import PopularPage from 'pages/PopularPage';
 import MyPage from 'pages/MyPage';
 import MyHistoryPage from 'pages/MyHistoryPage';
@@ -16,11 +16,8 @@ import GlobalStyle from 'styles/global-styles';
 import MyProfilePage from 'pages/MyProfilePage';
 import ScrollToTop from 'components/Global/ScrollToTop';
 import EnAddProjectPage from 'pages/EnAddProjectPage';
-<<<<<<< HEAD
 import ArAddProjectPage from 'pages/ArAddProjectPage';
-=======
 import KrAddProjectPage from 'pages/KrAddProjectPage';
->>>>>>> [#139] feat - 한국 프로젝트 등록페이지
 
 const MainLayout = styled.div`
   max-width: 900px;
@@ -38,18 +35,15 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/category" component={CategoryPage} />
           <Route path="/popular" component={PopularPage} />
-          <Route path="/project/:projectId" component={DetailPage} />
+          <Route path="/project/:projectId" component={EnDetailPage} />
           <Route path="/mypage" exact component={MyPage} />
           <Route path="/mypage/history" component={MyHistoryPage} />
           <Route path="/mypage/jjim" component={MyJjimPage} />
           <Route path="/mypage/cart" component={MyCartPage} />
           <Route path="/mypage/profile" component={MyProfilePage} />
           <Route path="/en/addproject" component={EnAddProjectPage} />
-<<<<<<< HEAD
           <Route path="/ar/addproject" component={ArAddProjectPage} />
-=======
           <Route path="/kr/addproject" component={KrAddProjectPage} />
->>>>>>> [#139] feat - 한국 프로젝트 등록페이지
         </Switch>
       </MainLayout>
     </BrowserRouter>

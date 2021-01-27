@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 /* Internal dependencies */
 import styles from './EnAddProjectPage.module.scss';
 import useProjectInfo from 'hooks/useProjectInfo';
-import TopInfo from 'components/EnAddProjectPage/TopInfo';
+import Info from 'components/EnAddProjectPage/Info';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +17,7 @@ function EnAddProjectPage() {
       <div className={cx('titlediv')}>
         <h1 className={cx('title')}>Register Project</h1>
       </div>
-      <TopInfo Category={Category} info={info} func={func} />
+      <Info Category={Category} info={info} func={func} />
     </div>
   );
 }
