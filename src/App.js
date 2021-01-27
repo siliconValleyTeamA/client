@@ -17,7 +17,7 @@ import MyProfilePage from 'pages/MyProfilePage';
 import ScrollToTop from 'components/Global/ScrollToTop';
 import EnAddProjectPage from 'pages/EnAddProjectPage';
 import ArAddProjectPage from 'pages/ArAddProjectPage';
-import KrAddProjectPage from 'pages/KrAddProjectPage';
+import KoAddProjectPage from 'pages/KoAddProjectPage';
 
 const MainLayout = styled.div`
   max-width: 900px;
@@ -43,7 +43,7 @@ function App() {
           <Route path="/mypage/profile" component={MyProfilePage} />
           <Route path="/en/addproject" component={EnAddProjectPage} />
           <Route path="/ar/addproject" component={ArAddProjectPage} />
-          <Route path="/kr/addproject" component={KrAddProjectPage} />
+          <Route path="/ko/addproject" component={KoAddProjectPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
