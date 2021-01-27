@@ -62,7 +62,7 @@ function ProjectInfo({ Category, info, func }) {
       <div className={cx('whole')}>
         <div className={cx('image')}>
           <div className={cx('empty')}>
-            This section will be showed by first image.
+            이 곳에는 첫 번째로 업로드하는 이미지가 들어갈 예정입니다.
           </div>
           <div className={cx('image-button')}>
             <div className={cx('uploaddiv')}>
@@ -174,12 +174,12 @@ function ProjectInfo({ Category, info, func }) {
 
         <div className={cx('description')}>
           <div className={cx('leftside')}>
-            <label>Project Name</label>
-            <label>Company</label>
-            <label>Goal Money</label>
-            <label>Start Date</label>
-            <label>End Date</label>
-            <label>Category</label>
+            <label>프로젝트명</label>
+            <label>회사</label>
+            <label>목표 펀딩 금액</label>
+            <label>시작 날짜</label>
+            <label>종료 날짜</label>
+            <label>카테고리</label>
           </div>
           <div className={cx('rightside')}>
             <input type="text" onChange={func.onTitle} value={info.title} />
