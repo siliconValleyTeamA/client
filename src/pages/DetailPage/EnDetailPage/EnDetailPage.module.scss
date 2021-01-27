@@ -7,18 +7,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .upper-div{
+
+  .upper-div {
     display: flex;
-    flex-direction: row;      
-    .image{
+    flex-direction: row;
+
+    .image {
       width: 500px;
-      margin:20px; 
+      margin: 20px;
     }
-    .description{ 
-      margin-left: 50px;  
-      margin-bottom: 20px;  
-      position: relative;  
-      .product-details-info {        
+
+    .description {
+      margin-left: 50px;
+      margin-bottom: 20px;
+      position: relative;
+      .product-details-info {
         box-sizing: border-box;
         position: absolute;
         bottom: 0;
@@ -27,31 +30,31 @@
         padding: 30px 40px;
         border-radius: 20px;
         background-color: $light-gray;
-        text-align: left;      
-    
+        text-align: left;
+
         .product-details-info-description {
           font-weight: 600;
           color: $gray;
           margin-bottom: 10px;
         }
-    
+
         .product-details-info-category {
           font-size: 12px;
           font-weight: 500;
           margin-bottom: 25px;
         }
-    
+
         .product-details-info-name {
           font-weight: 600;
           font-size: 25px;
           margin-bottom: 32px;
         }
-    
+
         .product-details-info-price-info {
           display: flex;
           align-items: center;
           margin-bottom: 10px;
-    
+
           .product-details-info-price-info-price {
             margin-left: auto;
             display: flex;
@@ -60,7 +63,7 @@
             font-weight: 700;
             margin-bottom: 2rem;
           }
-    
+
           .product-details-info-price-unit {
             font-size: 17px;
             font-weight: normal;
@@ -68,36 +71,36 @@
             margin-right: 0.3rem;
           }
         }
-    
+
         .product-details-funding-info {
           display: flex;
           justify-content: space-between;
           margin-bottom: 20px;
-    
+
           .product-funding-duedate {
             font-size: 20px;
             font-weight: 700;
           }
-    
+
           .product-funding-money {
             font-size: 20px;
             font-weight: 700;
           }
         }
-    
+
         .product-details-funding {
           display: flex;
           justify-content: space-around;
           align-items: center;
           background-color: $white;
-    
+
           .product-funding-percent {
             margin-right: auto;
             height: 0.3rem;
             background-color: $wadiz;
           }
         }
-    
+
         .product-details-info-options {
           display: flex;
           justify-content: space-around;
@@ -105,7 +108,7 @@
           padding-top: 30px;
           margin-top: 10px;
           border-top: 1px solid rgba(0, 0, 0, 0.1);
-    
+
           .product-details-info-options-jjim {
             color: $pink;
             width: 40px;
@@ -114,14 +117,14 @@
             animation: heart;
             animation-duration: 0.3s;
           }
-    
+
           .product-details-info-options-funding {
             color: $wadiz;
             width: 40px;
             height: auto;
             cursor: pointer;
           }
-    
+
           @keyframes heart {
             0% {
               transform: scale(1);
@@ -135,28 +138,29 @@
           }
         }
       }
-    }    
+    }
   }
- .bottom-div{
-  .product-more-details-info {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 700px;
-    padding: 30px 40px;
-    margin: auto;
-    margin-top: 30px;
-    border-radius: 20px;
-    background-color: $light-gray;
-    text-align: left;
-    letter-spacing: 3px;
-    line-height: 300%;
+  .bottom-div {
+    .product-more-details-info {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 700px;
+      padding: 30px 40px;
+      margin: auto;
+      margin-top: 30px;
+      border-radius: 20px;
+      background-color: $light-gray;
+      text-align: left;
+      letter-spacing: 3px;
+      line-height: 300%;
+    }
+    .product-details-image {
+      //밑에 2개에 적용됨
+      max-width: 600px;
+      width: 100%;
+      border-radius: 10px;
+      margin: 30px auto auto;
+      height: auto;
+    }
   }
-  .product-details-image { //밑에 2개에 적용됨
-    max-width: 600px;
-    width: 100%;
-    border-radius: 10px;
-    margin: 30px auto auto;    
-    height: auto;
-  }
- }  
 }
