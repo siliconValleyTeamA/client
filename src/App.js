@@ -6,7 +6,7 @@ import styled from 'styled-components';
 /* Internal dependencies */
 import HomePage from 'pages/HomePage';
 import CategoryPage from 'pages/CategoryPage';
-import DetailPage from 'pages/DetailPage';
+import DetailPage from 'pages/DetailPage/EnDetailPage';
 import PopularPage from 'pages/PopularPage';
 import MyPage from 'pages/MyPage';
 import MyHistoryPage from 'pages/MyHistoryPage';
