@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 function Drawer({ open, setOpen, data }) {
   const link = useLocation();
-  const projectId = link.pathname.split('/')[2];
+  const projectId = link.pathname.split('/')[3];
 
   const [money, setMoney] = useState('');
 
