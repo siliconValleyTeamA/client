@@ -31,7 +31,7 @@ function Menu() {
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
-      <Link to="/mypage/history">
+      <Link to="/mypage/investment">
         <li className={cx('support')}>
           <RiShoppingBag3Fill className={cx('RiShoppingBag3Fill')} />
           <div className={cx('title')}>My funding project</div>

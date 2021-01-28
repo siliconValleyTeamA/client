@@ -42,7 +42,7 @@ function Project({ data, type, jjimType, onRemove }) {
             <div className={cx('project-info-price')}>
               <span className={cx('project-info-price-current')}>
                 {type === 'open'
-                  ? 'Released after' + data.open_left_days 
+                  ? 'Released after' + data.open_left_days
                   : data.percent + '% achieved'}
               </span>
             </div>
@@ -55,7 +55,7 @@ function Project({ data, type, jjimType, onRemove }) {
     <div
       className={cx('project')}
       style={{
-        backgroundImage: `url("${data.image}")`,
+        backgroundImage: `url("${image}")`,
       }}
     >
       {jjim ? (

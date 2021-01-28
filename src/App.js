@@ -9,7 +9,7 @@ import CategoryPage from 'pages/CategoryPage';
 import EnDetailPage from 'pages/DetailPage/EnDetailPage';
 import PopularPage from 'pages/PopularPage';
 import MyPage from 'pages/MyPage';
-import MyHistoryPage from 'pages/MyHistoryPage';
+import MyInvestmentPage from 'pages/MyInvestmentPage';
 import MyJjimPage from 'pages/MyJjimPage';
 import MyCartPage from 'pages/MyCartPage';
 import GlobalStyle from 'styles/global-styles';
@@ -37,7 +37,7 @@ function App() {
           <Route path="/popular" component={PopularPage} />
           <Route path="/project/:projectId" component={EnDetailPage} />
           <Route path="/mypage" exact component={MyPage} />
-          <Route path="/mypage/history" component={MyHistoryPage} />
+          <Route path="/mypage/investment" component={MyInvestmentPage} />
           <Route path="/mypage/jjim" component={MyJjimPage} />
           <Route path="/mypage/cart" component={MyCartPage} />
           <Route path="/mypage/profile" component={MyProfilePage} />
