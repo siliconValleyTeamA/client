@@ -1,6 +1,7 @@
 @import 'styles/_palette.scss';
 
 .detail {
+  margin-top: 100px;
   width: 100%;
   text-align: center;
   display: flex;
@@ -13,7 +14,7 @@
     .product-details-info {
       box-sizing: border-box;
       width: 100%;
-      max-width: 400px;
+      max-width: 350px;
       padding: 30px 40px;
       margin: auto;
       margin-top: 30px;
