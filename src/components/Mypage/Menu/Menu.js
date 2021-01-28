@@ -14,21 +14,6 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-var link = '/';
-var userLanguage = navigator.userLanguage || navigator.language;
-
-switch (userLanguage.split('-')[0]) {
-  case 'en':
-    link = '/en/addproject';
-    break;
-  case 'ko':
-    link = '/ko/addproject';
-    break;
-  case 'ar':
-    link = '/ar/addproject';
-    break;
-}
-
 function Menu() {
   return (
     <ol className={cx('ol-menu')}>
@@ -53,7 +38,7 @@ function Menu() {
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
-      <Link to={link}>
+      <Link to="/en/addproject">
         <li className={cx('support')}>
           <IoIosFolder className={cx('IoIosFolder')} />
           <div className={cx('title')}>Register funding project</div>
