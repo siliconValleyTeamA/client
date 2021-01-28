@@ -22,7 +22,6 @@ function ArabDetailPage() {
   const [open, setOpen] = useState(false);
   const { jjim, createJjim, removeJim } = useProjectJjim(projectId);
   const { project } = useDetail(projectId);
-  console.log(projectId);
 
   return (
     <div className={cx('detail')}>

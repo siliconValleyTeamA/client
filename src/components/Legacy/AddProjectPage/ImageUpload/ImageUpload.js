@@ -21,7 +21,6 @@ function ImageUpload(props) {
 
     //save the Image we chose inside the Node Server
     axios.post(`/api/project/uploadimage`, formData, config).then(result => {
-      console.log(result.data);
       if (result.data.success) {
         setImages([...Images, result.data.image]);
         props.refreshFunction([...Images, result.data.image]);
