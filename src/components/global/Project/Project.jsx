@@ -23,7 +23,7 @@ function Project({ data, type, jjimType, onRemove }) {
   useEffect(()=>{
     if (changeLink.length > 0) {
       changeLink.map((data) => {
-        if (data.language === navigator.language) {
+        if (navigator.language.includes(data.language)) {
           setIsLanguage(true);
         }
       });
@@ -31,7 +31,12 @@ function Project({ data, type, jjimType, onRemove }) {
     if(!isLanguage){
       setLink(`/en/project/${data.id}`);
     }else{
-      setLink(`/${navigator.language}/project/${data.id}`);
+      if(navigator.language.length > 2){
+        const tmp = navigator.language.split('-')[0];
+        setLink(`/${tmp}/project/${data.id}`);
+      }else{
+        setLink(`/${navigator.language}/project/${data.id}`);
+      }
     }
   },[changeLink, link, isLanguage])
 

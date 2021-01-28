@@ -9,7 +9,6 @@ function KrDetailDescription({ image, description }) {
   const imageLinkList = image !== undefined ? image : [];
   const descriptionList =
     description !== undefined ? description.split('&') : [];
-  console.log(imageLinkList);
   return (
     <div>
       <div className={cx('detail-set')}>
