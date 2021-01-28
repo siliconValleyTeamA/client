@@ -4,12 +4,12 @@ export const getProjectListInCartAPI = () => {
   return axios.get(`/api/user/carts`);
 };
 
-export const createCartAPI = ({ projectId, point }) => {
-  return axios.post(`/api/user/carts`, { projectId, point });
+export const createCartAPI = ({ projectId, money }) => {
+  return axios.post(`/api/user/carts`, { projectId, money });
 };
 
-export const modifyCartAPI = ({ cartId, point }) => {
-  return axios.put('api/user/carts', { cartId, point });
+export const modifyCartAPI = ({ cartId, money }) => {
+  return axios.put('api/user/carts', { cartId, money });
 };
 
 export const removeCartAPI = ({ cartId }) => {

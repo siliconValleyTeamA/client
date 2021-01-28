@@ -4,22 +4,23 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 /* Internal dependencies */
-import styles from './Goods.module.scss';
-
+import styles from './Investment.module.scss';
 const cx = classNames.bind(styles);
 
-function Goods({ data }) {
-  const detailLink = '/project/' + data.project_id;
+function Investment({ data }) {
+  const projectId = data.project_id;
+  const image = data.image.split('&')[0];
+
   return (
     <button>
-      <Link to={detailLink}>
+      <Link to={`/project/${projectId}`}>
         <div className={cx('goods')}>
-          <div className={cx('goods-img')}>
-            <img
-              src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
-              alt="goods-detail"
-            />
-          </div>
+          <div
+            className={cx('goods-img')}
+            style={{
+              backgroundImage: `url("${image}")`,
+            }}
+          ></div>
           <div className={cx('goods-non-img')}>
             <div className={cx('goods-title')}>
               <h2> {data.title} </h2>
@@ -38,4 +39,4 @@ function Goods({ data }) {
   );
 }
 
-export default Goods;
+export default Investment;

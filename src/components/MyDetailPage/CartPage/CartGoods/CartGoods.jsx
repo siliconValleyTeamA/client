@@ -12,11 +12,12 @@ import { modifyCartAPI, removeCartAPI } from 'api/cartAPI';
 const cx = classNames.bind(styles);
 
 function CartGoods({ data, onModify, onRemove }) {
-  const [point, setPoint] = useState('');
+  const [money, setMoney] = useState('');
   const cartId = data.cart_id;
+  const image = data.image.split('&')[0];
 
   const modifyCart = () => {
-    modifyCartAPI({ cartId, point }).then(result => {
+    modifyCartAPI({ cartId, money }).then(result => {
       onModify(cartId);
     });
   };
@@ -37,7 +38,7 @@ function CartGoods({ data, onModify, onRemove }) {
           <div
             className={cx('cart-item-info-left')}
             style={{
-              backgroundImage: `url(${data.image})`,
+              backgroundImage: `url(${image})`,
             }}
           ></div>
         </Link>
@@ -46,9 +47,9 @@ function CartGoods({ data, onModify, onRemove }) {
             type="text"
             className={cx('cart-item-input')}
             placeholder="수정 금액 입력"
-            value={point}
+            value={money}
             onChange={e => {
-              setPoint(
+              setMoney(
                 e.target.value
                   ? parseInt(e.target.value.replace(/,/g, '')).toLocaleString()
                   : '',
