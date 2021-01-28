@@ -3,35 +3,50 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'api/axios';
 
 /* Internal dependencies */
 import styles from './Info.module.scss';
 import { createPorjectInfoAPI } from 'api/projectAPI';
 
+/* eslint no-restricted-globals: ["off"] */
+
 const cx = classNames.bind(styles);
 
 function ProjectInfo({ Category, info, func }) {
   const [images, setImages] = useState([]);
   const [text, setText] = useState('');
-  // const [description, setDescription] = useState([]);
+  const history = useHistory();
 
   const createProjectInfo = () => {
     info.images = images;
     info.description = text;
     createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
-        alert('상품을 성공적으로 업로드하였습니다.');
+        alert('You have successfully uploaded your product');
+        const answer = confirm(
+          'Would you like to introduce your products to other countries in their language?',
+        );
+        if (answer) {
+          var lang = prompt(
+            "Please choose a country. Type 'ar' for Arab and 'ko' for Korea.",
+          );
+
+          if (lang === 'ko') {
+            history.push('/ko/addproject');
+          } else {
+            history.push('/ar/addproject');
+          }
+        }
       } else {
-        alert('상품을 업로드하는데 실패하였습니다.');
+        alert('Failed to upload product.');
       }
     });
   };
 
   function onText(event) {
     setText(event.currentTarget.value);
-    // setDescription([...description, { idx: text }]);
   }
 
   const onDrop = files => {
@@ -249,7 +264,6 @@ function ProjectInfo({ Category, info, func }) {
           placeholder="Please write description about your project"
         ></textarea>
       </div>
-
       <Link to={`/`}>
         <button onClick={createProjectInfo}>Upload</button>
       </Link>
