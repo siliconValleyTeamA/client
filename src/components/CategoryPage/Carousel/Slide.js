@@ -14,9 +14,17 @@ const cx = classNames.bind(styles);
 function Slides() {
   const SimpleSlider = () => (
     <Carousel className={cx('wrap')} dots autoplay arrows={false}>
-        <img src={Img1} className={cx('pic')} />
-        <img src={Img2} className={cx('pic')} />
-        <img src={Img3} className={cx('pic')} />
+      <img src={Img1} className={cx('pic')} alt="carousel" />
+      <img
+        src="https://fuding-bucket.s3.ap-northeast-2.amazonaws.com/carousel3.jpg"
+        className={cx('pic')}
+        alt="carousel"
+      />
+      <img
+        src="https://fuding-bucket.s3.ap-northeast-2.amazonaws.com/carousel2.jpg"
+        className={cx('pic')}
+        alt="carousel"
+      />
     </Carousel>
   );
   return <SimpleSlider className={cx('carousel')} />;
