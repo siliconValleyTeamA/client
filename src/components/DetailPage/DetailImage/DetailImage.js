@@ -6,15 +6,15 @@ import styles from './DetailImage.module.scss';
 const cx = classNames.bind(styles);
 
 function DetailImage({ image }) {
-  const imageLinkList = image !== undefined ? image.split('&') : [];
-  // const [defaultImage, setDefaultImage] = useState();
+  const imageLinkList = image !== undefined ? image : [];
   const [mainImage, setMainImage] = useState(imageLinkList[0]);
 
   useEffect(() => {
-    const imageLinkList = image !== undefined ? image.split('&') : [];
-    setMainImage(imageLinkList[0]);
-  }, [image]);
-  // 메인페이지 수정
+    if (mainImage === undefined && imageLinkList !== undefined) {
+      setMainImage(imageLinkList[0]);
+    }
+  }, [imageLinkList]);
+
   return (
     <div className={cx('detail-image-component')}>
       <div className={cx('sub')}>

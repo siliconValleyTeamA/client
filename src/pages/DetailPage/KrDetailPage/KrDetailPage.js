@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
@@ -15,6 +15,7 @@ import useDetail from 'hooks/useDetail';
 import useProjectJjim from 'hooks/useProjectJjim';
 import DetailIamge from 'components/DetailPage/DetailImage';
 import KrDetailDescription from 'components/DetailPage/KrDetailDescription';
+import useImageDescription from 'hooks/useImageDescription';
 
 const cx = classNames.bind(styles);
 
@@ -24,12 +25,27 @@ function DetailPage() {
   const [open, setOpen] = useState(false);
   const { jjim, createJjim, removeJim } = useProjectJjim(projectId);
   const { project } = useDetail(projectId);
+  const project_change = useImageDescription(projectId, navigator.language);
+  const [koProject, setKoProject] = useState();
+  const imageLinkList =
+    koProject !== undefined ? koProject.image.split('&') : [];
+  const description = koProject !== undefined ? koProject.description : '';
+
+  useEffect(() => {
+    if (project_change.length > 0) {
+      project_change.map(data => {
+        if (data.language === 'ko') {
+          setKoProject(data);
+        }
+      });
+    }
+  }, [project_change, koProject]);
 
   return (
     <div className={cx('detail')}>
       <BackButton />
       <div className={cx('top')}>
-        <DetailIamge image={project.image} />
+        <DetailIamge image={imageLinkList} />
         <div className={cx('product-details-info')}>
           <div className={cx('product-details-info-category')}>
             {project.company}
@@ -84,10 +100,7 @@ function DetailPage() {
         </div>
       </div>
       <div className={cx('product-more-details-info')}>
-        <KrDetailDescription
-          image={project.image}
-          description={project.description}
-        />
+        <KrDetailDescription image={imageLinkList} description={description} />
       </div>
       <Drawer
         open={open}

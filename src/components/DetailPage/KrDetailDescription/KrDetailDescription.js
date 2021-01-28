@@ -6,9 +6,10 @@ import styles from './KrDetailDescription.module.scss';
 const cx = classNames.bind(styles);
 
 function KrDetailDescription({ image, description }) {
-  const imageLinkList = image !== undefined ? image.split('&') : [];
+  const imageLinkList = image !== undefined ? image : [];
   const descriptionList =
     description !== undefined ? description.split('&') : [];
+  console.log(imageLinkList);
   return (
     <div>
       <div className={cx('detail-set')}>
@@ -49,16 +50,6 @@ function KrDetailDescription({ image, description }) {
         />
         <span className={cx('product-details-description')}>
           {descriptionList[3]}
-        </span>
-      </div>
-      <div className={cx('detail-set')}>
-        <img
-          className={cx('product-details-image')}
-          src={imageLinkList[8]}
-          alt="product"
-        />
-        <span className={cx('product-details-description')}>
-          {descriptionList[4]}
         </span>
       </div>
     </div>

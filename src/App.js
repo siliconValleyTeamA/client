@@ -7,6 +7,8 @@ import styled from 'styled-components';
 import HomePage from 'pages/HomePage';
 import CategoryPage from 'pages/CategoryPage';
 import EnDetailPage from 'pages/DetailPage/EnDetailPage';
+import ArDetailPage from 'pages/DetailPage/ArDetailPage';
+import KrDetailPage from 'pages/DetailPage/KrDetailPage';
 import PopularPage from 'pages/PopularPage';
 import MyPage from 'pages/MyPage';
 import MyInvestmentPage from 'pages/MyInvestmentPage';
@@ -35,7 +37,9 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/category" component={CategoryPage} />
           <Route path="/popular" component={PopularPage} />
-          <Route path="/project/:projectId" component={EnDetailPage} />
+          <Route path="/en/project/:projectId" component={EnDetailPage} />
+          <Route path="/ko/project/:projectId" component={KrDetailPage} />
+          <Route path="/ar/project/:projectId" component={ArDetailPage} />
           <Route path="/mypage" exact component={MyPage} />
           <Route path="/mypage/investment" component={MyInvestmentPage} />
           <Route path="/mypage/jjim" component={MyJjimPage} />

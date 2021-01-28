@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
@@ -13,23 +13,37 @@ import ShoppingCart from 'components/Global/ShoppingCart';
 import useDetail from 'hooks/useDetail';
 import useProjectJjim from 'hooks/useProjectJjim';
 import DetailIamge from 'components/DetailPage/DetailImage';
+import useImageDescription from 'hooks/useImageDescription';
 
 const cx = classNames.bind(styles);
 
 function EnDetailPage() {
   const link = useLocation();
-  const projectId = link.pathname.split('/')[2];
+  const projectId = link.pathname.split('/')[3];
   const [open, setOpen] = useState(false);
   const { jjim, createJjim, removeJim } = useProjectJjim(projectId);
   const { project } = useDetail(projectId);
+  const project_change = useImageDescription(projectId, navigator.language);
+  const [enProject, setEnProject] = useState();
   const imageLinkList =
-    project.image !== undefined ? project.image.split('&') : [];
+    enProject !== undefined ? enProject.image.split('&') : [];
+  const description = enProject !== undefined ? enProject.description : '';
+
+  useEffect(() => {
+    if (project_change.length > 0) {
+      project_change.map(data => {
+        if (data.language === 'en') {
+          setEnProject(data);
+        }
+      });
+    }
+  }, [project_change, enProject]);
 
   return (
     <div className={cx('detail')}>
       <div className={cx('upper-div')}>
         <div className={cx('image')}>
-          <DetailIamge image={project.image}></DetailIamge>
+          <DetailIamge image={imageLinkList}></DetailIamge>
         </div>
         <div className={cx('description')}>
           <BackButton />
@@ -103,7 +117,7 @@ function EnDetailPage() {
           />
         </div>
         <div className={cx('product-more-details-info')}>
-          <span>{project.description}</span>
+          <span>{description}</span>
         </div>
       </div>
 

@@ -27,3 +27,7 @@ export const getProjectUserJjimAPI = ({ projectId }) => {
 export const createPorjectInfoAPI = info => {
   return axios.post(`/api/project/projectinfo`, info);
 };
+
+export const getImageDescriptionAPI = ({ projectId, language }) => {
+  return axios.get(`/api/project/${projectId}/${language}`);
+};

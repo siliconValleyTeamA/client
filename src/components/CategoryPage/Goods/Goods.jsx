@@ -1,7 +1,8 @@
 /* External dependencies */
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
+import useImageDescription from 'hooks/useImageDescription';
 
 /* Internal dependencies */
 import styles from './Goods.module.scss';
@@ -10,12 +11,29 @@ const cx = classNames.bind(styles);
 
 function Goods({ data }) {
   let width = data.percent > 100 ? 100 : data.percent;
-  const detailLink = '/project/' + data.id;
   const image = data.image.split('&')[0];
+  const [link,setLink] = useState('');
+  const [isLanguage, setIsLanguage] = useState(false);
+  const changeLink = useImageDescription(data.id, navigator.language);
+  
+  useEffect(()=>{
+    if (changeLink.length > 0) {
+      changeLink.map((data) => {
+        if (data.language === navigator.language) {
+          setIsLanguage(true);
+        }
+      });
+    }
+    if(!isLanguage){
+      setLink(`/en/project/${data.id}`);
+    }else{
+      setLink(`/${navigator.language}/project/${data.id}`);
+    }
+  },[changeLink, link, isLanguage])
 
   return (
     <div className={cx('goods')}>
-      <Link to={detailLink}>
+      <Link to={link}>
         <div className={cx('goods-img')}>
           <img src={image} alt="goods-detail" />
         </div>

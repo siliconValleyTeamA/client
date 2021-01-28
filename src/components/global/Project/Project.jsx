@@ -1,8 +1,9 @@
 /* External dependencies */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+import useImageDescription from 'hooks/useImageDescription';
 
 /* Internal dependencies */
 import { createJjimAPI, removeJjimAPI } from 'api/jjimAPI';
@@ -15,6 +16,24 @@ function Project({ data, type, jjimType, onRemove }) {
   const projectId = jjimType ? data.project_id : data.id;
   const jjimId = jjimType ? data.jjim_id : '';
   const image = data.image.split('&')[0];
+  const [link,setLink] = useState('');
+  const [isLanguage, setIsLanguage] = useState(false);
+  const changeLink = useImageDescription(data.id, navigator.language);
+  
+  useEffect(()=>{
+    if (changeLink.length > 0) {
+      changeLink.map((data) => {
+        if (data.language === navigator.language) {
+          setIsLanguage(true);
+        }
+      });
+    }
+    if(!isLanguage){
+      setLink(`/en/project/${data.id}`);
+    }else{
+      setLink(`/${navigator.language}/project/${data.id}`);
+    }
+  },[changeLink, link, isLanguage])
 
   const createJjim = () => {
     setJjim(true);
@@ -30,7 +49,7 @@ function Project({ data, type, jjimType, onRemove }) {
 
   if (!jjimType) {
     return (
-      <Link to={`/project/${projectId}`}>
+      <Link to={link}>
         <div
           className={cx('project')}
           style={{
@@ -71,7 +90,7 @@ function Project({ data, type, jjimType, onRemove }) {
         </div>
       )}
 
-      <Link to={`/project/${projectId}`}>
+      <Link to={link}>
         <div className={cx('project-info')}>
           <div className={cx('project-info-name')}>{data.title}</div>
           <div className={cx('project-info-price')}>

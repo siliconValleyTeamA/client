@@ -9,6 +9,7 @@ import Goods from 'components/CategoryPage/Goods';
 const cx = classNames.bind(styles);
 
 function GoodsList({ projectList }) {
+
   return (
     <div className={cx('goods-list')}>
       {projectList.map(project => {
