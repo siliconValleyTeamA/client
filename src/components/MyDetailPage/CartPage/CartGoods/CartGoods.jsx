@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { MdRemoveShoppingCart } from 'react-icons/md';
+import { MdRemoveShoppingCart, MdSettingsInputSvideo } from 'react-icons/md';
 import { FaCoins } from 'react-icons/fa';
 
 /* Internal dependencies */
@@ -10,9 +10,9 @@ import styles from './CartGoods.module.scss';
 import { modifyCartAPI, removeCartAPI } from 'api/cartAPI';
 
 const cx = classNames.bind(styles);
-
-function CartGoods({ data, onModify, onRemove }) {
+function CartGoods({ data, onModify, onRemove, handleTotalPrice }) {
   const [money, setMoney] = useState('');
+
   const cartId = data.cart_id;
   const image = data.image.split('&')[0];
 
@@ -28,10 +28,15 @@ function CartGoods({ data, onModify, onRemove }) {
     });
   };
 
+
   return (
     <div className={cx('cart-item')}>
+      <input
+        type="checkbox"
+        onChange={e => handleTotalPrice(e, Number(data.money), data.cart_id)}
+      />&ensp;
       <Link to={`/project/${data.project_id}`}>
-        <div className={cx('cart-item-name')}>{data.title}</div>
+        <span className={cx('cart-item-name')}>{data.title}</span>
       </Link>
       <div className={cx('cart-item-info')}>
         <Link to={`/project/${data.project_id}`}>

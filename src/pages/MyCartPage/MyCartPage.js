@@ -14,14 +14,19 @@ import useCart from 'hooks/useCart';
 const cx = classNames.bind(styles);
 
 function MyCartPage() {
-  const { cartList, onModify, onRemove, totalPrice } = useCart();
+  const { cartList, onModify, onRemove, totalPrice, handleTotalPrice, checkedList } = useCart();
   return (
     <div className={cx('mycart-page')}>
       <BackButton />
       <FaShoppingCart className={cx('FaShoppingCart')} />
       <Header header="Funding Cart" />
-      <CartList cartList={cartList} onModify={onModify} onRemove={onRemove} />
-      <CartFooter totalPrice={totalPrice} />
+      <CartList 
+        cartList={cartList} 
+        onModify={onModify} 
+        onRemove={onRemove} 
+        handleTotalPrice={handleTotalPrice} 
+      />
+      <CartFooter totalPrice={totalPrice} checkedList={checkedList} onRemove={onRemove}  />
     </div>
   );
 }

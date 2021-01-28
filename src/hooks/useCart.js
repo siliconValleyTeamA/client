@@ -7,22 +7,23 @@ import { getProjectListInCartAPI } from 'api/cartAPI';
 function useCart() {
   const [cartList, setCartList] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const [checkedList, setChecked]= useState([]);
   useEffect(() => {
     handleCartList();
   }, []);
 
-  useEffect(() => {
-    getTotalPrice();
-  }, [cartList]);
-
-  const getTotalPrice = function () {
-    let cartPrice = 0;
-    cartList.forEach(cart => {
-      cartPrice += cart.money;
-    });
-    setTotalPrice(cartPrice);
-  };
+  const handleTotalPrice = (event, price , id) => {
+    if(event.target.checked) {
+      setTotalPrice(0);
+      setTotalPrice(totalPrice + price);
+      setChecked([
+        ...checkedList,id
+      ]);  
+      return;
+    }   
+    setChecked(checkedList.filter(item => item!==id))
+    setTotalPrice(totalPrice - price);
+  }
 
   const handleCartList = function () {
     getProjectListInCartAPI().then(result => {
@@ -30,16 +31,17 @@ function useCart() {
     });
   };
 
-  function onModify(cart_id) {
+  function onModify(cart_id,point) {        
     handleCartList();
+    // handleTotalPrice();
   }
 
   function onRemove(cart_id) {
     setCartList(cartList.filter(cart => cart.cart_id !== cart_id));
-    getTotalPrice();
+    // handleTotalPrice();
   }
 
-  return { cartList, onModify, onRemove, totalPrice };
+  return { cartList, onModify, onRemove, totalPrice, handleTotalPrice, checkedList};
 }
 
 export default useCart;
