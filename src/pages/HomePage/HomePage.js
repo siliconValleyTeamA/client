@@ -9,6 +9,7 @@ import NavigationBar from 'components/Global/NavigationBar';
 import Carousel from 'components/CategoryPage/Carousel/Slide';
 import Container from 'components/HomePage/Container';
 import ShoppingCart from 'components/Global/ShoppingCart';
+import Notification from 'components/Global/Notification';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +21,7 @@ function HomePage() {
       <Carousel />
       <Container />
       <ShoppingCart />
+      <Notification text="hi!" />
     </div>
   );
 }
