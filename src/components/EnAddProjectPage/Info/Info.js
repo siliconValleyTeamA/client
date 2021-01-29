@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import classNames from 'classnames/bind';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'api/axios';
+import Swal from 'sweetalert2';
 
 /* Internal dependencies */
 import styles from './Info.module.scss';
@@ -25,25 +26,42 @@ function ProjectInfo({ Category, info, func }) {
     info.language = 'en-0';
 
     createPorjectInfoAPI(info).then(result => {
+      console.log('hi');
       if (result.data.success) {
-        alert('You have successfully uploaded your product');
-        sessionStorage.setItem('projectId', result.data.projectId);
-        const answer = confirm(
-          'Would you like to introduce your products to other countries in their language?',
-        );
-        if (answer) {
-          var lang = prompt(
-            "Please choose a country. Type 'ar' for Arab and 'ko' for Korea.",
-          );
-
-          if (lang === 'ko') {
-            history.push('/ko/addproject');
-          } else {
-            history.push('/ar/addproject');
-          }
-        }
+        Swal.fire({
+          title: '✅',
+          text: 'You have successfully uploaded your product',
+          position: 'top',
+          confirmButtonColor: '#00BC00',
+        }).then(() => {
+          Swal.fire({
+            title: '🤔',
+            position: 'top',
+            text:
+              'Would you like to introduce your products to other countries in their language?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: `AR`,
+            denyButtonText: `KO`,
+            confirmButtonColor: '#FD7654',
+            denyButtonColor: '#fece6e',
+          }).then(result => {
+            if (result.isConfirmed) {
+              history.push('/ar/addproject');
+            } else if (result.isDenied) {
+              history.push('/ko/addproject');
+            } else {
+              history.push('/');
+            }
+          });
+        });
       } else {
-        alert('Failed to upload product.');
+        Swal.fire({
+          title: '❌',
+          text: 'Failed to upload product.',
+          position: 'top',
+          confirmButtonColor: '#FF0000',
+        });
       }
     });
   };
@@ -267,9 +285,9 @@ function ProjectInfo({ Category, info, func }) {
           placeholder="Please write description about your project"
         ></textarea>
       </div>
-      <Link to={`/`}>
-        <button onClick={createProjectInfo}>Upload</button>
-      </Link>
+      {/* <Link to={`/`}> */}
+      <button onClick={createProjectInfo}>Upload</button>
+      {/* </Link> */}
     </div>
   );
 }
