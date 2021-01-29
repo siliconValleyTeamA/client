@@ -42,8 +42,8 @@ function Drawer({ open, setOpen, data }) {
                   setMoney(
                     e.target.value
                       ? parseInt(
-                          e.target.value.replace(/,/g, ''),
-                        ).toLocaleString()
+                        e.target.value.replace(/,/g, ''),
+                      ).toLocaleString()
                       : '',
                   );
                 }}

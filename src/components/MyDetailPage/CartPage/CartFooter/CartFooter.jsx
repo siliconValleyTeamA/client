@@ -6,13 +6,13 @@ import classNames from 'classnames/bind';
 import styles from './CartFooter.module.scss';
 import { removeCartAPI } from 'api/cartAPI';
 import axios from 'api/axios';
-
+import { useHistory } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function CartFooter({ totalPrice, checkedList }) {
+  const history = useHistory();
   function payment(list, IMP, pg, pay_method, name, amount) {
-    list.map(cartId => axios.post(`/api/user/history`, { cartId, amount }));
     IMP.request_pay({
       pg: pg, // version 1.1.0부터 지원.
       pay_method: pay_method,
@@ -22,7 +22,9 @@ function CartFooter({ totalPrice, checkedList }) {
       if (rsp.success) {
         var msg = '결제가 완료되었습니다. ';
         msg += '결제 금액 : ' + rsp.paid_amount;
-        list.map(cartId => axios.delete(`api/user/carts`, { data: { cartId } }));
+        list.map(cartId => axios.post(`/api/user/investment`, { cartId }));
+        list.map(cartId => removeCartAPI({ cartId }));
+        history.push('/');
       } else {
         var msg = '결제에 실패하였습니다. ';
         msg += '에러내용 : ' + rsp.error_msg;
