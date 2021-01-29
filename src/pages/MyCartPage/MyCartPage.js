@@ -10,6 +10,7 @@ import CartList from 'components/MyDetailPage/CartPage/CartList';
 import CartFooter from 'components/MyDetailPage/CartPage/CartFooter';
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from 'hooks/useCart';
+import Homebtn from 'components/Global/HomeButton';
 
 const cx = classNames.bind(styles);
 
@@ -27,6 +28,7 @@ function MyCartPage() {
         handleTotalPrice={handleTotalPrice} 
       />
       <CartFooter totalPrice={totalPrice} checkedList={checkedList} onRemove={onRemove}  />
+      <Homebtn></Homebtn>
     </div>
   );
 }
