@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'api/axios';
+import Swal from 'sweetalert2';
 
 /* Internal dependencies */
 import styles from './Info.module.scss';
@@ -18,6 +19,7 @@ function ProjectInfo({ Category, info, func }) {
   const [text2, setText2] = useState('');
   const [text3, setText3] = useState('');
   const [text4, setText4] = useState('');
+  const history = useHistory();
 
   const createProjectInfo = () => {
     info.images = images;
@@ -25,9 +27,21 @@ function ProjectInfo({ Category, info, func }) {
     info.language = 'ko-' + sessionStorage.getItem('projectId');
     createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
-        alert('상품을 성공적으로 업로드하였습니다.');
+        Swal.fire({
+          title: '✅',
+          text: '상품을 성공적으로 업로드하였습니다.',
+          position: 'top',
+          confirmButtonColor: '#00BC00',
+        }).then(() => {
+          history.push('/');
+        });
       } else {
-        alert('상품을 업로드하는데 실패하였습니다.');
+        Swal.fire({
+          title: '❌',
+          text: '상품을 업로드하는데 실패하였습니다.',
+          position: 'top',
+          confirmButtonColor: '#FF0000',
+        });
       }
     });
   };
@@ -362,9 +376,7 @@ function ProjectInfo({ Category, info, func }) {
         </div>
       </div>
 
-      <Link to={`/`}>
-        <button onClick={createProjectInfo}>Upload</button>
-      </Link>
+      <button onClick={createProjectInfo}>Upload</button>
     </div>
   );
 }

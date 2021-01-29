@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import Dropzone from 'react-dropzone';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import axios from 'api/axios';
+import Swal from 'sweetalert2';
+import { useHistory } from 'react-router-dom';
 
 /* Internal dependencies */
 import styles from './Info.module.scss';
@@ -16,6 +17,7 @@ function Info({ Category, info, func }) {
   const [images, setImages] = useState([]);
   const [text1, setText1] = useState('');
   const [text2, setText2] = useState('');
+  const history = useHistory();
 
   const handleInfo = () => {
     info.images = images;
@@ -23,9 +25,21 @@ function Info({ Category, info, func }) {
     info.language = 'ar-' + sessionStorage.getItem('projectId');
     createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
-        alert('상품을 성공적으로 업로드하였습니다.');
+        Swal.fire({
+          title: '✅',
+          text: 'لقد قمت بتحميل منتجك بنجاح',
+          position: 'top',
+          confirmButtonColor: '#00BC00',
+        }).then(() => {
+          history.push('/');
+        });
       } else {
-        alert('상품을 업로드하는데 실패하였습니다.');
+        Swal.fire({
+          title: '❌',
+          text: 'فشل تحميل المنتج.',
+          position: 'top',
+          confirmButtonColor: '#FF0000',
+        });
       }
     });
   };
@@ -130,9 +144,7 @@ function Info({ Category, info, func }) {
         className={cx('text-bottom')}
         placeholder="Please write description about your project"
       ></textarea>
-      <Link to={`/`}>
-        <button onClick={handleInfo}>Upload</button>
-      </Link>
+      <button onClick={handleInfo}>Upload</button>
     </div>
   );
 }

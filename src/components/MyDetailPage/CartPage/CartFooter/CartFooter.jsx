@@ -7,6 +7,8 @@ import styles from './CartFooter.module.scss';
 import { removeCartAPI } from 'api/cartAPI';
 import axios from 'api/axios';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 
 const cx = classNames.bind(styles);
 
@@ -20,16 +22,29 @@ function CartFooter({ totalPrice, checkedList }) {
       amount: amount,
     }, function (rsp) {
       if (rsp.success) {
-        var msg = '결제가 완료되었습니다. ';
+        var msg = '결제가 완료되었습니다. \n';
         msg += '결제 금액 : ' + rsp.paid_amount;
+
         list.map(cartId => axios.post(`/api/user/investment`, { cartId }));
-        list.map(cartId => removeCartAPI({ cartId }));
-        history.push('/');
+        list.map(cartId => axios.delete(`api/user/carts`, { data: { cartId } }));
+        Swal.fire({
+          title: '✅',
+          text: msg,
+          position: 'top',
+          confirmButtonColor: '#00BC00',
+        }).then(()=>{
+          history.push('/');
+        });
       } else {
-        var msg = '결제에 실패하였습니다. ';
-        msg += '에러내용 : ' + rsp.error_msg;
+        var msg = '결제에 실패하였습니다. \n';
+        msg += '\n에러내용 : ' + rsp.error_msg;
+        Swal.fire({
+          title: '❌',
+          text: msg,
+          position: 'top',
+          confirmButtonColor: '#FF0000',
+        });
       }
-      alert(msg);
     })
   }
   var IMP = window.IMP;
