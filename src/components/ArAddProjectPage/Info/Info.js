@@ -20,6 +20,7 @@ function Info({ Category, info, func }) {
   const handleInfo = () => {
     info.images = images;
     info.description = text1 + '&' + text2;
+    info.language = 'ar-' + sessionStorage.getItem('projectId');
     createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
         alert('상품을 성공적으로 업로드하였습니다.');
