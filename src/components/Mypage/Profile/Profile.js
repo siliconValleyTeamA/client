@@ -15,7 +15,7 @@ function Profile() {
     <div className={cx('profile')}>
       <div className={cx('photo')}>
         <img
-          src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
+          src="https://fuding-bucket.s3.ap-northeast-2.amazonaws.com/profile.png"
           alt="profile"
         />
       </div>
