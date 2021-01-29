@@ -28,6 +28,7 @@ function useProjectInfo() {
   const [categoryId, setCategoryId] = useState(1);
   const [images, setImages] = useState([]);
   const [description, setDescription] = useState('');
+  const [language, setLanguage] = useState('');
 
   function onTitle(event) {
     setTitle(event.currentTarget.value);
@@ -62,6 +63,7 @@ function useProjectInfo() {
     categoryId,
     images,
     description,
+    language,
   };
   const func = {
     onTitle,

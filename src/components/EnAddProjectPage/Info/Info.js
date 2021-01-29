@@ -22,9 +22,12 @@ function ProjectInfo({ Category, info, func }) {
   const createProjectInfo = () => {
     info.images = images;
     info.description = text;
+    info.language = 'en-0';
+
     createPorjectInfoAPI(info).then(result => {
       if (result.data.success) {
         alert('You have successfully uploaded your product');
+        sessionStorage.setItem('projectId', result.data.projectId);
         const answer = confirm(
           'Would you like to introduce your products to other countries in their language?',
         );
