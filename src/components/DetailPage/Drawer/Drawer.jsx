@@ -9,10 +9,9 @@ import { createCartAPI } from 'api/cartAPI';
 import styles from './Drawer.module.scss';
 const cx = classNames.bind(styles);
 
-function Drawer({ open, setOpen, data }) {
+function Drawer({ open, setOpen, image }) {
   const link = useLocation();
   const projectId = link.pathname.split('/')[3];
-
   const [money, setMoney] = useState('');
 
   return (
@@ -27,11 +26,12 @@ function Drawer({ open, setOpen, data }) {
         </div>
         <div className={cx('container')}>
           <div className={cx('product-details-cart')}>
-            <img
+            <div
               className={cx('product-details-cart-image')}
-              src={data.image}
-              alt="장바구니용 사진"
-            />
+              style={{
+                backgroundImage: `url("${image}")`,
+              }}
+            ></div>
             <div className={cx('product-details-cart-buttons')}>
               <input
                 type="text"

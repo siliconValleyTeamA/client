@@ -8,11 +8,14 @@
   border: 0.5px solid rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
 
-  .goods-img img {
+  .goods-img {
     width: 140px;
     height: 120px;
     margin-right: 15px;
     border-radius: 3px;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .goods-non-img {

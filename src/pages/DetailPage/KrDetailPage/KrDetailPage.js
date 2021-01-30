@@ -105,7 +105,7 @@ function DetailPage() {
       <Drawer
         open={open}
         setOpen={setOpen}
-        data={project}
+        image={imageLinkList[0]}
         projectId={projectId}
       />
       <ShoppingCart />

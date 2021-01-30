@@ -52,11 +52,14 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        
+
         .product-details-cart-image {
           width: 150px;
           height: 190px;
           border-radius: 10px;
+          background-position: 50%;
+          background-size: cover;
+          background-repeat: no-repeat;
         }
 
         .product-details-cart-buttons {
