@@ -11,19 +11,15 @@ function Investment({ data }) {
   return (
     <div>
       <div className={cx('goods')}>
-        <div
-          className={cx('goods-img')}
-        > <img src={image}></img></div>
+        <div className={cx('goods-img')}>
+          <img src={image}></img>
+        </div>
         <div className={cx('goods-non-img')}>
           <div className={cx('goods-title')}>
             <h2> {data.title} </h2>
           </div>
-
           <div className={cx('goods-money')}>
-            <span>
-              Funded amount&ensp;
-                {data.money.toLocaleString()}$
-              </span>
+            <span>Funded amount : {data.money.toLocaleString()}$</span>
           </div>
         </div>
       </div>

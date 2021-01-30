@@ -104,7 +104,7 @@ function ArabDetailPage() {
       <Drawer
         open={open}
         setOpen={setOpen}
-        data={project}
+        image={project.image}
         projectId={projectId}
       />
       <ShoppingCart />
