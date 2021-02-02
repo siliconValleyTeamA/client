@@ -26,8 +26,8 @@ function ProjectInfo({ Category, info, func }) {
     info.language = 'en-0';
 
     createPorjectInfoAPI(info).then(result => {
-      console.log('hi');
       if (result.data.success) {
+        sessionStorage.setItem('projectId', result.data.projectId);
         Swal.fire({
           title: '✅',
           text: 'You have successfully uploaded your product',
