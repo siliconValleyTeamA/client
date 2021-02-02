@@ -7,11 +7,3 @@ export const getUserAPI = () => {
 export const logOutAPI = () => {
   return axios.get('/auth/logout');
 };
-
-export const getPointAPI = () => {
-  return axios.get(`/api/user/point`);
-};
-
-export const chargePointAPI = point => {
-  return axios.put(`/api/user/point`, { point });
-};
