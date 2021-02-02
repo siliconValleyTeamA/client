@@ -6,7 +6,8 @@ import { FiSearch } from 'react-icons/fi';
 /* Internal dependencies */
 import styles from './MiddleSearch.module.scss';
 import Filter from 'components/Global/Filter';
-import axios from 'api/axios';
+import { postsearchAPI } from 'api/searchAPI';
+// import axios from 'api/axios';
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +15,7 @@ function MiddleSearch() {
   return (
     <div className={cx('middle-navigation')}>
       <div className={cx('navigation')}>
-        <SearchBar />      
+        <SearchBar />
         <Filter />
       </div>
     </div>
@@ -29,7 +30,7 @@ function SearchBar() {
   return (
     <div className={cx('search')}>
       <input type="text" onChange={handleChange} placeholder="search" className={cx('search-input')} />
-      <button onClick={() => { axios.post(`/api/search`, { search }) }}>
+      <button onClick={() => { postsearchAPI({ search }).then((result) => { React.createContext(result.data) });  }}>
         <FiSearch />
       </button>
     </div>
