@@ -31,7 +31,7 @@ function useCart() {
     });
   };
 
-  function onModify(cart_id,point) {        
+  function onModify(cart_id) {        
     handleCartList();
     // handleTotalPrice();
   }

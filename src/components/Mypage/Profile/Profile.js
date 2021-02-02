@@ -20,9 +20,8 @@ function Profile() {
         />
       </div>
       <div className={cx('user-name')}>{user?.name}</div>
-      <div className={cx('user-point')}>
-        Point : {user?.point.toLocaleString()} 💰
-      </div>
+      <br></br>
+      <br></br>
     </div>
   );
 }

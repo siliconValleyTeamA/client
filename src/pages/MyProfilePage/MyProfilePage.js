@@ -8,23 +8,22 @@ import styles from './MyProfilePage.module.scss';
 import BackButton from 'components/Global/BackButton';
 import Header from 'components/MyDetailPage/Header';
 import ShoppingCart from 'components/Global/ShoppingCart';
-import PointDialog from 'components/MyDetailPage/PointDialog';
-import usePoint from 'hooks/usePoint';
+
+
 
 const cx = classNames.bind(styles);
 
 function MyProfilePage() {
-  const { point, dialog, update, closeDialog, setDialog } = usePoint();
 
   return (
     <div className={cx('setcountry')}>
       <BackButton />
       <BiWorld className={cx('BiWorld')} />
       <Header header="Profile Setting" />
-      <div className={cx('profile')}>
+      <div className={cx('profile')}>      
         <img
           className={cx('picture')}
-          src="https://img-cf.kurly.com/shop/data/goods/1589438976172z0.jpg"
+          src="https://fuding-bucket.s3.ap-northeast-2.amazonaws.com/profile.png"
           alt="snsProfile"
         />
         <div className={cx('userinfo')}>
@@ -32,28 +31,13 @@ function MyProfilePage() {
           <div className={cx('user-login')}>깃허브로 로그인중</div>
         </div>
       </div>
-
+      <br></br>
       <div className={cx('language')}>
         <div className={cx('row')}>
           <span className={cx('edit')}>Change language</span>
           <span className={cx('delete')}>기본값 적용</span>
         </div>
         <div className={cx('content')}>한국어</div>
-      </div>
-
-      <div className={cx('point')}>
-        <div className={cx('row')}>
-          <span
-            className={cx('edit')}
-            onClick={() => {
-              setDialog(true);
-            }}
-          >
-            Charge point
-          </span>
-          {dialog && <PointDialog closeDialog={closeDialog} update={update} />}
-        </div>
-        <div className={cx('content')}>{point.toLocaleString()} 원</div>
       </div>
       <ShoppingCart />
     </div>
