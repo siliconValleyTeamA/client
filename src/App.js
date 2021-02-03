@@ -2,6 +2,7 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import { SearchProvider } from './modules/contextAPI/search';
 
 /* Internal dependencies */
 import HomePage from 'pages/HomePage';
@@ -33,9 +34,10 @@ function App() {
       <ScrollToTop />
       <GlobalStyle />
       <MainLayout>
+      <SearchProvider>
         <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/category" component={CategoryPage} />
+          <Route path="/" exact component={HomePage} />          
+          <Route path="/category" component={CategoryPage} />          
           <Route path="/popular" component={PopularPage} />
           <Route path="/en/project/:projectId" component={EnDetailPage} />
           <Route path="/ko/project/:projectId" component={KrDetailPage} />
@@ -49,6 +51,8 @@ function App() {
           <Route path="/ar/addproject" component={ArAddProjectPage} />
           <Route path="/ko/addproject" component={KoAddProjectPage} />
         </Switch>
+       
+        </SearchProvider>
       </MainLayout>
     </BrowserRouter>
   );
