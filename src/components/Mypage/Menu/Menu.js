@@ -6,7 +6,6 @@ import { AiFillHeart } from 'react-icons/ai';
 import { IoIosFolder } from 'react-icons/io';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
-import { BiWorld } from 'react-icons/bi';
 import { FaShoppingCart } from 'react-icons/fa';
 
 /* Internal dependencies */
@@ -42,13 +41,6 @@ function Menu() {
         <li className={cx('support')}>
           <IoIosFolder className={cx('IoIosFolder')} />
           <div className={cx('title')}>Register funding project</div>
-          <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
-        </li>
-      </Link>
-      <Link to="/mypage/profile">
-        <li className={cx('country')}>
-          <BiWorld className={cx('BiWorld')} />
-          <div className={cx('title')}>My profile setting</div>
           <RiArrowRightSLine className={cx('RiArrowRightSLine')} />
         </li>
       </Link>
