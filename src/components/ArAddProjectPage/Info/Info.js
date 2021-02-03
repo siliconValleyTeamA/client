@@ -100,41 +100,8 @@ function Info({ Category, info, func }) {
           onChange={onText1}
           value={text1}
           className={cx('text-middle')}
-          placeholder="Please write description about your project"
+          placeholder="الرجاء كتابة وصف عن مشروعك"
         ></textarea>
-
-        <div className={cx('description')}>
-          <div className={cx('leftside')}>
-            <label>Project Name</label>
-            <label>Company</label>
-            <label>Goal Money</label>
-            <label>Start Date</label>
-            <label>End Date</label>
-            <label>Category</label>
-          </div>
-          <div className={cx('rightside')}>
-            <input type="text" onChange={func.onTitle} value={info.title} />
-            <input type="text" onChange={func.onCompany} value={info.company} />
-            <input
-              type="number"
-              onChange={func.onGoalMoney}
-              value={info.goalMoney}
-            />
-            <input
-              type="date"
-              onChange={func.onStartDate}
-              value={info.startDate}
-            />
-            <input type="date" onChange={func.onEndDate} value={info.endDate} />
-            <select onChange={func.onCategoryId} value={info.categoryId}>
-              {Category.map(item => (
-                <option key={item.key} value={item.key}>
-                  {item.value}{' '}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
       </div>
 
       <textarea
@@ -142,7 +109,7 @@ function Info({ Category, info, func }) {
         onChange={onText2}
         value={text2}
         className={cx('text-bottom')}
-        placeholder="Please write description about your project"
+        placeholder="الرجاء كتابة وصف عن مشروعك"
       ></textarea>
       <button onClick={handleInfo}>Upload</button>
     </div>

@@ -186,39 +186,6 @@ function ProjectInfo({ Category, info, func }) {
             </div>
           </div>
         </div>
-
-        <div className={cx('description')}>
-          <div className={cx('leftside')}>
-            <label>프로젝트명</label>
-            <label>회사</label>
-            <label>목표 펀딩 금액</label>
-            <label>시작 날짜</label>
-            <label>종료 날짜</label>
-            <label>카테고리</label>
-          </div>
-          <div className={cx('rightside')}>
-            <input type="text" onChange={func.onTitle} value={info.title} />
-            <input type="text" onChange={func.onCompany} value={info.company} />
-            <input
-              type="number"
-              onChange={func.onGoalMoney}
-              value={info.goalMoney}
-            />
-            <input
-              type="date"
-              onChange={func.onStartDate}
-              value={info.startDate}
-            />
-            <input type="date" onChange={func.onEndDate} value={info.endDate} />
-            <select onChange={func.onCategoryId} value={info.categoryId}>
-              {Category.map(item => (
-                <option key={item.key} value={item.key}>
-                  {item.value}{' '}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
       </div>
 
       <div className={cx('image-description')}>
@@ -257,7 +224,7 @@ function ProjectInfo({ Category, info, func }) {
             onChange={onText1}
             value={text1}
             className={cx('text-description')}
-            placeholder="Please write description about your project"
+            placeholder="이미지에 대한 설명을 작성해주세요."
           ></textarea>
         </div>
         <div className={cx('image-description-comp')}>
@@ -295,7 +262,7 @@ function ProjectInfo({ Category, info, func }) {
             onChange={onText2}
             value={text2}
             className={cx('text-description')}
-            placeholder="Please write description about your project"
+            placeholder="이미지에 대한 설명을 작성해주세요."
           ></textarea>
         </div>
         <div className={cx('image-description-comp')}>
@@ -333,7 +300,7 @@ function ProjectInfo({ Category, info, func }) {
             onChange={onText3}
             value={text3}
             className={cx('text-description')}
-            placeholder="Please write description about your project"
+            placeholder="이미지에 대한 설명을 작성해주세요."
           ></textarea>
         </div>
         <div className={cx('image-description-comp')}>
@@ -371,7 +338,7 @@ function ProjectInfo({ Category, info, func }) {
             onChange={onText4}
             value={text4}
             className={cx('text-description')}
-            placeholder="Please write description about your project"
+            placeholder="이미지에 대한 설명을 작성해주세요."
           ></textarea>
         </div>
       </div>
