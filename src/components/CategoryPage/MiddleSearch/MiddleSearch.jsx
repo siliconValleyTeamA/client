@@ -11,8 +11,6 @@ import { postsearchAPI } from 'api/searchAPI';
 /** contextAPI */
 import { SearchContext } from '../../../modules/contextAPI/search';
 
-// import axios from 'api/axios';
-
 const cx = classNames.bind(styles);
 
 function MiddleSearch() {

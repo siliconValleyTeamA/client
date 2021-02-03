@@ -12,13 +12,10 @@ import { useContext } from 'react';
 const cx = classNames.bind(styles);
 
 function GoodsList({ projectList }) {
-  // console.log(projectList);
   const { searchResult, getSearch } = useContext(SearchContext);
-  // console.log(searchResult.length > 0 ? searchResult[0]._source.id : 'hi!');
   const [result, setResult] = useState([]);
   const [projectList2, setProjectList2] = useState(projectList);
   const [temp, setTemp] = useState(true);
-  console.log(searchResult.length);
 
   // const [idList, setIdList] = useState([]);
   // const list = searchResult.map(result => {
@@ -42,12 +39,10 @@ function GoodsList({ projectList }) {
     temp ? (
       <div className={cx('goods-list')}>
         {result.map(project => {
-          console.log('111');
           return <Goods key={project.id} data={project} />;
         })}
       </div>) : (<div className={cx('goods-list')}>
         {result.map(project => {
-          console.log('22');
           return <Goods key={project._id} data={project._source} />;
         })}
       </div>)
