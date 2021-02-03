@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 /* Internal dependencies */
 import { getCategoryProjectAPI } from 'api/projectAPI';
 import { getCategoryListAPI } from 'api/categoryAPI';
-import {postsearchAPI} from 'api/searchAPI';
 
 function useCategory() {
   const filter = useSelector(state => state.filterReducer);
@@ -14,9 +13,6 @@ function useCategory() {
   const [categoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
-    // postsearchAPI().then(result => {
-    //   console.log(result);
-    // });
     getCategoryProjectAPI({
       categoryId: category.id,
       filterType: filter,
