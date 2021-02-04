@@ -48,6 +48,13 @@ Then, you can access to http://localhost:3000
 - ![title](https://img.shields.io/badge/-Slack-4A154B?&logo=Slack&logoColor=white)
 
 ---
+## 정적 페이지 
+
+
+http://fuding-bucket.s3-website.ap-northeast-2.amazonaws.com
+
+
+---
 
 ## 프로젝트 구조
 
