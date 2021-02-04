@@ -1,6 +1,6 @@
-# Fuding(client)
+# Pudding(client)
 
-Project Funding Service
+Global Project Funding Service
 
 ## ✋Team Members
 
