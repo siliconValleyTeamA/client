@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
@@ -13,6 +13,7 @@ import Hit from 'components/DetailPage/Hit';
 import ShoppingCart from 'components/Global/ShoppingCart';
 import useDetail from 'hooks/useDetail';
 import useProjectJjim from 'hooks/useProjectJjim';
+import useImageDescription from 'hooks/useImageDescription';
 
 const cx = classNames.bind(styles);
 
@@ -22,6 +23,20 @@ function ArabDetailPage() {
   const [open, setOpen] = useState(false);
   const { jjim, createJjim, removeJim } = useProjectJjim(projectId);
   const { project } = useDetail(projectId);
+  const project_change = useImageDescription(projectId, navigator.language);
+  const [arProject, setArProject] = useState();
+  const imageLinkList =
+    arProject !== undefined ? arProject.image.split('&') : [];
+
+  useEffect(() => {
+    if (project_change.length > 0) {
+      project_change.map(data => {
+        if (data.language === 'ar') {
+          setArProject(data);
+        }
+      });
+    }
+  }, [project_change, arProject]);
 
   return (
     <div className={cx('detail')}>
@@ -93,7 +108,7 @@ function ArabDetailPage() {
         <div className={cx('rightside')}>
           <img
             className={cx('product-details-image')}
-            src={project.image}
+            src={imageLinkList[0]}
             alt="product"
           />
         </div>
@@ -104,7 +119,7 @@ function ArabDetailPage() {
       <Drawer
         open={open}
         setOpen={setOpen}
-        image={project.image}
+        image={imageLinkList[0]}
         projectId={projectId}
       />
       <ShoppingCart />
