@@ -32,12 +32,6 @@ Then, you can access to http://localhost:3000
 
 ---
 
-## 🐳Quick Start  - docker
-
-https://github.com/siliconValleyTeamA/docker
-
----
-
 ## 기술 스택
 
 **Frontend**
