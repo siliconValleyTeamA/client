@@ -27,6 +27,9 @@ function ArabDetailPage() {
   const [arProject, setArProject] = useState();
   const imageLinkList =
     arProject !== undefined ? arProject.image.split('&') : [];
+  const description = arProject !== undefined ? arProject.description : '';
+  const descriptionList =
+    description !== undefined ? description.split('&') : [];
 
   useEffect(() => {
     if (project_change.length > 0) {
@@ -102,7 +105,7 @@ function ArabDetailPage() {
             </div>
           </div>
           <div className={cx('product-more-details-info')}>
-            <bdo dir="rtl">{project.description}</bdo>
+            <bdo dir="rtl">{descriptionList[0]}</bdo>
           </div>
         </div>
         <div className={cx('rightside')}>
@@ -114,7 +117,7 @@ function ArabDetailPage() {
         </div>
       </div>
       <div className={cx('bottom')}>
-        <bdo dir="rtl">{project.description}</bdo>
+        <bdo dir="rtl">{descriptionList[1]}</bdo>
       </div>
       <Drawer
         open={open}
